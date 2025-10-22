@@ -78,6 +78,11 @@ func _process(delta: float) -> void:
 			$OminiousSound3.play()
 
 	if GoldenS_anger >= 299:
+		$UiPc.set_visible(false)
+		$Buttons.set_visible(false)
+		$AnimationPlayerOffice.play("animation_golden_s_death")
+		$"../Scream".play()
+		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 	if GoldenS_camera == GlobalVars.camera_clicked and GlobalVars.view_front == true:
 		$UiPc/CamFeed/GoldenRupraveno.set_visible(true)
@@ -98,7 +103,7 @@ func _on_button_right_side_mouse_entered() -> void:
 			$AnimationPlayerOffice.play("animation_view_right")
 			$UiPc.set_visible(false)
 			$Buttons.set_visible(false)
-			await get_tree().create_timer(0.4).timeout
+			await get_tree().create_timer(0.3).timeout
 			$Buttons.set_visible(true)
 			$Buttons/ButtonRightSide.set_visible(false)
 			$LightButton.set_visible(true)
@@ -109,7 +114,7 @@ func _on_button_right_side_mouse_entered() -> void:
 		$AnimationPlayerOffice.play_backwards("animation_view_left")
 		$LightButton.set_visible(false)
 		$Buttons.set_visible(false)
-		await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(0.3).timeout
 		$Buttons/ButtonLeftSide.set_visible(true)
 		$Buttons.set_visible(true)
 		$UiPc.set_visible(true)
@@ -129,7 +134,7 @@ func _on_button_left_side_mouse_entered():
 		$AnimationPlayerOffice.play("animation_view_left")
 		$UiPc.set_visible(false)
 		$Buttons.set_visible(false)
-		await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(0.3).timeout
 		$Buttons.set_visible(true)
 		$Buttons/ButtonLeftSide.set_visible(false)
 		$LightButton.set_visible(true)
@@ -141,7 +146,7 @@ func _on_button_left_side_mouse_entered():
 		$AnimationPlayerOffice.play_backwards("animation_view_right")
 		$LightButton.set_visible(false)
 		$Buttons.set_visible(false)
-		await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(0.3).timeout
 		$Buttons/ButtonRightSide.set_visible(true)
 		$Buttons.set_visible(true)
 		$UiPc.set_visible(true)
@@ -233,12 +238,15 @@ func _on_cam_9_button_pressed() -> void:
 func _on_ambient_sounds_timer_timeout() -> void:
 	$"../AmbientSounds/Creepyambience2".play()
 	$"../AmbientSounds/Creepyambience1".play()
+	$"../AmbientSounds/Creepyambience2".volume_db = -1000000000
+	$"../AmbientSounds/Creepyambience1".volume_db = -1000000000
 	var random_ambient = randi_range(1,10)
+	print(random_ambient)
 	if random_ambient == 8:
-		$"../AmbientSounds/Creepyambience1".volume_db = -18
-		$"../AmbientSounds/Creepyambience2".volume_db = -100000
+		$"../AmbientSounds/Creepyambience1".volume_db = -51
+		$"../AmbientSounds/Creepyambience2".volume_db = -1000000000
 	elif random_ambient == 1:
-		$"../AmbientSounds/Creepyambience1".volume_db = -1000000
-		$"../AmbientSounds/Creepyambience2".volume_db = -7
+		$"../AmbientSounds/Creepyambience1".volume_db = -1000000000
+		$"../AmbientSounds/Creepyambience2".volume_db = -27
 
 	

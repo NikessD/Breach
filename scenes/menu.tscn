@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
 [ext_resource type="AudioStream" uid="uid://deyb8ve2gmluo" path="res://sounds/click-button-140881.mp3" id="2_13sgg"]
 [ext_resource type="Texture2D" uid="uid://oldgmj4ljxi5" path="res://sprites/MenuBackgounds/Night1.png" id="2_70i5f"]
+[ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/Music/river's end.mp3" id="2_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://cxlus75bm8ern" path="res://sprites/DefaultBackground_Kreslicí plátno 1.png" id="2_i6lef"]
-[ext_resource type="AudioStream" uid="uid://bexkcax18n2g1" path="res://sounds/Music/caves-of-dawn-10376.mp3" id="2_mxgkd"]
 [ext_resource type="Texture2D" uid="uid://dkhmbuux3fi32" path="res://sprites/MenuBackgounds/Night2.png" id="3_7jp70"]
 [ext_resource type="Texture2D" uid="uid://7xqgodfwsm00" path="res://sprites/Ricky'sLogo.png" id="3_70i5f"]
 [ext_resource type="AudioStream" uid="uid://byfsd0famoq8b" path="res://sounds/modern-button-click-291234.mp3" id="3_i6lef"]
@@ -97,8 +97,8 @@ size_flags_vertical = 3
 theme = SubResource("Theme_o0tnf")
 script = ExtResource("1_v86rl")
 
-[node name="Caves-of-dawn-10376" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_mxgkd")
+[node name="MenuTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_g6gyw")
 volume_db = -20.613
 pitch_scale = 0.9
 autoplay = true
@@ -129,13 +129,11 @@ texture = ExtResource("9_i6lef")
 stream = ExtResource("2_13sgg")
 volume_db = -36.243
 pitch_scale = 0.86
-bus = &"VFX"
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource("3_i6lef")
 volume_db = -15.0
 pitch_scale = 0.86
-bus = &"VFX"
 
 [node name="Background" type="Control" parent="Menu"]
 light_mask = 2
@@ -230,7 +228,6 @@ label_settings = SubResource("LabelSettings_13sgg")
 stream = ExtResource("7_6cdou")
 volume_db = -24.369
 pitch_scale = 0.75
-bus = &"VFX"
 
 [node name="Settings" type="Control" parent="."]
 visible = false

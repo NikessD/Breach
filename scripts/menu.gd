@@ -27,7 +27,7 @@ func _ready() -> void:
 	
 func _on_play_pressed() -> void:
 	load_night()
-	$"Caves-of-dawn-10376".stop()
+	$MenuTheme.stop()
 	$Menu/Background/MenuStatic.stop()
 	$StartButtonSound.play()
 	$LoadingScreen/NightNumber.text = "NIGHT " + str(GlobalVars.night)
