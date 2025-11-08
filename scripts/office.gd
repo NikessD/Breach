@@ -114,7 +114,7 @@ func _on_button_right_side_mouse_entered() -> void:
 		$AnimationPlayerOffice.play_backwards("animation_view_left")
 		$LightButton.set_visible(false)
 		$Buttons.set_visible(false)
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.25).timeout
 		$Buttons/ButtonLeftSide.set_visible(true)
 		$Buttons.set_visible(true)
 		$UiPc.set_visible(true)
@@ -146,7 +146,7 @@ func _on_button_left_side_mouse_entered():
 		$AnimationPlayerOffice.play_backwards("animation_view_right")
 		$LightButton.set_visible(false)
 		$Buttons.set_visible(false)
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.25).timeout
 		$Buttons/ButtonRightSide.set_visible(true)
 		$Buttons.set_visible(true)
 		$UiPc.set_visible(true)

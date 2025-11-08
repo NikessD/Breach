@@ -14,7 +14,6 @@ var animatronic_rooster_door_var = 0
 
 
 
-
 func _ready() -> void:
 	pass
 func _process(delta: float) -> void:
@@ -97,6 +96,7 @@ func _on_timer_rooster_timeout() -> void:
 	else:
 		if animatronic_random_number <= GlobalVars.animatronic_rooster_AI :
 			if animatronic_rooster_camera == GlobalVars.camera_clicked:
+				#movement_sound()
 				CamMovementStatic()
 				await get_tree().create_timer(0.5).timeout	
 			match animatronic_rooster_camera:
@@ -167,6 +167,7 @@ func cam_7():
 	if GlobalVars.light_button_is_pressed == true:
 		$"../Office/AnimationPlayerOffice".play("animation_view_left_scared_away")
 		$"../Office/RunningSound".play()
+		#door_leave_sound()
 		animatronic_rooster_door_var = randi_range(1,2)
 		if animatronic_rooster_door_var == 1:
 			animatronic_rooster_camera -= randi_range(1,2)
@@ -213,6 +214,7 @@ func cam_11():
 	if GlobalVars.light_button_is_pressed == true:
 		$"../Office/AnimationPlayerOffice".play("animation_view_right_scared_away")
 		$"../Office/RunningSound".play()
+		#door_leave_sound()
 		animatronic_rooster_door_var = randi_range(1,2)
 		if animatronic_rooster_door_var == 1:
 			animatronic_rooster_camera -= randi_range(1,3)
@@ -261,3 +263,26 @@ func _on_light_button_button_up() -> void:
 	else:
 		pass
 	
+#func door_leave_sound():
+	#var animatronic_rooster_leave_sound_number = randi_range(1,10)
+	#match animatronic_rooster_leave_sound_number:
+		#1:
+			#$FiddlesticksOriginalDeath3.play()
+		#2:
+			#$FiddlesticksOriginalP4.play()
+		#3:
+			#$FiddlesticksOriginalDeath1.play()
+
+#func movement_sound():
+	#var animatronic_rooster_leave_sound_number = randi_range(1,20)
+	#match animatronic_rooster_leave_sound_number:
+		#1:
+			#$FiddlesticksOriginalMove6.play()
+		#2:
+			#$FiddlesticksOriginalMoveLong3.play()
+		#3:
+			#$FiddlesticksOriginalJokeResponse.play()
+		#4:
+			#$FiddlesticksOriginalMoveFirst0.play()
+		#5:
+			#$FiddlesticksOriginalMoveFirst2.play()

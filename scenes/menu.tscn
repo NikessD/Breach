@@ -99,9 +99,10 @@ script = ExtResource("1_v86rl")
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g6gyw")
-volume_db = -20.613
+volume_db = -20.991
 pitch_scale = 0.9
 autoplay = true
+bus = &"MenuMusic"
 parameters/looping = true
 
 [node name="BackGround" type="AnimatedSprite2D" parent="."]
@@ -109,6 +110,7 @@ position = Vector2(969.735, 541.5)
 scale = Vector2(1.02367, 1.01944)
 sprite_frames = SubResource("SpriteFrames_i6lef")
 animation = &"Night1"
+metadata/_edit_lock_ = true
 
 [node name="Menu" type="Control" parent="."]
 anchors_preset = 0
