@@ -1,6 +1,7 @@
 extends Control
 
 
+
 func _ready() -> void:
 	var err = GlobalVars.config.load("res://save.cfg")	
 	if err != OK:
@@ -10,22 +11,23 @@ func _ready() -> void:
 	else:
 		GlobalVars.night = GlobalVars.config.get_value("night number", "night", GlobalVars.night)
 	
-	match GlobalVars.night:
-		1:
-			$BackGround.play("Night1")
-		2:
-			$BackGround.play("Night2")
-		3:
-			$BackGround.play("Night3")
-		4:
-			$BackGround.play("Night4")
-		5:
-			$BackGround.play("Night5")
-		6:
-			$BackGround.play("Night6")
+	#match GlobalVars.night:
+		#1:
+			#$BackGround.play("Night1")
+		#2:
+			#$BackGround.play("Night2")
+		#3:
+			#$BackGround.play("Night3")
+		#4:
+			#$BackGround.play("Night4")
+		#5:
+			#$BackGround.play("Night5")
+		#6:
+			#$BackGround.play("Night6")
 		
 	
 func _on_play_pressed() -> void:
+	$StaticTimer.stop()
 	load_night()
 	$MenuTheme.stop()
 	$Menu/Background/MenuStatic.stop()
@@ -58,6 +60,7 @@ func load_night():
 			GlobalVars.animatronic_rooster_AI = 20
 	
 func _on_options_pressed() -> void:
+
 	$Menu/ClickSound.play()
 	show_and_hide($Settings, $Menu)
 	
@@ -91,16 +94,45 @@ func volume(bus_index, value):
 	AudioServer.set_bus_volume_db(bus_index, value)
 
 func _on_master_volume_value_changed(value: float) -> void:
-	volume(0,linear_to_db(value))
+		GlobalVars.config.set_value("options", "masterVOL", GlobalVars.masterVOL)
+		GlobalVars.config.save("res://save.cfg")
+		value = GlobalVars.masterVOL
+		volume(0,linear_to_db(value))
 	
 
 func _on_vfx_value_changed(value: float) -> void:
+	var err = GlobalVars.config.load("res://save.cfg")	
+	if err != OK:
+		GlobalVars.config = ConfigFile.new()
+		GlobalVars.config.set_value("options", "vfxVOL", GlobalVars.vfxVOL)
+		GlobalVars.config.save("res://save.cfg")
+	else:
+		GlobalVars.night = GlobalVars.config.get_value("options", "vfxVOL", GlobalVars.vfxVOL)
+	GlobalVars.vfxVOL = value
 	volume(2,linear_to_db(value))
-	
 
 func _on_ambience_value_changed(value: float) -> void:
+	var err = GlobalVars.config.load("res://save.cfg")	
+	if err != OK:
+		GlobalVars.config = ConfigFile.new()
+		GlobalVars.config.set_value("options", "ambienceVOL", GlobalVars.ambienceVOL)
+		GlobalVars.config.save("res://save.cfg")
+	else:
+		GlobalVars.night = GlobalVars.config.get_value("options", "ambienceVOL", GlobalVars.ambienceVOL)
+	GlobalVars.ambienceVOL = value
 	volume(1,linear_to_db(value))
-
 
 func _on_exit_mouse_entered() -> void:
 	$Menu/HoverSound.play()
+
+
+func _on_back_ground_change_timer_timeout() -> void:
+	$BackGround.frame = randi_range(0,2)
+	$BackGroundChange_Timer.wait_time = randf_range(0.1, 0.4)
+	$BackGroundChange_Timer.start()
+
+
+func _on_static_timer_timeout() -> void:
+	$Static.self_modulate.a = randf_range(0.4,1)
+	$Static.offset = Vector2(0,randi_range(1,100))
+	$BackGround.self_modulate.a = randf_range(0.4,1)

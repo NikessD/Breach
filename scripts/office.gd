@@ -38,6 +38,9 @@ func _ready() -> void:
 		$Tutorial/camfed.set_visible(false)
 		button_anim_tutorial()	
 
+
+
+
 func button_anim_tutorial():
 		$Buttons.set_visible(true)
 		await get_tree().create_timer(0.3).timeout
@@ -58,7 +61,6 @@ func _process(delta: float) -> void:
 		power -= 0.003
 	power = snapped(power,0.001) 
 	$UiPc/Power.text = str(power) + " POWER"
-	
 	if power <= 0 and power_down_check == 0:
 		power_down_check = 1
 		$UiPc.set_visible(false)
@@ -66,6 +68,7 @@ func _process(delta: float) -> void:
 		$PowerDownSound.play()
 		await get_tree().create_timer(20/GlobalVars.night).timeout
 		get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
+		
 		
 
 	ominious_sound_number = randi_range(0,100000)
