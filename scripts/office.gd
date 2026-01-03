@@ -1,36 +1,33 @@
-extends Control
+extends Node
 
 # player var
-var head_position = "stred"
 var door_view_first = 0
 var cam_view_first = 0
 
 # Animatronic var
-var hour = 0
-var game_over = 0
 
+@onready var ricky = $Ricky
+@onready var ardent = $Ardent
 # player var
-var power = 100
-var power_down_check = 0
+var power: float = 100
+
 
 # sound var
 var ominious_sound_number = 0
 
 # GoldenS var
 
-var GoldenS_random_number = 1
-var GoldenS_camera = 0
-var GoldenS_timer = 0
-var GoldenS_anger = 0
 
 
 func _ready() -> void:
+	
+
 	$Tutorial/camfed.set_visible(false)
 	$Tutorial/sideview.set_visible(false)
 	$PowerUse.value = 10
 	$AnimationPlayerOffice.play("animation_view_front")
 	GlobalVars.view_front = true
-	if GlobalVars.night == 1:
+	if GlobalVars.night_number == 1:
 		$Buttons.set_visible(false)
 		$Tutorial/camfed.set_visible(true)
 		await get_tree().create_timer(20).timeout
@@ -53,24 +50,19 @@ func button_anim_tutorial():
 		$Buttons.set_visible(true)		
 		
 func _process(delta: float) -> void:
-	if hour == 6:
-		get_tree().change_scene_to_file("res://scenes/night_win_screen.tscn")
+
+	
 	if GlobalVars.light_button_is_pressed == true:
 		power -= 0.015
 	if power > 0:
 		power -= 0.003
 	power = snapped(power,0.001) 
 	$UiPc/Power.text = str(power) + " POWER"
-	if power <= 0 and power_down_check == 0:
-		power_down_check = 1
-		$UiPc.set_visible(false)
-		$Buttons.set_visible(false)
-		$PowerDownSound.play()
-		await get_tree().create_timer(20/GlobalVars.night).timeout
-		get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
-		
-		
+	if power <= 0 and power < 0:
+		linegring_death()
 
+
+	
 	ominious_sound_number = randi_range(0,100000)
 	match ominious_sound_number:
 		1:
@@ -80,24 +72,27 @@ func _process(delta: float) -> void:
 		3:
 			$OminiousSound3.play()
 
-	if GoldenS_anger >= 299:
-		$UiPc.set_visible(false)
-		$Buttons.set_visible(false)
-		$AnimationPlayerOffice.play("animation_golden_s_death")
-		$"../Scream".play()
-		await get_tree().create_timer(3).timeout
-		get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
-	if GoldenS_camera == GlobalVars.camera_clicked and GlobalVars.view_front == true:
-		$UiPc/CamFeed/GoldenRupraveno.set_visible(true)
-		GoldenS_anger = min(GoldenS_anger + 100 * delta, 300)
-	else:
-		GoldenS_anger = 0
-		$UiPc/CamFeed/GoldenRupraveno.set_visible(false)
 
+
+
+func camera_movement_static():
+	$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
+	$CamBuzzSound.play()
+	await get_tree().create_timer(0.5).timeout	
+	$UiPc/CamFeed/CameraStatic.self_modulate.a = (0.2)
+	$CamBuzzSound.stop()
+
+func linegring_death():
+	$UiPc.set_visible(false)
+	$Buttons.set_visible(false)
+	$PowerDownSound.play()
+	@warning_ignore("integer_division")
+	await get_tree().create_timer(20/GlobalVars.night_number).timeout
+	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 
 # Pravý pohyb hráče
 func _on_button_right_side_mouse_entered() -> void:
-	if GlobalVars.night == 1 and cam_view_first == 1:
+	if GlobalVars.night_number == 1 and cam_view_first == 1:
 		cam_view_first = 1
 		$Tutorial/camfed.set_visible(false)
 	if GlobalVars.view_front == true:
@@ -122,12 +117,12 @@ func _on_button_right_side_mouse_entered() -> void:
 		$Buttons.set_visible(true)
 		$UiPc.set_visible(true)
 
-	if GlobalVars.night == 1 and door_view_first == 0:
+	if GlobalVars.night_number == 1 and door_view_first == 0:
 		dvere_tutorial()
 		
 # Levý pohyb hráče
 func _on_button_left_side_mouse_entered(): 
-	if GlobalVars.night == 1 and cam_view_first == 1:
+	if GlobalVars.night_number == 1 and cam_view_first == 1:
 		cam_view_first = 1
 		$Tutorial/camfed.set_visible(false)
 		
@@ -154,15 +149,18 @@ func _on_button_left_side_mouse_entered():
 		$Buttons.set_visible(true)
 		$UiPc.set_visible(true)
 
-	if GlobalVars.night == 1 and door_view_first == 0:
+	if GlobalVars.night_number == 1 and door_view_first == 0:
 		dvere_tutorial()
 
 
 
 #Hodiny
 func _on_timer_hour_timeout() -> void:
-	hour += 1
-	$UiPc/GameHour.text = str(hour) + " AM"
+	GlobalVars.hour += 1
+	$UiPc/GameHour.text = str(GlobalVars.hour) + " AM"
+	if GlobalVars.hour == 6:
+		get_tree().change_scene_to_file("res://scenes/night_win_screen.tscn")
+	
 	
 func dvere_tutorial():
 	door_view_first = 1
@@ -170,86 +168,166 @@ func dvere_tutorial():
 	await get_tree().create_timer(7).timeout
 	$Tutorial/sideview.set_visible(false)
 		
-		
-func _on_golden_s_timer_timeout() -> void:
-	GoldenS_camera = 0
-	GoldenS_random_number = randi_range(0, 20)
-	if GoldenS_random_number <= GlobalVars.golden_s_AI and GlobalVars.golden_s_AI > 0:
-		GoldenS_camera = randi_range(0, 10)
-		GoldenS_timer = randi_range(80, 120) / GlobalVars.golden_s_AI
-		await get_tree().create_timer(GoldenS_timer).timeout
+	
 
+func _on_light_button_button_down() -> void:
+	$"../Office/FlashLightSound".play() 
+	GlobalVars.light_button_is_pressed = true
+	if(GlobalVars.light_button_is_pressed == true and ricky.camera == 7 and GlobalVars.view_left == true):
+		$"../Office/AnimationPlayerOffice".play("animation_view_left_animatronic")
+		ricky.anger += 20
+	elif(GlobalVars.view_left == true):
+		$"../Office/AnimationPlayerOffice".play("animation_view_left_light")
+		ricky.anger += 20
+	elif(GlobalVars.light_button_is_pressed == true and ricky.camera == 11 and GlobalVars.view_right == true):
+		$"../Office/AnimationPlayerOffice".play("animation_view_right_animatronic")
+	elif(GlobalVars.view_right == true):
+		$"../Office/AnimationPlayerOffice".play("animation_view_right_light")
 	else:
 		pass
 
-
+func _on_light_button_button_up() -> void:
+	$"../Office/PowerUse".value -= 25
+	$"../Office/FlashLightSound".stop()
+	GlobalVars.light_button_is_pressed = false
+	
+	if(GlobalVars.view_left == true):
+		$"../Office/AnimationPlayerOffice".play("animation_view_left_look")
+	elif(GlobalVars.view_right == true):
+		$"../Office/AnimationPlayerOffice".play("animation_view_right_look")
+	else:
+		pass
+func camera_change():
+	print("lokace je " + str(ricky.camera) + "  kamera je " + str(GlobalVars.camera_clicked))
+	$UiPc/Cameras.text =  "CAM " + str(GlobalVars.camera_ID) 
+	
+	if (GlobalVars.camera_clicked == ardent.camera):
+		ardent.anger = randi_range(100,200)
+		$UiPc/CamFeed/Ardent.set_visible(true)
+	else:
+		$UiPc/CamFeed/Ardent.set_visible(false)
+	if (GlobalVars.camera_clicked == ricky.camera):
+		match GlobalVars.camera_clicked:
+				1:
+					$UiPc/CamFeed/CameraFeed.play("Cam1Animatronic")
+				2:
+					$UiPc/CamFeed/CameraFeed.play("Cam2Animatronic")
+				3:
+					$UiPc/CamFeed/CameraFeed.play("Cam3Animatronic")
+				4:
+					$UiPc/CamFeed/CameraFeed.play("Cam4Animatronic")
+				5:
+					$UiPc/CamFeed/CameraFeed.play("Cam5Animatronic")
+				6:
+					$UiPc/CamFeed/CameraFeed.play("Cam6Animatronic")
+				8:
+					$UiPc/CamFeed/CameraFeed.play("Cam7Animatronic")
+				9:
+					$UiPc/CamFeed/CameraFeed.play("Cam8Animatronic")
+				10:
+					$UiPc/CamFeed/CameraFeed.play("Cam9")
+				
+	else:
+		match GlobalVars.camera_clicked:
+			1:
+				$UiPc/CamFeed/CameraFeed.play("Cam1Nothing")
+			2:
+				$UiPc/CamFeed/CameraFeed.play("Cam2Nothing")
+			3:
+				$UiPc/CamFeed/CameraFeed.play("Cam3Nothing")
+			4:
+				$UiPc/CamFeed/CameraFeed.play("Cam4Nothing")
+			5:
+				$UiPc/CamFeed/CameraFeed.play("Cam5Nothing")
+			6:
+				$UiPc/CamFeed/CameraFeed.play("Cam6Nothing")
+			8:
+				$UiPc/CamFeed/CameraFeed.play("Cam7Nothing")
+			9:
+				$UiPc/CamFeed/CameraFeed.play("Cam8Nothing")
+			10:
+				$UiPc/CamFeed/CameraFeed.play("Cam9")
+				
+	if GlobalVars.camera_clicked == 10:
+		$"../Office/CamBuzzSound".play()
+	else:
+		$"../Office/CamBuzzSound".stop()
 
 func _on_cam_1_button_pressed() -> void:
 	GlobalVars.camera_clicked = 1
 	GlobalVars.camera_ID = 1
-	$CamSelected.play()
-	get_node("../RoosterAi").Cam_Change()
-
+	camera_change()
+	$CamSelected.play() 
+	
 func _on_cam_2_button_pressed() -> void:
 	GlobalVars.camera_clicked = 2
 	GlobalVars.camera_ID = 2
-	$CamSelected.play()
-	get_node("../RoosterAi").Cam_Change()
-
+	camera_change()
+	$CamSelected.play() 
+	
 func _on_cam_3_button_pressed() -> void:
 	GlobalVars.camera_clicked = 3
 	GlobalVars.camera_ID = 3
+	camera_change()
 	$CamSelected.play() 
-	get_node("../RoosterAi").Cam_Change()	
-
+	
 func _on_cam_4_button_pressed() -> void:
 	GlobalVars.camera_clicked = 4
 	GlobalVars.camera_ID = 4
+	camera_change()
 	$CamSelected.play() 
-	get_node("../RoosterAi").Cam_Change()
-
+	
 func _on_cam_5_button_pressed() -> void:
 	GlobalVars.camera_clicked = 5
 	GlobalVars.camera_ID = 5
-	$CamSelected.play() 
-	get_node("../RoosterAi").Cam_Change()
-	
+	camera_change()
+	$CamSelected.play()
+	 
 func _on_cam_6_button_pressed() -> void:
 	GlobalVars.camera_clicked = 6
 	GlobalVars.camera_ID = 6
+	camera_change()
 	$CamSelected.play() 
-	get_node("../RoosterAi").Cam_Change()
 	
 func _on_cam_7_button_pressed() -> void:
 	GlobalVars.camera_clicked = 8
 	GlobalVars.camera_ID = 7
+	camera_change()
 	$CamSelected.play() 
-	get_node("../RoosterAi").Cam_Change()
-		
+	
 func _on_cam_8_button_pressed() -> void:
 	GlobalVars.camera_clicked = 9
 	GlobalVars.camera_ID = 8
+	camera_change()
 	$CamSelected.play() 
-	get_node("../RoosterAi").Cam_Change()
+	
 func _on_cam_9_button_pressed() -> void:
 	GlobalVars.camera_clicked = 10
 	GlobalVars.camera_ID = 9
+	camera_change()
 	$CamSelected.play() 
-	get_node("../RoosterAi").Cam_Change()
 
 
-func _on_ambient_sounds_timer_timeout() -> void:
-	$"../AmbientSounds/Creepyambience2".play()
-	$"../AmbientSounds/Creepyambience1".play()
-	$"../AmbientSounds/Creepyambience2".volume_db = -1000000000
-	$"../AmbientSounds/Creepyambience1".volume_db = -1000000000
-	var random_ambient = randi_range(1,10)
-	print(random_ambient)
-	if random_ambient == 8:
-		$"../AmbientSounds/Creepyambience1".volume_db = -51
-		$"../AmbientSounds/Creepyambience2".volume_db = -1000000000
-	elif random_ambient == 1:
-		$"../AmbientSounds/Creepyambience1".volume_db = -1000000000
-		$"../AmbientSounds/Creepyambience2".volume_db = -27
-
-	
+func begining_set_ai():
+	match GlobalVars.night_number:
+		1:
+			ardent.ai = 0
+			ricky.ai = 3
+		2:
+			ardent.ai = 1
+			ricky.ai = 5
+		3:
+			ardent.ai = 3
+			ricky.ai = 7
+		4:
+			ardent.ai = 4
+			ricky.ai = 9
+		5:
+			ardent.ai = 6
+			ricky.ai = 12
+		6:
+			ardent.ai = 20
+			ricky.ai = 20
+		null:
+			ardent.ai = 20
+			ricky.ai = 20

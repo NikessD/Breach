@@ -25,7 +25,7 @@ func CamMovementStatic():
 	$"../Office/UiPc/CamFeed/CameraStatic".self_modulate.a = (0.2)
 
 	
-func Cam_Change():
+func cam_change():
 	$"../Office/UiPc/Cameras".text =  "CAM " + str(GlobalVars.camera_ID) 
 	
 	if (GlobalVars.camera_clicked == animatronic_rooster_camera):
@@ -132,8 +132,7 @@ func _on_timer_rooster_timeout() -> void:
 	if animatronic_rooster_camera == GlobalVars.camera_clicked:
 		CamMovementStatic()
 		await get_tree().create_timer(0.5).timeout	
-	Cam_Change()
-
+	cam_change()
 
 
 func cam_left_side():

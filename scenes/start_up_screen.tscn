@@ -2,8 +2,23 @@
 
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_87om0"]
 [ext_resource type="Texture2D" uid="uid://gbf2fwxdt244" path="res://sprites/HS_Kreslicí plátno 1.png" id="2_6qanq"]
-[ext_resource type="Script" uid="uid://d0faaseofyus0" path="res://scripts/timer.gd" id="3_rdtdx"]
 [ext_resource type="AudioStream" uid="uid://7ib2goek06si" path="res://sounds/ElevenLabs_2025-03-25T17_44_59_Callum_pre_sp84_s100_sb0_se0_b_m2.mp3" id="4_gde50"]
+
+[sub_resource type="GDScript" id="GDScript_ympbp"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_timeout():
+	get_tree().change_scene_to_file(\"res://scenes/menu.tscn\")
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -31,7 +46,7 @@ texture = ExtResource("2_6qanq")
 wait_time = 3.436
 one_shot = true
 autostart = true
-script = ExtResource("3_rdtdx")
+script = SubResource("GDScript_ympbp")
 
 [node name="ElevenLabs2025-03-25t174459CallumPreSp84S100Sb0Se0BM2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_gde50")

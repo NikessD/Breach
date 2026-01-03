@@ -6,10 +6,10 @@ func _ready() -> void:
 	var err = GlobalVars.config.load("res://save.cfg")	
 	if err != OK:
 		GlobalVars.config = ConfigFile.new()
-		GlobalVars.config.set_value("night number", "night", 1)
+		GlobalVars.config.set_value("night number", "night_number", 1)
 		GlobalVars.config.save("res://save.cfg")
 	else:
-		GlobalVars.night = GlobalVars.config.get_value("night number", "night", GlobalVars.night)
+		GlobalVars.night_number = GlobalVars.config.get_value("night number", "night_number", GlobalVars.night_number)
 	
 	#match GlobalVars.night:
 		#1:
@@ -28,36 +28,16 @@ func _ready() -> void:
 	
 func _on_play_pressed() -> void:
 	$StaticTimer.stop()
-	load_night()
 	$MenuTheme.stop()
 	$Menu/Background/MenuStatic.stop()
 	$StartButtonSound.play()
-	$LoadingScreen/NightNumber.text = "NIGHT " + str(GlobalVars.night)
+	$LoadingScreen/NightNumber.text = "NIGHT " + str(GlobalVars.night_number)
 	$Menu.set_visible(false)
 	$LoadingScreen.set_visible(true)
 	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 	
-func load_night():
-	match GlobalVars.night:
-		1:
-			GlobalVars.golden_s_AI = 0
-			GlobalVars.animatronic_rooster_AI = 3
-		2:
-			GlobalVars.golden_s_AI = 1
-			GlobalVars.animatronic_rooster_AI = 5
-		3:
-			GlobalVars.golden_s_AI = 3
-			GlobalVars.animatronic_rooster_AI = 7
-		4:
-			GlobalVars.golden_s_AI = 4
-			GlobalVars.animatronic_rooster_AI = 9
-		5:
-			GlobalVars.golden_s_AI = 6
-			GlobalVars.animatronic_rooster_AI = 12
-		6:
-			GlobalVars.golden_s_AI = 20
-			GlobalVars.animatronic_rooster_AI = 20
+
 	
 func _on_options_pressed() -> void:
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=258 format=3 uid="uid://dp1pppkrg6cqj"]
+[gd_scene load_steps=259 format=3 uid="uid://dp1pppkrg6cqj"]
 
 [ext_resource type="Script" uid="uid://dq58rj15aheoq" path="res://scripts/office.gd" id="1_1o6bn"]
+[ext_resource type="Script" uid="uid://dnprw1g0tlcm8" path="res://scenes/game.gd" id="1_pgf4p"]
 [ext_resource type="AudioStream" uid="uid://bxt0qmpqksl4l" path="res://sounds/OminiousSound1.mp3" id="2_spd4q"]
 [ext_resource type="AudioStream" uid="uid://b81fbds6e2pnc" path="res://sounds/OminiousSound2.mp3" id="3_ixtdc"]
 [ext_resource type="AudioStream" uid="uid://bgxeua8ndfre8" path="res://sounds/Running.mp3" id="4_8qswn"]
@@ -31,7 +32,6 @@
 [ext_resource type="Texture2D" uid="uid://det4mavvsasi1" path="res://animations/jumpscare_right/0001.png0001.png0008.png" id="30_lddog"]
 [ext_resource type="Texture2D" uid="uid://ib6qrup3c2gi" path="res://animations/jumpscare_right/0001.png0001.png0009.png" id="31_boxkr"]
 [ext_resource type="Texture2D" uid="uid://g5th88b0qusk" path="res://animations/jumpscare_right/0001.png0001.png0010.png" id="32_de5we"]
-[ext_resource type="Script" uid="uid://bv2i6lqhns64l" path="res://scripts/rooster_ai.gd" id="32_wljb1"]
 [ext_resource type="Texture2D" uid="uid://myfvy6cualos" path="res://animations/jumpscare_right/0001.png0001.png0011.png" id="33_8tghg"]
 [ext_resource type="Texture2D" uid="uid://cbkouysw1ny3c" path="res://animations/jumpscare_right/0001.png0001.png0012.png" id="34_473mq"]
 [ext_resource type="Texture2D" uid="uid://c6l2kbvwo7chg" path="res://animations/jumpscare_right/0001.png0001.png0013.png" id="35_1va0p"]
@@ -109,16 +109,12 @@
 [ext_resource type="Texture2D" uid="uid://dxs04cpvc0ci8" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086404.jpg" id="94_qkuf6"]
 [ext_resource type="Texture2D" uid="uid://cqvombqe8odom" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086405.jpg" id="95_nri4r"]
 [ext_resource type="Texture2D" uid="uid://dae8figv3myel" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086406.jpg" id="96_pvp8v"]
-[ext_resource type="Texture2D" uid="uid://buj1mdt14tdce" path="res://animations/Cam_Renders/Stage/Stage_W.png" id="96_sfqmp"]
-[ext_resource type="Texture2D" uid="uid://bchqtj3cuwuv7" path="res://animations/Cam_Renders/Stage/Stage_A.png" id="97_gik8r"]
 [ext_resource type="Texture2D" uid="uid://c1byprbtpswta" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086407.jpg" id="97_rjakg"]
 [ext_resource type="Texture2D" uid="uid://csh4k1v4p3ret" path="res://animations/office/StunnedRIGHT/StunnedDoorRIGHT.png0012.png" id="97_y70ak"]
 [ext_resource type="Texture2D" uid="uid://e1auj6n68r6v" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086408.jpg" id="98_addpb"]
-[ext_resource type="Texture2D" uid="uid://qjgcnblew6n3" path="res://animations/Cam_Renders/DinningHall/Dining_A.png" id="99_gik8r"]
 [ext_resource type="Texture2D" uid="uid://b4iwurwvhgsn8" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086409.jpg" id="99_mtq6s"]
 [ext_resource type="Texture2D" uid="uid://c0bm50p60oxhw" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086410.jpg" id="100_kkdm3"]
 [ext_resource type="Texture2D" uid="uid://dkoi1pvlmqstt" path="res://animations/office/StunnedRIGHT/StunnedDoorRIGHT.png0015.png" id="100_no60i"]
-[ext_resource type="Texture2D" uid="uid://dnfuaetfomqek" path="res://animations/Cam_Renders/DinningHall/Dining_withoutA.png" id="100_r2em3"]
 [ext_resource type="Texture2D" uid="uid://d02uqhuepdr5p" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086411.jpg" id="101_hvrij"]
 [ext_resource type="Texture2D" uid="uid://b1jb0lovidg6e" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086412.jpg" id="102_k6q4l"]
 [ext_resource type="Texture2D" uid="uid://bj1o2ah07nmxy" path="res://animations/office/StunnedRIGHT/StunnedDoorRIGHT.png0018.png" id="103_2gupq"]
@@ -126,16 +122,20 @@
 [ext_resource type="Texture2D" uid="uid://camt10dl74s2x" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086414.jpg" id="104_7qjva"]
 [ext_resource type="Texture2D" uid="uid://dyyr6s0qknecr" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086415.jpg" id="105_xsid7"]
 [ext_resource type="Texture2D" uid="uid://dwux1jr8dfwkq" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086416.jpg" id="106_cbnbf"]
+[ext_resource type="Texture2D" uid="uid://boqecufe6xarb" path="res://animations/Cam_Renders/Stage/rndr_stage_animatronic.png" id="106_gpphh"]
 [ext_resource type="Texture2D" uid="uid://lv8eaap87e65" path="res://animations/office/TwitchingRIGHT/TwitchingRightDoor.png0000.png" id="106_njubb"]
 [ext_resource type="Texture2D" uid="uid://bgu6eh8vwbq2k" path="res://animations/office/TwitchingRIGHT/TwitchingRightDoor.png0001.png" id="107_gm21d"]
+[ext_resource type="Texture2D" uid="uid://dbdwox0uvy4qq" path="res://animations/Cam_Renders/Stage/rndr_stage_empty.png" id="107_ilysl"]
 [ext_resource type="Texture2D" uid="uid://bx3y4nvtb4tod" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086417.jpg" id="107_vjgfe"]
 [ext_resource type="Texture2D" uid="uid://dop4b72uai1bl" path="res://animations/office/TwitchingRIGHT/TwitchingRightDoor.png0002.png" id="108_b44pw"]
 [ext_resource type="Texture2D" uid="uid://dxab15nutmkgg" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086418.jpg" id="108_efgwv"]
+[ext_resource type="Texture2D" uid="uid://0a1ohfm1rtuf" path="res://animations/Cam_Renders/DinningHall/rndr_diningHall_animatronic.png" id="108_pgf4p"]
 [ext_resource type="Texture2D" uid="uid://cnfvgg47wqj36" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086419.jpg" id="109_hq3h4"]
+[ext_resource type="Texture2D" uid="uid://f2ruwch616bq" path="res://animations/Cam_Renders/DinningHall/rndr_diningHall_empty.png" id="109_wigk3"]
 [ext_resource type="Texture2D" uid="uid://de668eib6x8ik" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086420.jpg" id="110_iy3bn"]
-[ext_resource type="Texture2D" uid="uid://8g232p25w8t" path="res://animations/Cam_Renders/Closet/PAS_W.png" id="110_pgf4p"]
+[ext_resource type="Texture2D" uid="uid://8g232p25w8t" path="res://animations/Cam_Renders/PartsAndServise/PAS_W.png" id="110_pgf4p"]
 [ext_resource type="Texture2D" uid="uid://yqx6xp6hut6r" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086421.jpg" id="111_p2lbs"]
-[ext_resource type="Texture2D" uid="uid://cgct3aiwcg6np" path="res://animations/Cam_Renders/Closet/PAS_Without.png" id="111_wigk3"]
+[ext_resource type="Texture2D" uid="uid://cgct3aiwcg6np" path="res://animations/Cam_Renders/PartsAndServise/PAS_Without.png" id="111_wigk3"]
 [ext_resource type="Texture2D" uid="uid://c0bmrwa612wki" path="res://animations/Cam_Renders/Hallway/Hallway_A.png" id="112_ilysl"]
 [ext_resource type="Texture2D" uid="uid://cpc31umipla2u" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086422.jpg" id="112_va6gw"]
 [ext_resource type="Texture2D" uid="uid://cy5waiapk5r4e" path="res://animations/Cam_Renders/Hallway/Hallway_without.png" id="113_pgf4p"]
@@ -237,7 +237,6 @@
 [ext_resource type="Texture2D" uid="uid://cslkcisnqwskn" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086511.jpg" id="201_0pfl8"]
 [ext_resource type="Texture2D" uid="uid://dnh8mutj4ypo4" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086512.jpg" id="202_q0i7y"]
 [ext_resource type="Texture2D" uid="uid://djr6mrms2pvk2" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086513.jpg" id="203_pieqp"]
-[ext_resource type="AudioStream" uid="uid://raxqnifi6uum" path="res://sounds/Scream.mp3" id="204_8wuql"]
 [ext_resource type="Texture2D" uid="uid://de2d6bk8peoxc" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086514.jpg" id="204_tx6kw"]
 [ext_resource type="AudioStream" uid="uid://dms1qvpickor2" path="res://sounds/ambient/creepyambience1.mp3" id="205_oa88d"]
 [ext_resource type="Texture2D" uid="uid://8hfl2yksny5x" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086515.jpg" id="205_u46n8"]
@@ -248,6 +247,8 @@
 [ext_resource type="Texture2D" uid="uid://digjr0k4tt5o5" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086519.jpg" id="209_m6iyp"]
 [ext_resource type="FontFile" uid="uid://chsnrwwfq0y8a" path="res://fonts/digital-7.ttf" id="212_e3n7k"]
 [ext_resource type="FontFile" uid="uid://c7gvdxmesi0hw" path="res://fonts/HydrophiliaIced-Regular.ttf" id="213_vpp0n"]
+[ext_resource type="PackedScene" uid="uid://d4d3qe4rm77wx" path="res://scenes/Ricky.tscn" id="245_gpphh"]
+[ext_resource type="PackedScene" uid="uid://ihr427hih7bu" path="res://scenes/ardent.tscn" id="246_ilysl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pidd4"]
 animations = [{
@@ -796,7 +797,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("97_gik8r")
+"texture": ExtResource("106_gpphh")
 }],
 "loop": false,
 "name": &"Cam1Animatronic",
@@ -804,15 +805,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("96_sfqmp")
+"texture": ExtResource("107_ilysl")
 }],
-"loop": true,
+"loop": false,
 "name": &"Cam1Nothing",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("99_gik8r")
+"texture": ExtResource("108_pgf4p")
 }],
 "loop": false,
 "name": &"Cam2Animatronic",
@@ -820,7 +821,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("100_r2em3")
+"texture": ExtResource("109_wigk3")
 }],
 "loop": true,
 "name": &"Cam2Nothing",
@@ -2041,14 +2042,7 @@ font_size = 21
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kxhu"]
 
 [node name="Game" type="Node2D" groups=["Persist"]]
-
-[node name="RoosterAi" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("32_wljb1")
-metadata/_edit_use_anchors_ = true
+script = ExtResource("1_pgf4p")
 
 [node name="Office" type="Control" parent="."]
 layout_mode = 3
@@ -2059,16 +2053,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1o6bn")
 metadata/_edit_use_anchors_ = true
-
-[node name="GoldenS" type="Control" parent="Office"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-metadata/_edit_use_anchors_ = true
-
-[node name="GoldenSTimer" type="Timer" parent="Office/GoldenS"]
-wait_time = 20.0
-autostart = true
 
 [node name="WalkSound" type="AudioStreamPlayer2D" parent="Office"]
 stream = ExtResource("5_xnu4a")
@@ -2121,7 +2105,6 @@ position = Vector2(958, 536)
 scale = Vector2(0.773958, 0.773958)
 sprite_frames = SubResource("SpriteFrames_pidd4")
 animation = &"animation_view_front"
-frame_progress = 1.0
 
 [node name="PowerUse" type="ProgressBar" parent="Office"]
 visible = false
@@ -2147,7 +2130,14 @@ position = Vector2(1153.0829, 587.8701)
 rotation = -5.54186e-05
 scale = Vector2(0.376592, 0.3625015)
 sprite_frames = SubResource("SpriteFrames_7025r")
-animation = &"Cam1Nothing"
+animation = &"Cam1Animatronic"
+
+[node name="Ardent" type="Sprite2D" parent="Office/UiPc/CamFeed"]
+visible = false
+modulate = Color(0.601223, 0.601223, 0.601223, 1)
+position = Vector2(1135, 591)
+scale = Vector2(0.405766, 0.405766)
+texture = ExtResource("90_tc8uq")
 
 [node name="CameraStatic" type="AnimatedSprite2D" parent="Office/UiPc/CamFeed"]
 self_modulate = Color(1, 1, 1, 0.36862746)
@@ -2157,13 +2147,6 @@ sprite_frames = SubResource("SpriteFrames_e3n7k")
 animation = &"CamStatic"
 autoplay = "CamStatic"
 frame_progress = 0.6368351
-
-[node name="GoldenRupraveno" type="Sprite2D" parent="Office/UiPc/CamFeed"]
-visible = false
-modulate = Color(0.601223, 0.601223, 0.601223, 1)
-position = Vector2(1135, 591)
-scale = Vector2(0.405766, 0.405766)
-texture = ExtResource("90_tc8uq")
 
 [node name="Cameras" type="Label" parent="Office/UiPc"]
 layout_mode = 0
@@ -2258,21 +2241,21 @@ offset_bottom = 697.0
 focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="cam7button" type="Button" parent="Office/UiPc"]
-layout_mode = 0
-offset_left = 575.0
-offset_top = 669.0
-offset_right = 603.0
-offset_bottom = 696.0
-focus_mode = 0
-metadata/_edit_use_anchors_ = true
-
 [node name="cam6button" type="Button" parent="Office/UiPc"]
 layout_mode = 0
 offset_left = 504.0
 offset_top = 750.0
 offset_right = 533.0
 offset_bottom = 777.0
+focus_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="cam7button" type="Button" parent="Office/UiPc"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 669.0
+offset_right = 603.0
+offset_bottom = 696.0
 focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
@@ -2396,12 +2379,6 @@ text = "<<"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Animatronics" type="Control" parent="Office"]
-anchors_preset = 0
-offset_right = 16.0
-offset_bottom = 5.0
-metadata/_edit_use_anchors_ = true
-
 [node name="LightButton" type="TextureButton" parent="Office"]
 visible = false
 modulate = Color(1, 1, 1, 0.207843)
@@ -2420,12 +2397,10 @@ offset_right = 232.0
 offset_bottom = 98.0
 metadata/_edit_use_anchors_ = true
 
-[node name="DoorKillTimer" type="Timer" parent="Office"]
-wait_time = 0.1
+[node name="Ricky" parent="Office" instance=ExtResource("245_gpphh")]
 
-[node name="TimerRooster" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
+[node name="Ardent" parent="Office" instance=ExtResource("246_ilysl")]
+layout_mode = 1
 
 [node name="ComputerFanSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("49_8qswn")
@@ -2436,11 +2411,6 @@ autoplay = true
 [node name="TimerHour" type="Timer" parent="."]
 wait_time = 45.0
 autostart = true
-
-[node name="Scream" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("204_8wuql")
-volume_db = -13.169
-bus = &"GameReverb"
 
 [node name="AmbientSounds" type="Control" parent="."]
 layout_mode = 3
@@ -2468,31 +2438,18 @@ autostart = true
 wait_time = 2.277
 autostart = true
 
-[connection signal="timeout" from="Office/GoldenS/GoldenSTimer" to="Office" method="_on_golden_s_timer_timeout"]
-[connection signal="pressed" from="Office/UiPc/cam1button" to="Office" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Office/UiPc/cam1button" to="Office" method="_on_cam_1_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/cam2button" to="Office" method="_on_button_4_pressed"]
 [connection signal="pressed" from="Office/UiPc/cam2button" to="Office" method="_on_cam_2_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/cam3button" to="Office" method="_on_button_pressed"]
 [connection signal="pressed" from="Office/UiPc/cam3button" to="Office" method="_on_cam_3_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/cam4button" to="Office" method="_on_button_5_pressed"]
 [connection signal="pressed" from="Office/UiPc/cam4button" to="Office" method="_on_cam_4_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/cam5button" to="Office" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Office/UiPc/cam5button" to="Office" method="_on_cam_5_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/cam7button" to="Office" method="_on_button_6_pressed"]
-[connection signal="pressed" from="Office/UiPc/cam7button" to="Office" method="_on_cam_7_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/cam6button" to="Office" method="_on_button_7_pressed"]
 [connection signal="pressed" from="Office/UiPc/cam6button" to="Office" method="_on_cam_6_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/cam8button" to="Office" method="_on_button_8_pressed"]
+[connection signal="pressed" from="Office/UiPc/cam7button" to="Office" method="_on_cam_7_button_pressed"]
 [connection signal="pressed" from="Office/UiPc/cam8button" to="Office" method="_on_cam_8_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/cam9button" to="Office" method="_on_button_9_pressed"]
 [connection signal="pressed" from="Office/UiPc/cam9button" to="Office" method="_on_cam_9_button_pressed"]
 [connection signal="mouse_entered" from="Office/Buttons/ButtonRightSide" to="Office" method="_on_button_right_side_mouse_entered"]
 [connection signal="mouse_entered" from="Office/Buttons/ButtonLeftSide" to="Office" method="_on_button_left_side_mouse_entered"]
-[connection signal="button_down" from="Office/LightButton" to="RoosterAi" method="_on_light_button_button_down"]
-[connection signal="button_up" from="Office/LightButton" to="RoosterAi" method="_on_light_button_button_up"]
-[connection signal="timeout" from="Office/DoorKillTimer" to="RoosterAi" method="_on_door_kill_timer_timeout"]
-[connection signal="timeout" from="TimerRooster" to="RoosterAi" method="_on_timer_rooster_timeout"]
-[connection signal="timeout" from="TimerRooster" to="Office" method="_on_timer_rooster_timeout"]
+[connection signal="button_down" from="Office/LightButton" to="Office" method="_on_light_button_button_down"]
+[connection signal="button_up" from="Office/LightButton" to="Office" method="_on_light_button_button_up"]
 [connection signal="timeout" from="TimerHour" to="Office" method="_on_timer_hour_timeout"]
-[connection signal="timeout" from="AmbientSounds/AmbientSoundsTimer" to="Office" method="_on_ambient_sounds_timer_timeout"]
+[connection signal="timeout" from="AmbientSounds/AmbientSoundsTimer" to="." method="_on_ambient_sounds_timer_timeout"]
