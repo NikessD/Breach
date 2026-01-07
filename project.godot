@@ -15,7 +15,6 @@ run/main_scene="uid://bhqcnvyxjgoh1"
 config/features=PackedStringArray("4.5")
 run/max_fps=60
 boot_splash/image="uid://kpje6fy77mvd"
-config/icon="uid://b471kuyokmikb"
 boot_splash/minimum_display_time=2000
 
 [audio]

@@ -3,7 +3,6 @@ extends Node
 # player var
 var door_view_first = 0
 var cam_view_first = 0
-
 # Animatronic var
 
 @onready var ricky = $Ricky
@@ -50,8 +49,6 @@ func button_anim_tutorial():
 		$Buttons.set_visible(true)		
 		
 func _process(delta: float) -> void:
-
-	
 	if GlobalVars.light_button_is_pressed == true:
 		power -= 0.015
 	if power > 0:
@@ -83,6 +80,7 @@ func camera_movement_static():
 	$CamBuzzSound.stop()
 
 func linegring_death():
+	GlobalVars.blackout = true
 	$UiPc.set_visible(false)
 	$Buttons.set_visible(false)
 	$PowerDownSound.play()
@@ -201,10 +199,12 @@ func camera_change():
 	print("lokace je " + str(ricky.camera) + "  kamera je " + str(GlobalVars.camera_clicked))
 	$UiPc/Cameras.text =  "CAM " + str(GlobalVars.camera_ID) 
 	
-	if (GlobalVars.camera_clicked == ardent.camera):
+	if (GlobalVars.camera_clicked == ardent.camera and GlobalVars.view_front == true and GlobalVars.blackout == false):
+		ardent.anger_timer.start()
 		ardent.anger = randi_range(100,200)
 		$UiPc/CamFeed/Ardent.set_visible(true)
-	else:
+	elif (GlobalVars.camera_clicked != ardent.camera and GlobalVars.view_front == true and GlobalVars.blackout == false):
+		ardent.anger_timer.stop()
 		$UiPc/CamFeed/Ardent.set_visible(false)
 	if (GlobalVars.camera_clicked == ricky.camera):
 		match GlobalVars.camera_clicked:
@@ -307,6 +307,20 @@ func _on_cam_9_button_pressed() -> void:
 	camera_change()
 	$CamSelected.play() 
 
+
+func blackout():
+	$AnimationPlayerOffice.play("anim_blackout")
+	ardent.move_timer.stop()
+	ricky.move_timer.stop()
+	GlobalVars.blackout = true
+	$UiPc.set_visible(false)
+	$Buttons.set_visible(false)
+	$LightButton.set_visible(false)
+	$PowerDownSound.play() 
+	if (ardent.killer == true):
+		ardent.kill()
+	else:
+		ricky.kill()
 
 func begining_set_ai():
 	match GlobalVars.night_number:

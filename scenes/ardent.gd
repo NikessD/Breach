@@ -7,35 +7,39 @@ extends Control
 @export var anger_timer: Timer
 @export var kill_sound: AudioStreamPlayer
 @export var ai: int = 0
+@export var killer: bool = false
+
 
 var time_to_kill: int
 var anger: int = 1
 var movement_random_number: int = 0
 
 
+@onready var office = $".."
 
-func ardent_kill():
+
+
+func kill():
 	anger_timer.stop()
-	$"../UiPc".set_visible(false)
-	$"../Buttons".set_visible(false)
-	$"../PowerDownSound".play() 
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2).timeout
 	$AngrySound.play()
 	await get_tree().create_timer(8).timeout
 	$"../AnimationPlayerOffice".play("animation_golden_s_death")
 	kill_sound.play()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 
-		
+
 
 func _on_anger_timer_timeout() -> void:
 	if (anger > 299):
-		ardent_kill()
+		print("aktiviváno")
+		killer = true
+		office.blackout()
 		anger_timer.stop()
 		move_timer.stop()
 	elif (GlobalVars.camera_clicked == camera):
-		anger += 10
+		anger += 20
 	else:
 		anger_timer.stop()
 	

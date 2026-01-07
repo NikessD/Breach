@@ -1,4 +1,4 @@
-[gd_scene load_steps=259 format=3 uid="uid://dp1pppkrg6cqj"]
+[gd_scene load_steps=260 format=3 uid="uid://dp1pppkrg6cqj"]
 
 [ext_resource type="Script" uid="uid://dq58rj15aheoq" path="res://scripts/office.gd" id="1_1o6bn"]
 [ext_resource type="Script" uid="uid://dnprw1g0tlcm8" path="res://scenes/game.gd" id="1_pgf4p"]
@@ -8,19 +8,19 @@
 [ext_resource type="AudioStream" uid="uid://83g8lvti7f0d" path="res://sounds/CamBuzzSound.mp3" id="4_bdqdv"]
 [ext_resource type="AudioStream" uid="uid://rul8uamd01gv" path="res://sounds/OminiousSound3.mp3" id="4_ruyut"]
 [ext_resource type="AudioStream" uid="uid://lhh4cacsrvfg" path="res://sounds/walk_hall.mp3" id="5_xnu4a"]
-[ext_resource type="AudioStream" uid="uid://j675xlsw4gt6" path="res://sounds/FlashLightSound.ogg" id="6_suyxu"]
 [ext_resource type="AudioStream" uid="uid://dsfejvc4etgcy" path="res://sounds/PowerDownSound.mp3" id="8_qouja"]
+[ext_resource type="AudioStream" uid="uid://1wlyih21qbd7" path="res://sounds/torch-turned-on-flashlight-click-457506.mp3" id="9_ilysl"]
 [ext_resource type="AudioStream" uid="uid://c6wrh1kqs2vwa" path="res://sounds/CamSelected.mp3" id="10_02fa5"]
-[ext_resource type="Texture2D" uid="uid://ppbt4pfs8j33" path="res://animations/jumpscare_left/0001.png0001.png" id="12_8djkq"]
-[ext_resource type="Texture2D" uid="uid://no4637tbvhf" path="res://animations/jumpscare_left/0001.png0002.png" id="13_8wuql"]
-[ext_resource type="Texture2D" uid="uid://trqekyg2osf2" path="res://animations/jumpscare_left/0001.png0003.png" id="14_tmhwu"]
-[ext_resource type="Texture2D" uid="uid://bht8berwfehew" path="res://animations/jumpscare_left/0001.png0004.png" id="15_oa88d"]
-[ext_resource type="Texture2D" uid="uid://cgcm46mvuwhrq" path="res://animations/jumpscare_left/0001.png0005.png" id="16_lygv6"]
-[ext_resource type="Texture2D" uid="uid://c7fgut55h34ng" path="res://animations/jumpscare_left/0001.png0006.png" id="17_ufjh3"]
-[ext_resource type="Texture2D" uid="uid://ddxu5emn7ioup" path="res://animations/jumpscare_left/0001.png0007.png" id="18_eio5l"]
-[ext_resource type="Texture2D" uid="uid://dbhpk8nkw7htn" path="res://animations/jumpscare_left/0001.png0008.png" id="19_7l6q4"]
-[ext_resource type="Texture2D" uid="uid://diydch7u0vbsb" path="res://animations/jumpscare_left/0001.png0009.png" id="20_jqiwq"]
-[ext_resource type="Texture2D" uid="uid://16bvx82566ke" path="res://animations/jumpscare_left/0001.png0010.png" id="21_08jcq"]
+[ext_resource type="Texture2D" uid="uid://ppbt4pfs8j33" path="res://animations/Jumpscare_left/0001.png0001.png" id="12_8djkq"]
+[ext_resource type="Texture2D" uid="uid://no4637tbvhf" path="res://animations/Jumpscare_left/0001.png0002.png" id="13_8wuql"]
+[ext_resource type="Texture2D" uid="uid://trqekyg2osf2" path="res://animations/Jumpscare_left/0001.png0003.png" id="14_tmhwu"]
+[ext_resource type="Texture2D" uid="uid://bht8berwfehew" path="res://animations/Jumpscare_left/0001.png0004.png" id="15_oa88d"]
+[ext_resource type="Texture2D" uid="uid://cgcm46mvuwhrq" path="res://animations/Jumpscare_left/0001.png0005.png" id="16_lygv6"]
+[ext_resource type="Texture2D" uid="uid://c7fgut55h34ng" path="res://animations/Jumpscare_left/0001.png0006.png" id="17_ufjh3"]
+[ext_resource type="Texture2D" uid="uid://ddxu5emn7ioup" path="res://animations/Jumpscare_left/0001.png0007.png" id="18_eio5l"]
+[ext_resource type="Texture2D" uid="uid://dbhpk8nkw7htn" path="res://animations/Jumpscare_left/0001.png0008.png" id="19_7l6q4"]
+[ext_resource type="Texture2D" uid="uid://diydch7u0vbsb" path="res://animations/Jumpscare_left/0001.png0009.png" id="20_jqiwq"]
+[ext_resource type="Texture2D" uid="uid://16bvx82566ke" path="res://animations/Jumpscare_left/0001.png0010.png" id="21_08jcq"]
 [ext_resource type="Texture2D" uid="uid://bgi01nog7hfcp" path="res://animations/jumpscare_right/0001.png0001.png0000.png" id="22_tc8uq"]
 [ext_resource type="Texture2D" uid="uid://c0s7mxdg6ij88" path="res://animations/jumpscare_right/0001.png0001.png0001.png" id="23_h5tdf"]
 [ext_resource type="Texture2D" uid="uid://cchwqmaso1cxs" path="res://animations/jumpscare_right/0001.png0001.png0002.png" id="24_xbifu"]
@@ -252,6 +252,95 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pidd4"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_eio5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_rjakg")
+}],
+"loop": false,
+"name": &"anim_blackout",
+"speed": 60.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("90_tc8uq")
@@ -2037,6 +2126,8 @@ font_size = 21
 font = ExtResource("176_4kxhu")
 font_size = 21
 
+[sub_resource type="Theme" id="Theme_ilysl"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4ip4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4kxhu"]
@@ -2088,8 +2179,9 @@ volume_db = -39.713
 bus = &"GameReverb"
 
 [node name="FlashLightSound" type="AudioStreamPlayer" parent="Office"]
-stream = ExtResource("6_suyxu")
-volume_db = 6.559
+stream = ExtResource("9_ilysl")
+volume_db = -1.908
+pitch_scale = 1.18
 
 [node name="PowerDownSound" type="AudioStreamPlayer" parent="Office"]
 stream = ExtResource("8_qouja")
@@ -2212,6 +2304,7 @@ offset_top = 579.0
 offset_right = 567.0
 offset_bottom = 606.0
 focus_mode = 0
+theme = SubResource("Theme_ilysl")
 metadata/_edit_use_anchors_ = true
 
 [node name="cam3button" type="Button" parent="Office/UiPc"]
@@ -2299,7 +2392,12 @@ text = "Tady přepínáš kamery ----->"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="Office/Tutorial/camfed"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.35
+anchor_top = 0.15
+anchor_right = -1.35
+anchor_bottom = 1.025
 offset_left = 139.0
 offset_top = 397.0
 offset_right = 695.0
@@ -2312,7 +2410,12 @@ tak se ti vše vypne. "
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Office/Tutorial/camfed"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = -1.475
+anchor_right = 0.1
+anchor_bottom = 0.075
 offset_left = 783.0
 offset_top = 283.0
 offset_right = 1729.0
@@ -2401,6 +2504,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Ardent" parent="Office" instance=ExtResource("246_ilysl")]
 layout_mode = 1
+ai = 0
 
 [node name="ComputerFanSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("49_8qswn")

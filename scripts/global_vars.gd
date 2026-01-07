@@ -4,7 +4,7 @@ var view_left = false
 var view_right = false
 var view_front = true
 var light_button_is_pressed = false
-
+var blackout: bool = false
 
 # Office camera system variables
 var camera_clicked = 1
