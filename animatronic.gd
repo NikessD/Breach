@@ -70,7 +70,7 @@ func move():
 		camera = get_cam(camera)
 		$"..".camera_change()
 		if camera == GlobalVars.camera_clicked or GlobalVars.camera_clicked == last_cam:
-			$"..".camera_movement_static()
+			$"..".camera_static()
 
 		
 func camera_7_compute():

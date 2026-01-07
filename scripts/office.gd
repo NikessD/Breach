@@ -72,10 +72,10 @@ func _process(delta: float) -> void:
 
 
 
-func camera_movement_static():
+func camera_static():
 	$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
 	$CamBuzzSound.play()
-	await get_tree().create_timer(0.5).timeout	
+	await get_tree().create_timer(0.3).timeout	
 	$UiPc/CamFeed/CameraStatic.self_modulate.a = (0.2)
 	$CamBuzzSound.stop()
 
@@ -195,6 +195,9 @@ func _on_light_button_button_up() -> void:
 		$"../Office/AnimationPlayerOffice".play("animation_view_right_look")
 	else:
 		pass
+		
+		
+		
 func camera_change():
 	print("lokace je " + str(ricky.camera) + "  kamera je " + str(GlobalVars.camera_clicked))
 	$UiPc/Cameras.text =  "CAM " + str(GlobalVars.camera_ID) 
@@ -258,54 +261,63 @@ func _on_cam_1_button_pressed() -> void:
 	GlobalVars.camera_ID = 1
 	camera_change()
 	$CamSelected.play() 
+	camera_static()
 	
 func _on_cam_2_button_pressed() -> void:
 	GlobalVars.camera_clicked = 2
 	GlobalVars.camera_ID = 2
 	camera_change()
 	$CamSelected.play() 
+	camera_static()
 	
 func _on_cam_3_button_pressed() -> void:
 	GlobalVars.camera_clicked = 3
 	GlobalVars.camera_ID = 3
 	camera_change()
 	$CamSelected.play() 
+	camera_static()
 	
 func _on_cam_4_button_pressed() -> void:
 	GlobalVars.camera_clicked = 4
 	GlobalVars.camera_ID = 4
 	camera_change()
 	$CamSelected.play() 
+	camera_static()
 	
 func _on_cam_5_button_pressed() -> void:
 	GlobalVars.camera_clicked = 5
 	GlobalVars.camera_ID = 5
 	camera_change()
 	$CamSelected.play()
+	camera_static()
 	 
 func _on_cam_6_button_pressed() -> void:
 	GlobalVars.camera_clicked = 6
 	GlobalVars.camera_ID = 6
 	camera_change()
 	$CamSelected.play() 
+	camera_static()
 	
 func _on_cam_7_button_pressed() -> void:
 	GlobalVars.camera_clicked = 8
 	GlobalVars.camera_ID = 7
 	camera_change()
 	$CamSelected.play() 
+	camera_static()
 	
 func _on_cam_8_button_pressed() -> void:
 	GlobalVars.camera_clicked = 9
 	GlobalVars.camera_ID = 8
 	camera_change()
-	$CamSelected.play() 
+	$CamSelected.play()
+	camera_static() 
 	
 func _on_cam_9_button_pressed() -> void:
 	GlobalVars.camera_clicked = 10
 	GlobalVars.camera_ID = 9
 	camera_change()
 	$CamSelected.play() 
+	camera_static()
 
 
 func blackout():
@@ -321,6 +333,7 @@ func blackout():
 		ardent.kill()
 	else:
 		ricky.kill()
+
 
 func begining_set_ai():
 	match GlobalVars.night_number:
