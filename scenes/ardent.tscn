@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ihr427hih7bu"]
 
 [ext_resource type="Script" uid="uid://bdav4tnqn7xk1" path="res://scenes/ardent.gd" id="1_2du4y"]
-[ext_resource type="AudioStream" uid="uid://raxqnifi6uum" path="res://sounds/Scream.mp3" id="2_eywbw"]
+[ext_resource type="AudioStream" uid="uid://dwbxxphirf3n8" path="res://sounds/jumpscare.mp3" id="2_byk1r"]
 [ext_resource type="AudioStream" uid="uid://dn0ik7y8e1xdc" path="res://sounds/Ardent/dragon-death-102428.mp3" id="3_byk1r"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("move_timer", "kill_timer", "anger_timer", "kill_sound")]
@@ -18,7 +18,6 @@ move_timer = NodePath("MoveTimer")
 kill_timer = NodePath("KillTimer")
 anger_timer = NodePath("AngerTimer")
 kill_sound = NodePath("KillSound")
-ai = null
 
 [node name="MoveTimer" type="Timer" parent="."]
 wait_time = 20.0
@@ -27,7 +26,8 @@ autostart = true
 [node name="KillTimer" type="Timer" parent="."]
 
 [node name="KillSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_eywbw")
+stream = ExtResource("2_byk1r")
+volume_db = -21.799
 
 [node name="AngrySound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_byk1r")

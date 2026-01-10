@@ -24,7 +24,7 @@ func kill():
 	await get_tree().create_timer(2).timeout
 	$AngrySound.play()
 	await get_tree().create_timer(8).timeout
-	$"../AnimationPlayerOffice".play("animation_golden_s_death")
+	$"../AnimationPlayerOffice".play("animation_ardent_jumpscare")
 	kill_sound.play()
 	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
