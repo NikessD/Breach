@@ -14,7 +14,7 @@ var power: float = 100
 # sound var
 var ominious_sound_number = 0
 
-# GoldenS var
+var previous_cam: int = 0
 
 
 
@@ -23,7 +23,6 @@ func _ready() -> void:
 
 	$Tutorial/camfed.set_visible(false)
 	$Tutorial/sideview.set_visible(false)
-	$PowerUse.value = 10
 	$AnimationPlayerOffice.play("animation_view_front")
 	GlobalVars.view_front = true
 	if GlobalVars.night_number == 1:
@@ -185,7 +184,6 @@ func _on_light_button_button_down() -> void:
 		pass
 
 func _on_light_button_button_up() -> void:
-	$"../Office/PowerUse".value -= 25
 	$"../Office/FlashLightSound".stop()
 	GlobalVars.light_button_is_pressed = false
 	
@@ -199,7 +197,7 @@ func _on_light_button_button_up() -> void:
 		
 		
 func camera_change():
-	print("lokace je " + str(ricky.camera) + "  kamera je " + str(GlobalVars.camera_clicked))
+
 	$UiPc/Cameras.text =  "CAM " + str(GlobalVars.camera_ID) 
 	
 	if (GlobalVars.camera_clicked == ardent.camera and GlobalVars.view_front == true and GlobalVars.blackout == false):
@@ -256,58 +254,15 @@ func camera_change():
 	else:
 		$"../Office/CamBuzzSound".stop()
 
-func _on_cam_1_button_pressed() -> void:
-	GlobalVars.camera_clicked = 1
-	GlobalVars.camera_ID = 1
-	camera_change()
-	$CamSelected.play() 
-	camera_static()
 	
-func _on_cam_2_button_pressed() -> void:
-	GlobalVars.camera_clicked = 2
-	GlobalVars.camera_ID = 2
-	camera_change()
-	$CamSelected.play() 
-	camera_static()
-	
-func _on_cam_3_button_pressed() -> void:
-	GlobalVars.camera_clicked = 3
-	GlobalVars.camera_ID = 3
-	camera_change()
-	$CamSelected.play() 
-	camera_static()
-	
-func _on_cam_4_button_pressed() -> void:
-	GlobalVars.camera_clicked = 4
-	GlobalVars.camera_ID = 4
-	camera_change()
-	$CamSelected.play() 
-	camera_static()
-	
-func _on_cam_5_button_pressed() -> void:
-	GlobalVars.camera_clicked = 5
-	GlobalVars.camera_ID = 5
-	camera_change()
-	$CamSelected.play()
-	camera_static()
+
 	 
-func _on_cam_6_button_pressed() -> void:
-	GlobalVars.camera_clicked = 6
-	GlobalVars.camera_ID = 6
-	camera_change()
-	$CamSelected.play() 
-	camera_static()
+
 	
-func _on_cam_7_button_pressed() -> void:
-	GlobalVars.camera_clicked = 8
-	GlobalVars.camera_ID = 7
-	camera_change()
-	$CamSelected.play() 
-	camera_static()
+
 	
 func _on_cam_8_button_pressed() -> void:
-	GlobalVars.camera_clicked = 9
-	GlobalVars.camera_ID = 8
+
 	camera_change()
 	$CamSelected.play()
 	camera_static() 
@@ -358,3 +313,115 @@ func begining_set_ai():
 		null:
 			ardent.ai = 20
 			ricky.ai = 20
+
+
+func cam_button_clicked():
+	print("př " + str(previous_cam))
+	print("ted " + str(GlobalVars.camera_ID))
+	if previous_cam != GlobalVars.camera_ID:
+		match previous_cam:
+			1:
+				$UiPc/StageButton.set_pressed_no_signal(false)
+			2:
+				$UiPc/DinningHallButton.set_pressed_no_signal(false)
+			3:
+				$UiPc/PASButton.set_pressed_no_signal(false)
+			4:
+				$UiPc/HallwayButton.set_pressed_no_signal(false)
+			5:
+				$UiPc/HallwayLeftButton.set_pressed_no_signal(false)
+			6:
+				$UiPc/DoorLeftCornerButton.set_pressed_no_signal(false)
+			7:
+				$UiPc/HallwayRightButton.set_pressed_no_signal(false)
+			8:
+				$UiPc/DoorRightCornerButton.set_pressed_no_signal(false)
+			9:
+				$UiPc/BackroomButton.set_pressed_no_signal(false)
+	match GlobalVars.camera_ID:
+		1:
+			$UiPc/StageButton.set_pressed_no_signal(true)
+		2:
+			$UiPc/DinningHallButton.set_pressed_no_signal(true)
+		3:
+			$UiPc/PASButton.set_pressed_no_signal(true)
+		4:
+			$UiPc/HallwayButton.set_pressed_no_signal(true)
+		5:
+			$UiPc/HallwayLeftButton.set_pressed_no_signal(true)
+		6:
+			$UiPc/DoorLeftCornerButton.set_pressed_no_signal(true)
+		7:
+			$UiPc/HallwayRightButton.set_pressed_no_signal(true)
+		8:
+			$UiPc/DoorRightCornerButton.set_pressed_no_signal(true)
+		9:
+			$UiPc/BackroomButton.set_pressed_no_signal(true)
+
+	camera_change()
+	$CamSelected.play() 
+	camera_static()
+
+
+func _on_stage_button_pressed() -> void:
+	previous_cam = GlobalVars.camera_ID
+	GlobalVars.camera_clicked = 1
+	GlobalVars.camera_ID = 1
+	cam_button_clicked()
+
+
+func _on_dinning_hall_button_pressed() -> void:
+	previous_cam = GlobalVars.camera_ID
+	GlobalVars.camera_clicked = 2
+	GlobalVars.camera_ID = 2
+	cam_button_clicked()
+
+
+func _on_pas_button_pressed() -> void:
+	previous_cam = GlobalVars.camera_ID
+	GlobalVars.camera_clicked = 3
+	GlobalVars.camera_ID = 3
+	cam_button_clicked()
+
+
+func _on_hallway_button_pressed() -> void:
+	previous_cam = GlobalVars.camera_ID
+	GlobalVars.camera_clicked = 4
+	GlobalVars.camera_ID = 4
+	cam_button_clicked()
+
+
+func _on_hallway_left_button_pressed() -> void:
+	previous_cam = GlobalVars.camera_ID
+	GlobalVars.camera_clicked = 5
+	GlobalVars.camera_ID = 5
+	cam_button_clicked()
+
+
+func _on_hallway_right_button_pressed() -> void:
+	previous_cam = GlobalVars.camera_ID
+	GlobalVars.camera_clicked = 8
+	GlobalVars.camera_ID = 7
+	cam_button_clicked()
+	
+
+
+func _on_door_left_corner_button_pressed() -> void:
+	previous_cam = GlobalVars.camera_ID
+	GlobalVars.camera_clicked = 6
+	GlobalVars.camera_ID = 6
+	cam_button_clicked()
+
+
+func _on_door_right_corner_button_pressed() -> void:
+	previous_cam = GlobalVars.camera_ID	
+	GlobalVars.camera_clicked = 9
+	GlobalVars.camera_ID = 8
+	cam_button_clicked()
+
+
+func _on_backroom_button_pressed() -> void:
+	previous_cam = GlobalVars.camera_ID	
+	GlobalVars.camera_clicked = 10
+	GlobalVars.camera_ID = 9
+	cam_button_clicked()

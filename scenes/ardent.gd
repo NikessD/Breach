@@ -21,9 +21,7 @@ var movement_random_number: int = 0
 
 func kill():
 	anger_timer.stop()
-	await get_tree().create_timer(2).timeout
-	$AngrySound.play()
-	await get_tree().create_timer(8).timeout
+	await get_tree().create_timer(1.5).timeout
 	$"../AnimationPlayerOffice".play("animation_ardent_jumpscare")
 	kill_sound.play()
 	await get_tree().create_timer(1.5).timeout

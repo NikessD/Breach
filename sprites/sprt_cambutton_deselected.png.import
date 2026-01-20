@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kpje6fy77mvd"
-path="res://.godot/imported/AZIMUTH-05.png-ba9c9262d2a23faad8c4be50129736b9.ctex"
+uid="uid://crqqy2jpst5la"
+path="res://.godot/imported/sprt_cambutton_deselected.png-5b1b30f96366ebc67c00eaaaee438e1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/azimuth/AZIMUTH-05.png"
-dest_files=["res://.godot/imported/AZIMUTH-05.png-ba9c9262d2a23faad8c4be50129736b9.ctex"]
+source_file="res://sprites/sprt_cambutton_deselected.png"
+dest_files=["res://.godot/imported/sprt_cambutton_deselected.png-5b1b30f96366ebc67c00eaaaee438e1d.ctex"]
 
 [params]
 

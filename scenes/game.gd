@@ -49,3 +49,7 @@ func begining_set_ai():
 		null:
 			ardent.ai = 20
 			ricky.ai = 20
+
+
+func _on_pas_button_pressed() -> void:
+	pass # Replace with function body.

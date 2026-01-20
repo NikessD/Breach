@@ -2330,9 +2330,10 @@ sprite_frames = SubResource("SpriteFrames_7025r")
 animation = &"Cam1Animatronic"
 
 [node name="Ardent" type="Sprite2D" parent="Office/UiPc/CamFeed"]
+visible = false
 modulate = Color(0.601223, 0.601223, 0.601223, 1)
-position = Vector2(1156.5, 585.5)
-scale = Vector2(0.37447914, 0.35833335)
+position = Vector2(1156.5, 601.0568)
+scale = Vector2(0.37447914, 0.38714227)
 texture = ExtResource("262_y8e17")
 
 [node name="CameraStatic" type="AnimatedSprite2D" parent="Office/UiPc/CamFeed"]
@@ -2399,7 +2400,6 @@ offset_top = 511.0
 offset_right = 566.0
 offset_bottom = 537.0
 toggle_mode = true
-button_pressed = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
@@ -2433,55 +2433,50 @@ toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="HallwayLeftButton" type="TextureButton" parent="Office/UiPc"]
+[node name="cam5button" type="Button" parent="Office/UiPc"]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 671.0
-offset_right = 531.0
-offset_bottom = 697.0
-toggle_mode = true
-texture_normal = ExtResource("273_njubb")
-texture_pressed = ExtResource("274_gm21d")
-
-[node name="HallwayRightButton" type="TextureButton" parent="Office/UiPc"]
-layout_mode = 0
-offset_left = 576.0
+offset_left = 505.0
 offset_top = 670.0
-offset_right = 601.0
-offset_bottom = 696.0
-toggle_mode = true
-texture_normal = ExtResource("273_njubb")
-texture_pressed = ExtResource("274_gm21d")
+offset_right = 532.0
+offset_bottom = 697.0
+focus_mode = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="DoorLeftCornerButton" type="TextureButton" parent="Office/UiPc"]
+[node name="cam6button" type="Button" parent="Office/UiPc"]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 751.0
-offset_right = 531.0
-offset_bottom = 777.0
-toggle_mode = true
-texture_normal = ExtResource("273_njubb")
-texture_pressed = ExtResource("274_gm21d")
-
-[node name="DoorRightCornerButton" type="TextureButton" parent="Office/UiPc"]
-layout_mode = 0
-offset_left = 576.0
+offset_left = 504.0
 offset_top = 750.0
-offset_right = 601.0
-offset_bottom = 776.0
-toggle_mode = true
-texture_normal = ExtResource("273_njubb")
-texture_pressed = ExtResource("274_gm21d")
+offset_right = 533.0
+offset_bottom = 777.0
+focus_mode = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="BackroomButton" type="TextureButton" parent="Office/UiPc"]
+[node name="cam7button" type="Button" parent="Office/UiPc"]
 layout_mode = 0
-offset_left = 636.0
-offset_top = 703.0
-offset_right = 661.0
+offset_left = 575.0
+offset_top = 669.0
+offset_right = 603.0
+offset_bottom = 696.0
+focus_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="cam8button" type="Button" parent="Office/UiPc"]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 749.0
+offset_right = 603.0
+offset_bottom = 776.0
+focus_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="cam9button" type="Button" parent="Office/UiPc"]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 702.0
+offset_right = 663.0
 offset_bottom = 729.0
-toggle_mode = true
-texture_normal = ExtResource("273_njubb")
-texture_pressed = ExtResource("274_gm21d")
+focus_mode = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Tutorial" type="Control" parent="Office"]
 anchors_preset = 0
@@ -2658,11 +2653,11 @@ autostart = true
 [connection signal="pressed" from="Office/UiPc/DinningHallButton" to="Office" method="_on_dinning_hall_button_pressed"]
 [connection signal="pressed" from="Office/UiPc/PASButton" to="Office" method="_on_pas_button_pressed"]
 [connection signal="pressed" from="Office/UiPc/HallwayButton" to="Office" method="_on_hallway_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/HallwayLeftButton" to="Office" method="_on_hallway_left_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/HallwayRightButton" to="Office" method="_on_hallway_right_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/DoorLeftCornerButton" to="Office" method="_on_door_left_corner_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/DoorRightCornerButton" to="Office" method="_on_door_right_corner_button_pressed"]
-[connection signal="pressed" from="Office/UiPc/BackroomButton" to="Office" method="_on_backroom_button_pressed"]
+[connection signal="pressed" from="Office/UiPc/cam5button" to="Office" method="_on_cam_5_button_pressed"]
+[connection signal="pressed" from="Office/UiPc/cam6button" to="Office" method="_on_cam_6_button_pressed"]
+[connection signal="pressed" from="Office/UiPc/cam7button" to="Office" method="_on_cam_7_button_pressed"]
+[connection signal="pressed" from="Office/UiPc/cam8button" to="Office" method="_on_cam_8_button_pressed"]
+[connection signal="pressed" from="Office/UiPc/cam9button" to="Office" method="_on_cam_9_button_pressed"]
 [connection signal="mouse_entered" from="Office/Buttons/ButtonRightSide" to="Office" method="_on_button_right_side_mouse_entered"]
 [connection signal="mouse_entered" from="Office/Buttons/ButtonLeftSide" to="Office" method="_on_button_left_side_mouse_entered"]
 [connection signal="button_down" from="Office/LightButton" to="Office" method="_on_light_button_button_down"]

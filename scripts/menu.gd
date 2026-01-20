@@ -1,5 +1,24 @@
 extends Control
 
+var loader: ResourceLoader
+var progress: = 0.0
+
+
+
+
+func _process(delta):
+	var status = ResourceLoader.load_threaded_get_status("res://scenes/game.tscn")
+
+	if status == ResourceLoader.THREAD_LOAD_LOADED:
+		var packed_scene = ResourceLoader.load_threaded_get("res://scenes/game.tscn")
+		get_tree().change_scene_to_packed(packed_scene)
+
+
+
+
+
+
+
 
 
 func _ready() -> void:
@@ -27,6 +46,7 @@ func _ready() -> void:
 		
 	
 func _on_play_pressed() -> void:
+	ResourceLoader.load_threaded_request("res://scenes/game.tscn")
 	$StaticTimer.stop()
 	$MenuTheme.stop()
 	$Menu/Background/MenuStatic.stop()
@@ -34,8 +54,11 @@ func _on_play_pressed() -> void:
 	$LoadingScreen/NightNumber.text = "NIGHT " + str(GlobalVars.night_number)
 	$Menu.set_visible(false)
 	$LoadingScreen.set_visible(true)
+	for n in range(100):
+		$Static.self_modulate.a += 0.1
+		await get_tree().process_frame
 	await get_tree().create_timer(3).timeout
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
 	
 
 	
@@ -114,5 +137,4 @@ func _on_back_ground_change_timer_timeout() -> void:
 
 func _on_static_timer_timeout() -> void:
 	$Static.self_modulate.a = randf_range(0.4,1)
-	$Static.offset = Vector2(0,randi_range(1,100))
 	$BackGround.self_modulate.a = randf_range(0.4,1)

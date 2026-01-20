@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://bhqcnvyxjgoh1"]
+[gd_scene load_steps=146 format=3 uid="uid://bhqcnvyxjgoh1"]
 
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
 [ext_resource type="AudioStream" uid="uid://deyb8ve2gmluo" path="res://sounds/click-button-140881.mp3" id="2_13sgg"]
@@ -14,11 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://soumsu723jea" path="res://sprites/MenuBackgounds/0002.png" id="4_oi1it"]
 [ext_resource type="Texture2D" uid="uid://bcdbtcfkaj4va" path="res://sprites/MenuBackgounds/0003.png" id="5_fy8yy"]
 [ext_resource type="Texture2D" uid="uid://bl2hg57w2ql6s" path="res://sprites/MenuBackgounds/Night4.png" id="5_g6gyw"]
-[ext_resource type="Texture2D" uid="uid://b471kuyokmikb" path="res://sprites/PNUS_LOGO_Kreslicí plátno 1.png" id="5_mj5lg"]
 [ext_resource type="Texture2D" uid="uid://b3s5n42dn6lr2" path="res://sprites/MenuBackgounds/Night5.png" id="6_3dmrc"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="6_13sgg"]
 [ext_resource type="AudioStream" uid="uid://cr2upuxd6n6da" path="res://sounds/lazerius-139178.mp3" id="7_6cdou"]
-[ext_resource type="Texture2D" uid="uid://kpje6fy77mvd" path="res://sprites/azimuth/AZIMUTH-05.png" id="9_i6lef"]
 [ext_resource type="Texture2D" uid="uid://dbqe51p3qe7et" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086400.jpg" id="11_tb2g6"]
 [ext_resource type="Texture2D" uid="uid://c8qydwvbai860" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086401.jpg" id="12_m8j8s"]
 [ext_resource type="Texture2D" uid="uid://dxs04cpvc0ci8" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086404.jpg" id="12_x16fv"]
@@ -139,6 +137,7 @@
 [ext_resource type="Texture2D" uid="uid://dkqht3bh5kax7" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086517.jpg" id="128_r15ia"]
 [ext_resource type="Texture2D" uid="uid://xe8wyxyjhnjq" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086518.jpg" id="129_p18f8"]
 [ext_resource type="Texture2D" uid="uid://digjr0k4tt5o5" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086519.jpg" id="130_ygene"]
+[ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://sprites/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_11y2r"]
 
@@ -623,8 +622,8 @@ animation = &"MenuAnim_NEW"
 
 [node name="Static" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.7564044, 0.7564044, 0.7564044, 0.39215687)
-position = Vector2(969.5, 547)
-scale = Vector2(1.0328125, 1.1462963)
+position = Vector2(960.00006, 531)
+scale = Vector2(1.0145835, 1.0296296)
 sprite_frames = SubResource("SpriteFrames_i6lef")
 animation = &"Static"
 autoplay = "Static"
@@ -640,11 +639,6 @@ offset_bottom = 40.0
 position = Vector2(310, 167.5)
 scale = Vector2(0.300926, 0.300926)
 texture = ExtResource("3_70i5f")
-
-[node name="Azimuth-05" type="Sprite2D" parent="Menu"]
-position = Vector2(1848, 985)
-scale = Vector2(0.070051, 0.070051)
-texture = ExtResource("9_i6lef")
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource("2_13sgg")
@@ -704,7 +698,6 @@ flat = true
 visible = false
 position = Vector2(216, 296)
 scale = Vector2(0.179951, 0.179951)
-texture = ExtResource("5_mj5lg")
 
 [node name="VersionNumber" type="Label" parent="Menu"]
 layout_mode = 0
@@ -840,6 +833,11 @@ step = 0.01
 value = 0.5
 tick_count = 11
 ticks_on_borders = true
+
+[node name="AzimuthNormalFlag" type="Sprite2D" parent="."]
+position = Vector2(1846.4993, 1002.8125)
+scale = Vector2(0.030106487, 0.030106494)
+texture = ExtResource("138_i4wbw")
 
 [connection signal="timeout" from="StaticTimer" to="." method="_on_static_timer_timeout"]
 [connection signal="timeout" from="BackGroundChange_Timer" to="." method="_on_back_ground_change_timer_timeout"]
