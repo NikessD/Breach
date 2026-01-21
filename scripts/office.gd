@@ -71,6 +71,9 @@ func _process(delta: float) -> void:
 
 
 
+
+
+
 func camera_static():
 	$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
 	$CamBuzzSound.play()
@@ -316,8 +319,7 @@ func begining_set_ai():
 
 
 func cam_button_clicked():
-	print("př " + str(previous_cam))
-	print("ted " + str(GlobalVars.camera_ID))
+
 	if previous_cam != GlobalVars.camera_ID:
 		match previous_cam:
 			1:

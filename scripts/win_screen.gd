@@ -5,7 +5,7 @@ func _ready() -> void:
 	GlobalVars.config = ConfigFile.new()
 	GlobalVars.config.save("res://save.cfg")
 	$"Deep-strange-whoosh-183845".play()
-	$CenterContainer/Night.text = "NIGHT " + str(GlobalVars.night)  
+	$CenterContainer/Night.text = "NIGHT " + str(GlobalVars.night_number)  
 
 	
 	

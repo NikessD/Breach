@@ -10,6 +10,7 @@ class_name Animatronic
 @export var kill_timer: Timer
 @export var kill_sound: AudioStreamPlayer
 @export var ai: int = 0
+var door_side: int = 0
 var anger: int = 1
 var is_at_door: bool = false
 var movement_random_number: int = 0
@@ -41,11 +42,11 @@ func get_cam(cam_i):
 			else:
 				return 8
 		5, 6: 
-			$"../WalkSound".play()
 			close_roaming = randi_range(1,2)
 			if close_roaming == 1:
 				anger = randi_range(250,500)
 				kill_timer.start()
+				door_side = 1
 				if GlobalVars.light_button_is_pressed == true and GlobalVars.view_left == true:
 					$"../AnimationPlayerOffice".play("animation_view_left_light_walk_in")
 				return 7
@@ -74,7 +75,7 @@ func move():
 
 		
 func camera_7_compute():
-	if GlobalVars.light_button_is_pressed and GlobalVars.view_left:
+	if anger <= 0:
 		$"../AnimationPlayerOffice".play("animation_view_left_scared_away")
 		$"../RunningSound".play()
 		#door_leave_sound()
@@ -86,18 +87,17 @@ func camera_7_compute():
 		else:
 			return 4
 	else:
-		$"../AnimationPlayerOffice".play("animation_jumpscare_left")
 		kill()
 		return 7
 
 
 
 func camera_8_compute() -> int:
-	$"../WalkSound".play()
 	close_roaming = randi_range(1,3)
 	if close_roaming == 1:
 		anger = randi_range(250,500)
 		$KillTimer.start()
+		door_side = 2
 		if GlobalVars.light_button_is_pressed == true and GlobalVars.view_right == true:
 			$"../AnimationPlayerOffice".play("animation_view_right_light_walk_in")
 		return 11
@@ -108,11 +108,11 @@ func camera_8_compute() -> int:
 
 
 func camera_9_compute():
-	$"../WalkSound".play()
 	close_roaming = randi_range(1,3)
 	if close_roaming == 1:
 		return 10
 	else:
+		door_side = 2
 		anger = randi_range(250,500)
 		kill_timer.start()
 		if GlobalVars.light_button_is_pressed == true and GlobalVars.view_right == true:
@@ -121,11 +121,11 @@ func camera_9_compute():
 
 
 func camera_10_compute():
-	$"../WalkSound".play()
 	close_roaming = randi_range(1,2)
 	if close_roaming == 1:
 		return 9
 	else:
+		door_side = 2
 		anger = randi_range(250,500)
 		kill_timer.start()
 		if GlobalVars.light_button_is_pressed == true and GlobalVars.view_right == true:
@@ -133,7 +133,7 @@ func camera_10_compute():
 		return 11
 
 func camera_11_compute():
-	if GlobalVars.light_button_is_pressed:
+	if anger <= 0:
 		$"../AnimationPlayerOffice".play("animation_view_right_scared_away")
 		$"../RunningSound".play()
 		#door_leave_sound()
@@ -145,7 +145,6 @@ func camera_11_compute():
 		else:
 			return 10
 	else:
-		$"../AnimationPlayerOffice".play("animation_jumpscare_right")
 		kill()
 		return 11
 
@@ -157,39 +156,45 @@ func kill():
 	$"../Buttons".set_visible(false)
 	kill_timer.stop()
 	kill_sound.play()
-	await get_tree().create_timer(0.7).timeout	
+	$"../../JumpscarePlayer".set_visible(true)
+	$"../../JumpscarePlayer".play("ricky_jumpscare")
+	await get_tree().create_timer(1.2).timeout	
 	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
-
+	
 func run_away():
+	kill_timer.stop()
 	is_at_door = false
+	door_side = 0
 	anger = 0
-	$"../TimerRooster".wait_time = 5
-	$KillTimer.stop()
-	
-	
-func _on_door_kill_timer_timeout() -> void:
-	print(GlobalVars.anger)
-	if(GlobalVars.light_button_is_pressed and is_at_door):
-		anger -= 40	
-	else:
-		anger += 10	
-	
-	if(anger >= 750 and camera == 11):
-		kill()	
-	elif(anger >= 750 and camera == 7):
-		kill()
+	move_timer.wait_time = 5
+
 		
-	if(GlobalVars.light_button_is_pressed):
-		if(GlobalVars.anger <= 250 and camera == 11):
-			$"../AnimationPlayerOffice".play("animation_view_right_twithing")
-		elif(GlobalVars.anger <= 250 and camera == 7):
-			$"../AnimationPlayerOffice".play("animation_view_right_twithing")
-			
+
+
+func _on_kill_timer_timeout() -> void:
+	print(str(anger))
 	if(anger <= 0 ):
-		match (camera):
+		match camera:
 			7:
 				run_away()
 				camera_7_compute()	
 			11:
 				run_away()
 				camera_11_compute()	
+	elif anger >= 750:
+		kill()
+		
+	if(GlobalVars.light_button_is_pressed):
+		if(GlobalVars.light_button_is_pressed and door_side == 1 and GlobalVars.view_left):
+			anger -= 40	
+		
+		elif(GlobalVars.light_button_is_pressed and door_side == 2 and GlobalVars.view_right):
+			anger -= 40	
+	else:
+		anger += 20
+		
+		if(anger <= 250 and camera == 11):
+			$"../AnimationPlayerOffice".play("animation_view_right_twithing")
+		elif(anger <= 250 and camera == 7):
+			$"../AnimationPlayerOffice".play("animation_view_left_twithing")
+			
