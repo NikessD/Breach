@@ -2493,14 +2493,13 @@ metadata/_edit_use_anchors_ = true
 [node name="PowerText" type="Label" parent="Office/UiPc"]
 use_parent_material = true
 layout_mode = 0
-offset_left = 592.447
-offset_top = 404.0
-offset_right = 657.447
-offset_bottom = 430.0
+offset_left = 597.8651
+offset_top = 403.90222
+offset_right = 688.82086
+offset_bottom = 430.07663
 rotation = 0.0141439
-text = "POWER"
+text = "% POWER"
 label_settings = SubResource("LabelSettings_wljb1")
-metadata/_edit_use_anchors_ = true
 
 [node name="Power" type="Label" parent="Office/UiPc"]
 use_parent_material = true
@@ -2514,7 +2513,6 @@ text = "100 power"
 label_settings = SubResource("LabelSettings_wljb1")
 visible_characters = 3
 visible_ratio = 0.343
-metadata/_edit_use_anchors_ = true
 
 [node name="GameHour" type="Label" parent="Office/UiPc"]
 layout_mode = 0
@@ -2523,7 +2521,7 @@ offset_top = 438.0
 offset_right = 615.447
 offset_bottom = 460.0
 rotation = 0.00241168
-text = "12 AM"
+text = "12:00"
 label_settings = SubResource("LabelSettings_v8ala")
 metadata/_edit_use_anchors_ = true
 

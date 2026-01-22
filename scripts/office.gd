@@ -77,7 +77,7 @@ func _process(delta: float) -> void:
 func camera_static():
 	$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
 	$CamBuzzSound.play()
-	await get_tree().create_timer(0.3).timeout	
+	await get_tree().create_timer(0.2).timeout	
 	$UiPc/CamFeed/CameraStatic.self_modulate.a = (0.2)
 	$CamBuzzSound.stop()
 
@@ -157,7 +157,7 @@ func _on_button_left_side_mouse_entered():
 #Hodiny
 func _on_timer_hour_timeout() -> void:
 	GlobalVars.hour += 1
-	$UiPc/GameHour.text = str(GlobalVars.hour) + " AM"
+	$UiPc/GameHour.text = str(GlobalVars.hour) + ":00"
 	if GlobalVars.hour == 6:
 		get_tree().change_scene_to_file("res://scenes/night_win_screen.tscn")
 	

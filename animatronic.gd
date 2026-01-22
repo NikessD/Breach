@@ -15,7 +15,7 @@ var anger: int = 1
 var is_at_door: bool = false
 var movement_random_number: int = 0
 var close_roaming: int = 0
-
+var previous_side: int = 0
 
 
 
@@ -37,16 +37,36 @@ func get_cam(cam_i):
 			return randi_range(3,4)
 		4:
 			var side_choose = randi_range(1, 2)
-			if side_choose == 1:
-				return 5
-			else:
-				return 8
+			if previous_side == side_choose:
+				var side_mixer = randi_range(1,3)
+				if side_mixer != previous_side:
+					if previous_side == 1:
+						previous_side = 2
+						return 8
+					else:
+						previous_side = 1
+						return 5
+				else:
+					if previous_side == 1:
+						previous_side = 1
+						return 5
+					else:
+						previous_side = 1
+						return 8
+			else:	
+				if side_choose == 1:
+					previous_side = 1
+					return 5
+				else:
+					previous_side = 2
+					return 8
 		5, 6: 
 			close_roaming = randi_range(1,2)
 			if close_roaming == 1:
 				anger = randi_range(250,500)
 				kill_timer.start()
 				door_side = 1
+				move_timer.stop()
 				if GlobalVars.light_button_is_pressed == true and GlobalVars.view_left == true:
 					$"../AnimationPlayerOffice".play("animation_view_left_light_walk_in")
 				return 7
@@ -65,7 +85,14 @@ func get_cam(cam_i):
 
 func move():
 	movement_random_number = randi_range(0,20)
-	if movement_random_number <= ai:
+	if is_at_door:
+		var last_cam
+		last_cam = camera
+		camera = get_cam(camera)
+		$"..".camera_change()
+		if camera == GlobalVars.camera_clicked or GlobalVars.camera_clicked == last_cam:
+			$"..".camera_static()
+	elif movement_random_number <= ai:
 		var last_cam
 		last_cam = camera
 		camera = get_cam(camera)
@@ -76,10 +103,11 @@ func move():
 		
 func camera_7_compute():
 	if anger <= 0:
+		print("utekl")
 		$"../AnimationPlayerOffice".play("animation_view_left_scared_away")
 		$"../RunningSound".play()
 		#door_leave_sound()
-		close_roaming = randi_range(1,3)
+		close_roaming = randi_range(1,8)
 		if close_roaming == 1:
 			return 5
 		elif close_roaming == 2:
@@ -96,6 +124,7 @@ func camera_8_compute() -> int:
 	close_roaming = randi_range(1,3)
 	if close_roaming == 1:
 		anger = randi_range(250,500)
+		move_timer.stop()
 		$KillTimer.start()
 		door_side = 2
 		if GlobalVars.light_button_is_pressed == true and GlobalVars.view_right == true:
@@ -114,6 +143,7 @@ func camera_9_compute():
 	else:
 		door_side = 2
 		anger = randi_range(250,500)
+		move_timer.stop()
 		kill_timer.start()
 		if GlobalVars.light_button_is_pressed == true and GlobalVars.view_right == true:
 			$"../AnimationPlayerOffice".play("animation_view_right_light_walk_in")
@@ -137,13 +167,13 @@ func camera_11_compute():
 		$"../AnimationPlayerOffice".play("animation_view_right_scared_away")
 		$"../RunningSound".play()
 		#door_leave_sound()
-		close_roaming = randi_range(1,2)
+		close_roaming = randi_range(1,8)
 		if close_roaming == 1:
 			return 8
-		elif close_roaming == 1:
+		elif close_roaming == 2:
 			return 9
 		else:
-			return 10
+			return 4
 	else:
 		kill()
 		return 11
@@ -154,6 +184,7 @@ func kill():
 	$"../LightButton".set_visible(false)
 	$"../UiPc".set_visible(false)
 	$"../Buttons".set_visible(false)
+	move_timer.stop()
 	kill_timer.stop()
 	kill_sound.play()
 	$"../../JumpscarePlayer".set_visible(true)
@@ -162,6 +193,7 @@ func kill():
 	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 	
 func run_away():
+	move_timer.start(5)
 	kill_timer.stop()
 	is_at_door = false
 	door_side = 0
@@ -177,10 +209,10 @@ func _on_kill_timer_timeout() -> void:
 		match camera:
 			7:
 				run_away()
-				camera_7_compute()	
+				move()
 			11:
 				run_away()
-				camera_11_compute()	
+				move()
 	elif anger >= 750:
 		kill()
 		
