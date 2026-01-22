@@ -2433,7 +2433,8 @@ volume_db = -22.486
 
 [node name="CamSelected" type="AudioStreamPlayer" parent="Office"]
 stream = ExtResource("10_02fa5")
-volume_db = -34.666
+volume_db = -12.453
+pitch_scale = 0.92
 bus = &"UI_VFX"
 
 [node name="AnimationPlayerOffice" type="AnimatedSprite2D" parent="Office"]
@@ -2784,7 +2785,7 @@ autostart = true
 
 [node name="ComputerFanSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("49_8qswn")
-volume_db = -19.677
+volume_db = -6.551
 pitch_scale = 0.75
 autoplay = true
 

@@ -1,7 +1,6 @@
 [gd_scene load_steps=146 format=3 uid="uid://bhqcnvyxjgoh1"]
 
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
-[ext_resource type="AudioStream" uid="uid://deyb8ve2gmluo" path="res://sounds/click-button-140881.mp3" id="2_13sgg"]
 [ext_resource type="Texture2D" uid="uid://oldgmj4ljxi5" path="res://sprites/MenuBackgounds/Night1.png" id="2_70i5f"]
 [ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/Music/river's end.mp3" id="2_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://cxlus75bm8ern" path="res://sprites/DefaultBackground_Kreslicí plátno 1.png" id="2_i6lef"]
@@ -16,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bl2hg57w2ql6s" path="res://sprites/MenuBackgounds/Night4.png" id="5_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://b3s5n42dn6lr2" path="res://sprites/MenuBackgounds/Night5.png" id="6_3dmrc"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="6_13sgg"]
-[ext_resource type="AudioStream" uid="uid://cr2upuxd6n6da" path="res://sounds/lazerius-139178.mp3" id="7_6cdou"]
 [ext_resource type="Texture2D" uid="uid://dbqe51p3qe7et" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086400.jpg" id="11_tb2g6"]
 [ext_resource type="Texture2D" uid="uid://c8qydwvbai860" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086401.jpg" id="12_m8j8s"]
 [ext_resource type="Texture2D" uid="uid://dxs04cpvc0ci8" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086404.jpg" id="12_x16fv"]
@@ -137,6 +135,8 @@
 [ext_resource type="Texture2D" uid="uid://dkqht3bh5kax7" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086517.jpg" id="128_r15ia"]
 [ext_resource type="Texture2D" uid="uid://xe8wyxyjhnjq" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086518.jpg" id="129_p18f8"]
 [ext_resource type="Texture2D" uid="uid://digjr0k4tt5o5" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086519.jpg" id="130_ygene"]
+[ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/Menu/ButtonHover.wav" id="132_i4wbw"]
+[ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/Menu/IntoGame.wav" id="137_i4wbw"]
 [ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://sprites/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_11y2r"]
@@ -607,7 +607,7 @@ autostart = true
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g6gyw")
-volume_db = -20.991
+volume_db = -10.894
 pitch_scale = 0.9
 autoplay = true
 bus = &"MenuMusic"
@@ -641,9 +641,9 @@ scale = Vector2(0.300926, 0.300926)
 texture = ExtResource("3_70i5f")
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="Menu"]
-stream = ExtResource("2_13sgg")
-volume_db = -36.243
-pitch_scale = 0.86
+stream = ExtResource("132_i4wbw")
+volume_db = -23.378
+pitch_scale = 0.82
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource("3_i6lef")
@@ -699,6 +699,11 @@ visible = false
 position = Vector2(216, 296)
 scale = Vector2(0.179951, 0.179951)
 
+[node name="AzimuthNormalFlag" type="Sprite2D" parent="Menu"]
+position = Vector2(1846.4993, 1002.8125)
+scale = Vector2(0.030106487, 0.030106494)
+texture = ExtResource("138_i4wbw")
+
 [node name="VersionNumber" type="Label" parent="Menu"]
 layout_mode = 0
 offset_left = 1792.0
@@ -732,9 +737,9 @@ text = "NIGHT 1"
 label_settings = SubResource("LabelSettings_13sgg")
 
 [node name="StartButtonSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_6cdou")
-volume_db = -24.369
-pitch_scale = 0.75
+stream = ExtResource("137_i4wbw")
+volume_db = -14.321
+pitch_scale = 1.29
 
 [node name="Settings" type="Control" parent="."]
 visible = false
@@ -833,11 +838,6 @@ step = 0.01
 value = 0.5
 tick_count = 11
 ticks_on_borders = true
-
-[node name="AzimuthNormalFlag" type="Sprite2D" parent="."]
-position = Vector2(1846.4993, 1002.8125)
-scale = Vector2(0.030106487, 0.030106494)
-texture = ExtResource("138_i4wbw")
 
 [connection signal="timeout" from="StaticTimer" to="." method="_on_static_timer_timeout"]
 [connection signal="timeout" from="BackGroundChange_Timer" to="." method="_on_back_ground_change_timer_timeout"]
