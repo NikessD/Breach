@@ -29,8 +29,9 @@ func _ready() -> void:
 		GlobalVars.config.save("res://save.cfg")
 	else:
 		GlobalVars.night_number = GlobalVars.config.get_value("night number", "night_number", GlobalVars.night_number)
-	
-	#match GlobalVars.night:
+	if GlobalVars.night_number != 1:
+		$Menu/MenuButtons/Play.text = "NIGHT " + str(GlobalVars.night_number)
+	#match GlobalVars.night:	
 		#1:
 			#$BackGround.play("Night1")
 		#2:

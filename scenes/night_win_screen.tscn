@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw0m768bq6qc6"]
+[gd_scene format=3 uid="uid://bw0m768bq6qc6"]
 
 [ext_resource type="Script" uid="uid://coejka0k6xpmu" path="res://scripts/win_screen.gd" id="1_leokh"]
 [ext_resource type="AudioStream" uid="uid://d125n6yer5qvm" path="res://sounds/deep-strange-whoosh-183845.mp3" id="2_ka34s"]
@@ -8,7 +8,7 @@
 font_names = PackedStringArray("LCD Solid")
 oversampling = 10.0
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=844730635]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,12 +21,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_leokh")
 
-[node name="DefaultBackgroundKreslicíPlátno1" type="Sprite2D" parent="."]
+[node name="DefaultBackgroundKreslicíPlátno1" type="Sprite2D" parent="." unique_id=958290896]
 position = Vector2(955, 541)
 scale = Vector2(1.02083, 1.04259)
 texture = ExtResource("2_srivd")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1215152783]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,28 +40,22 @@ offset_bottom = 90.55
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Night" type="Label" parent="CenterContainer"]
+[node name="Night" type="Label" parent="CenterContainer" unique_id=37631885]
 layout_mode = 2
 size_flags_stretch_ratio = 3.8
 theme_override_fonts/font = SubResource("SystemFont_0eiwq")
 theme_override_font_sizes/font_size = 181
-text = "NIGHT 1"
+text = "SHIFT COMPLETED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Deep-strange-whoosh-183845" type="AudioStreamPlayer" parent="."]
+[node name="Deep-strange-whoosh-183845" type="AudioStreamPlayer" parent="." unique_id=1137962136]
 stream = ExtResource("2_ka34s")
 volume_db = -8.432
 pitch_scale = 0.78
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1344553310]
 wait_time = 6.823
 autostart = true
 
-[node name="TimerNight" type="Timer" parent="."]
-wait_time = 2.278
-one_shot = true
-autostart = true
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="TimerNight" to="." method="_on_timer_night_timeout"]

@@ -21,12 +21,6 @@ var previous_side: int = 0
 
 func _on_move_timer_timeout() -> void:
 	move()
-	
-
-
-func at_door():
-	GlobalVars.location.is_at_door = true
-
 
 
 func get_cam(cam_i):
@@ -67,6 +61,7 @@ func get_cam(cam_i):
 				kill_timer.start()
 				door_side = 1
 				move_timer.stop()
+				is_at_door = true
 				if GlobalVars.light_button_is_pressed == true and GlobalVars.view_left == true:
 					$"../AnimationPlayerOffice".play("animation_view_left_light_walk_in")
 				return 7
@@ -109,10 +104,13 @@ func camera_7_compute():
 		#door_leave_sound()
 		close_roaming = randi_range(1,8)
 		if close_roaming == 1:
+			is_at_door = false
 			return 5
 		elif close_roaming == 2:
+			is_at_door = false
 			return 6
 		else:
+			is_at_door = false
 			return 4
 	else:
 		kill()
@@ -145,6 +143,7 @@ func camera_9_compute():
 		anger = randi_range(250,500)
 		move_timer.stop()
 		kill_timer.start()
+		is_at_door = true
 		if GlobalVars.light_button_is_pressed == true and GlobalVars.view_right == true:
 			$"../AnimationPlayerOffice".play("animation_view_right_light_walk_in")
 		return 11
@@ -158,6 +157,7 @@ func camera_10_compute():
 		door_side = 2
 		anger = randi_range(250,500)
 		kill_timer.start()
+		is_at_door = true
 		if GlobalVars.light_button_is_pressed == true and GlobalVars.view_right == true:
 			$"../AnimationPlayerOffice".play("animation_view_right_light_walk_in")
 		return 11
@@ -169,10 +169,13 @@ func camera_11_compute():
 		#door_leave_sound()
 		close_roaming = randi_range(1,8)
 		if close_roaming == 1:
+			is_at_door = false
 			return 8
 		elif close_roaming == 2:
+			is_at_door = false
 			return 9
 		else:
+			is_at_door = false
 			return 4
 	else:
 		kill()
@@ -195,11 +198,9 @@ func kill():
 func run_away():
 	move_timer.start(5)
 	kill_timer.stop()
-	is_at_door = false
 	door_side = 0
 	anger = 0
 	move_timer.wait_time = 5
-
 		
 
 
@@ -210,9 +211,11 @@ func _on_kill_timer_timeout() -> void:
 			7:
 				run_away()
 				move()
+				is_at_door = false
 			11:
 				run_away()
 				move()
+				is_at_door = false
 	elif anger >= 750:
 		kill()
 		

@@ -1,14 +1,11 @@
-[gd_scene load_steps=146 format=3 uid="uid://bhqcnvyxjgoh1"]
+[gd_scene format=3 uid="uid://bhqcnvyxjgoh1"]
 
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
 [ext_resource type="Texture2D" uid="uid://oldgmj4ljxi5" path="res://sprites/MenuBackgounds/Night1.png" id="2_70i5f"]
 [ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/Music/river's end.mp3" id="2_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://cxlus75bm8ern" path="res://sprites/DefaultBackground_Kreslicí plátno 1.png" id="2_i6lef"]
 [ext_resource type="Texture2D" uid="uid://dkhmbuux3fi32" path="res://sprites/MenuBackgounds/Night2.png" id="3_7jp70"]
-[ext_resource type="Texture2D" uid="uid://7xqgodfwsm00" path="res://sprites/Ricky'sLogo.png" id="3_70i5f"]
-[ext_resource type="AudioStream" uid="uid://byfsd0famoq8b" path="res://sounds/modern-button-click-291234.mp3" id="3_i6lef"]
 [ext_resource type="Texture2D" uid="uid://nrvqyrufeocm" path="res://sprites/MenuBackgounds/0001.png" id="3_rsfmq"]
-[ext_resource type="AudioStream" uid="uid://b5psk57q003qe" path="res://sounds/MenuStatic.mp3" id="4_70i5f"]
 [ext_resource type="Texture2D" uid="uid://yob4vtgoykw" path="res://sprites/MenuBackgounds/Night3.png" id="4_mxgkd"]
 [ext_resource type="Texture2D" uid="uid://soumsu723jea" path="res://sprites/MenuBackgounds/0002.png" id="4_oi1it"]
 [ext_resource type="Texture2D" uid="uid://bcdbtcfkaj4va" path="res://sprites/MenuBackgounds/0003.png" id="5_fy8yy"]
@@ -135,6 +132,7 @@
 [ext_resource type="Texture2D" uid="uid://dkqht3bh5kax7" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086517.jpg" id="128_r15ia"]
 [ext_resource type="Texture2D" uid="uid://xe8wyxyjhnjq" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086518.jpg" id="129_p18f8"]
 [ext_resource type="Texture2D" uid="uid://digjr0k4tt5o5" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086519.jpg" id="130_ygene"]
+[ext_resource type="Texture2D" uid="uid://drmev11gutqe7" path="res://sprites/BREACH_logo.png" id="131_t8wjt"]
 [ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/Menu/ButtonHover.wav" id="132_i4wbw"]
 [ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/Menu/IntoGame.wav" id="137_i4wbw"]
 [ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://sprites/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
@@ -576,7 +574,7 @@ font_size = 100
 [sub_resource type="SystemFont" id="SystemFont_i6lef"]
 font_names = PackedStringArray("LCD Solid")
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=1274546302]
 material = SubResource("CanvasItemMaterial_11y2r")
 layout_mode = 3
 anchors_preset = 15
@@ -589,7 +587,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_o0tnf")
 script = ExtResource("1_v86rl")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=499389139]
 layout_mode = 0
 offset_left = -31.0
 offset_top = -38.0
@@ -597,15 +595,15 @@ offset_right = 1956.0
 offset_bottom = 1110.0
 color = Color(0, 0, 0, 1)
 
-[node name="StaticTimer" type="Timer" parent="."]
+[node name="StaticTimer" type="Timer" parent="." unique_id=1489716094]
 wait_time = 0.093
 autostart = true
 
-[node name="BackGroundChange_Timer" type="Timer" parent="."]
+[node name="BackGroundChange_Timer" type="Timer" parent="." unique_id=859613023]
 wait_time = 1.422
 autostart = true
 
-[node name="MenuTheme" type="AudioStreamPlayer" parent="."]
+[node name="MenuTheme" type="AudioStreamPlayer" parent="." unique_id=716738802]
 stream = ExtResource("2_g6gyw")
 volume_db = -10.894
 pitch_scale = 0.9
@@ -613,14 +611,14 @@ autoplay = true
 bus = &"MenuMusic"
 parameters/looping = true
 
-[node name="BackGround" type="AnimatedSprite2D" parent="."]
+[node name="BackGround" type="AnimatedSprite2D" parent="." unique_id=590299307]
 modulate = Color(1.3167266, 1.3167266, 1.3167266, 1)
 position = Vector2(969.735, 541.5)
 scale = Vector2(1.02367, 1.01944)
 sprite_frames = SubResource("SpriteFrames_i6lef")
 animation = &"MenuAnim_NEW"
 
-[node name="Static" type="AnimatedSprite2D" parent="."]
+[node name="Static" type="AnimatedSprite2D" parent="." unique_id=1970209207]
 modulate = Color(0.7564044, 0.7564044, 0.7564044, 0.39215687)
 position = Vector2(960.00006, 531)
 scale = Vector2(1.0145835, 1.0296296)
@@ -630,63 +628,61 @@ autoplay = "Static"
 frame = 6
 frame_progress = 0.27618605
 
-[node name="Menu" type="Control" parent="."]
+[node name="Menu" type="Control" parent="." unique_id=2134854497]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Ricky\'sLogo" type="Sprite2D" parent="Menu"]
-position = Vector2(310, 167.5)
-scale = Vector2(0.300926, 0.300926)
-texture = ExtResource("3_70i5f")
+[node name="Ricky\'sLogo" type="Sprite2D" parent="Menu" unique_id=12588475]
+position = Vector2(300.07404, 179.04167)
+scale = Vector2(0.41932872, 0.41932872)
+texture = ExtResource("131_t8wjt")
 
-[node name="HoverSound" type="AudioStreamPlayer" parent="Menu"]
+[node name="HoverSound" type="AudioStreamPlayer" parent="Menu" unique_id=1806530835]
 stream = ExtResource("132_i4wbw")
 volume_db = -23.378
 pitch_scale = 0.82
 
-[node name="ClickSound" type="AudioStreamPlayer" parent="Menu"]
-stream = ExtResource("3_i6lef")
+[node name="ClickSound" type="AudioStreamPlayer" parent="Menu" unique_id=1796533387]
 volume_db = -15.0
 pitch_scale = 0.86
 
-[node name="Background" type="Control" parent="Menu"]
+[node name="Background" type="Control" parent="Menu" unique_id=652655633]
 light_mask = 2
 visibility_layer = 2
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MenuStatic" type="AudioStreamPlayer" parent="Menu/Background"]
-stream = ExtResource("4_70i5f")
+[node name="MenuStatic" type="AudioStreamPlayer" parent="Menu/Background" unique_id=550857956]
 volume_db = -12.609
 mix_target = 1
 
-[node name="MenuButtons" type="VBoxContainer" parent="Menu"]
+[node name="MenuButtons" type="VBoxContainer" parent="Menu" unique_id=1103089360]
 visibility_layer = 4
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 55.0
-offset_top = 657.0
-offset_right = 277.0
+offset_top = 622.0
+offset_right = 216.0
 offset_bottom = 1040.0
 grow_vertical = 0
 theme = SubResource("Theme_b6cxs")
 alignment = 1
 
-[node name="Play" type="Button" parent="Menu/MenuButtons"]
+[node name="Play" type="Button" parent="Menu/MenuButtons" unique_id=51605494]
 material = SubResource("CanvasItemMaterial_aaywf")
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 50
-text = "START
+text = "NEW GAME
 "
 flat = true
 
-[node name="Quit" type="Button" parent="Menu/MenuButtons"]
+[node name="Quit" type="Button" parent="Menu/MenuButtons" unique_id=1400989770]
 layout_mode = 2
 focus_mode = 0
 theme_override_fonts/font = ExtResource("6_13sgg")
@@ -694,17 +690,17 @@ theme_override_font_sizes/font_size = 50
 text = "QUIT"
 flat = true
 
-[node name="FnasLogo" type="Sprite2D" parent="Menu"]
+[node name="FnasLogo" type="Sprite2D" parent="Menu" unique_id=1536126350]
 visible = false
 position = Vector2(216, 296)
 scale = Vector2(0.179951, 0.179951)
 
-[node name="AzimuthNormalFlag" type="Sprite2D" parent="Menu"]
+[node name="AzimuthNormalFlag" type="Sprite2D" parent="Menu" unique_id=1905102023]
 position = Vector2(1846.4993, 1002.8125)
 scale = Vector2(0.030106487, 0.030106494)
 texture = ExtResource("138_i4wbw")
 
-[node name="VersionNumber" type="Label" parent="Menu"]
+[node name="VersionNumber" type="Label" parent="Menu" unique_id=1123707364]
 layout_mode = 0
 offset_left = 1792.0
 offset_top = 1053.0
@@ -713,19 +709,19 @@ offset_bottom = 1076.0
 theme_override_fonts/font = ExtResource("6_13sgg")
 text = "VER - 0.8.0"
 
-[node name="LoadingScreen" type="Control" parent="."]
+[node name="LoadingScreen" type="Control" parent="." unique_id=1262903751]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="DefaultBackgroundKreslicíPlátno1" type="Sprite2D" parent="LoadingScreen"]
+[node name="DefaultBackgroundKreslicíPlátno1" type="Sprite2D" parent="LoadingScreen" unique_id=1129965563]
 visible = false
 position = Vector2(972, 535)
 scale = Vector2(1.03125, 1.05)
 texture = ExtResource("2_i6lef")
 
-[node name="NightNumber" type="Label" parent="LoadingScreen"]
+[node name="NightNumber" type="Label" parent="LoadingScreen" unique_id=547786746]
 layout_mode = 0
 offset_left = 755.0
 offset_top = 450.0
@@ -736,12 +732,12 @@ theme_override_font_sizes/font_size = 100
 text = "NIGHT 1"
 label_settings = SubResource("LabelSettings_13sgg")
 
-[node name="StartButtonSound" type="AudioStreamPlayer" parent="."]
+[node name="StartButtonSound" type="AudioStreamPlayer" parent="." unique_id=926367735]
 stream = ExtResource("137_i4wbw")
 volume_db = -14.321
 pitch_scale = 1.29
 
-[node name="Settings" type="Control" parent="."]
+[node name="Settings" type="Control" parent="." unique_id=1886788501]
 visible = false
 anchors_preset = 0
 offset_left = 7.0
@@ -749,12 +745,12 @@ offset_top = 1011.0
 offset_right = 47.0
 offset_bottom = 1051.0
 
-[node name="DefaultBackgroundKreslicíPlátno1" type="Sprite2D" parent="Settings"]
+[node name="DefaultBackgroundKreslicíPlátno1" type="Sprite2D" parent="Settings" unique_id=1356655807]
 position = Vector2(955, -468)
 scale = Vector2(1.02396, 1.03704)
 texture = ExtResource("2_i6lef")
 
-[node name="Exit" type="Button" parent="Settings"]
+[node name="Exit" type="Button" parent="Settings" unique_id=1229623204]
 layout_mode = 0
 offset_left = 2.0
 offset_top = -31.0
@@ -767,25 +763,25 @@ text = "MENU
 "
 flat = true
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Settings"]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Settings" unique_id=783571333]
 layout_mode = 0
 offset_left = -7.0
 offset_top = -1011.0
 offset_right = 33.0
 offset_bottom = -971.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Settings"]
+[node name="MarginContainer" type="MarginContainer" parent="Settings" unique_id=1508727168]
 layout_mode = 0
 offset_left = 599.0
 offset_top = -1011.0
 offset_right = 1264.0
 offset_bottom = 70.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer" unique_id=994891813]
 layout_mode = 2
 alignment = 1
 
-[node name="Label3" type="Label" parent="Settings/MarginContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=1997022161]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 40
@@ -795,7 +791,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Master volume" type="HSlider" parent="Settings/MarginContainer/VBoxContainer"]
+[node name="Master volume" type="HSlider" parent="Settings/MarginContainer/VBoxContainer" unique_id=896629259]
 layout_mode = 2
 max_value = 2.0
 step = 0.01
@@ -803,7 +799,7 @@ value = 1.0
 tick_count = 11
 ticks_on_borders = true
 
-[node name="Label" type="Label" parent="Settings/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=215161811]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 40
@@ -813,7 +809,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="VFX" type="HSlider" parent="Settings/MarginContainer/VBoxContainer"]
+[node name="VFX" type="HSlider" parent="Settings/MarginContainer/VBoxContainer" unique_id=1965168956]
 layout_mode = 2
 max_value = 1.0
 step = 0.01
@@ -821,7 +817,7 @@ value = 0.5
 tick_count = 11
 ticks_on_borders = true
 
-[node name="Label2" type="Label" parent="Settings/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=612893752]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 40
@@ -831,7 +827,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Ambience" type="HSlider" parent="Settings/MarginContainer/VBoxContainer"]
+[node name="Ambience" type="HSlider" parent="Settings/MarginContainer/VBoxContainer" unique_id=194460221]
 layout_mode = 2
 max_value = 1.0
 step = 0.01

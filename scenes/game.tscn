@@ -1,4 +1,4 @@
-[gd_scene load_steps=305 format=3 uid="uid://dp1pppkrg6cqj"]
+[gd_scene format=3 uid="uid://dp1pppkrg6cqj"]
 
 [ext_resource type="Script" uid="uid://dq58rj15aheoq" path="res://scripts/office.gd" id="1_1o6bn"]
 [ext_resource type="Script" uid="uid://dnprw1g0tlcm8" path="res://scenes/game.gd" id="1_pgf4p"]
@@ -54,16 +54,20 @@
 [ext_resource type="Texture2D" uid="uid://4j25of8vwmey" path="res://animations/office/MotionLookRIGHT/PohledpravaAnim.png0010.png" id="75_efgwv"]
 [ext_resource type="Texture2D" uid="uid://cwkyh0yfpchua" path="res://animations/office/StunnedLEFT/StunnedDoorRIGHT.png0018.png" id="75_sy3rc"]
 [ext_resource type="Texture2D" uid="uid://bakpv8js2hs3o" path="res://animations/office/MotionLookRIGHT/PohledpravaAnim.png0011.png" id="76_hq3h4"]
+[ext_resource type="Texture2D" uid="uid://mbxk2xqfo2c4" path="res://animations/Cam_Renders/PartsAndServise/rndr_partsAndServise_animatronic.png" id="76_yfuyu"]
 [ext_resource type="Texture2D" uid="uid://ce6t8qhp57on0" path="res://animations/office/MotionLookRIGHT/PohledpravaAnim.png0012.png" id="77_iy3bn"]
+[ext_resource type="Texture2D" uid="uid://b42x4rpk6cyt5" path="res://animations/Cam_Renders/PartsAndServise/rndr_partsAndServise_empty.png" id="77_qmnfn"]
 [ext_resource type="Texture2D" uid="uid://ba40e6vj7fyvb" path="res://animations/office/MotionLookRIGHT/PohledpravaAnim.png0013.png" id="78_p2lbs"]
-[ext_resource type="Texture2D" uid="uid://b8waa38tkt2oc" path="res://animations/Cam_Renders/OfficeRightDoor/13-RightDoorAnim.png" id="79_s33c4"]
 [ext_resource type="Texture2D" uid="uid://7xwt3x6ah8o2" path="res://animations/office/MotionLookRIGHT/PohledpravaAnim.png0014.png" id="79_va6gw"]
-[ext_resource type="Texture2D" uid="uid://dgxk285ajs8aj" path="res://animations/Cam_Renders/OfficeRightDoor/16-RightDoor.png" id="80_3hv4c"]
 [ext_resource type="Texture2D" uid="uid://bh4kajomck071" path="res://animations/office/MotionLookRIGHT/PohledpravaAnim.png0015.png" id="80_sfqmp"]
 [ext_resource type="Texture2D" uid="uid://dl52tcjm5keg8" path="res://animations/office/LookingRIGHT/Untitled.png" id="81_mtq6s"]
+[ext_resource type="Texture2D" uid="uid://cdkmhbksico46" path="res://animations/Cam_Renders/OfficeLeftDoor/rndr_leftCorner_animatronic.png" id="82_yfuyu"]
 [ext_resource type="Texture2D" uid="uid://c0078jb81yopt" path="res://animations/office/LookingRIGHT/RightLightAnimatronicpng.png" id="83_p0oue"]
+[ext_resource type="Texture2D" uid="uid://cwxlkinjkqlmq" path="res://animations/Cam_Renders/OfficeLeftDoor/rndr_leftCorner_empty.png" id="83_qmnfn"]
 [ext_resource type="Texture2D" uid="uid://0p3glfejuw86" path="res://animations/office/StunnedRIGHT/StunnedDoorRIGHT.png0000.png" id="85_1xm1f"]
+[ext_resource type="Texture2D" uid="uid://5jqrtd41nxkf" path="res://animations/Cam_Renders/OfficeRightDoor/rndr_rightCorner_animatronic.png" id="86_d0aju"]
 [ext_resource type="Texture2D" uid="uid://dnlw1siejgk03" path="res://animations/office/StunnedRIGHT/StunnedDoorRIGHT.png0002.png" id="87_36io8"]
+[ext_resource type="Texture2D" uid="uid://c8ja0fsemmaoe" path="res://animations/Cam_Renders/OfficeRightDoor/rndr_rightCorner_empty.png" id="87_dy8ei"]
 [ext_resource type="Texture2D" uid="uid://cjj8mnq3k5ap" path="res://animations/office/StunnedRIGHT/StunnedDoorRIGHT.png0003.png" id="88_pcasu"]
 [ext_resource type="Texture2D" uid="uid://dbqe51p3qe7et" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086400.jpg" id="90_mpqr6"]
 [ext_resource type="Texture2D" uid="uid://ypjtdd0mja8d" path="res://animations/office/StunnedRIGHT/StunnedDoorRIGHT.png0005.png" id="90_sy3rc"]
@@ -99,9 +103,7 @@
 [ext_resource type="Texture2D" uid="uid://cnfvgg47wqj36" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086419.jpg" id="109_hq3h4"]
 [ext_resource type="Texture2D" uid="uid://f2ruwch616bq" path="res://animations/Cam_Renders/DinningHall/rndr_diningHall_empty.png" id="109_wigk3"]
 [ext_resource type="Texture2D" uid="uid://de668eib6x8ik" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086420.jpg" id="110_iy3bn"]
-[ext_resource type="Texture2D" uid="uid://8g232p25w8t" path="res://animations/Cam_Renders/PartsAndServise/PAS_W.png" id="110_pgf4p"]
 [ext_resource type="Texture2D" uid="uid://yqx6xp6hut6r" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086421.jpg" id="111_p2lbs"]
-[ext_resource type="Texture2D" uid="uid://cgct3aiwcg6np" path="res://animations/Cam_Renders/PartsAndServise/PAS_Without.png" id="111_wigk3"]
 [ext_resource type="Texture2D" uid="uid://c0bmrwa612wki" path="res://animations/Cam_Renders/Hallway/Hallway_A.png" id="112_ilysl"]
 [ext_resource type="Texture2D" uid="uid://cpc31umipla2u" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086422.jpg" id="112_va6gw"]
 [ext_resource type="Texture2D" uid="uid://cy5waiapk5r4e" path="res://animations/Cam_Renders/Hallway/Hallway_without.png" id="113_pgf4p"]
@@ -920,7 +922,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("110_pgf4p")
+"texture": ExtResource("76_yfuyu")
 }],
 "loop": false,
 "name": &"Cam3Animatronic",
@@ -928,7 +930,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("111_wigk3")
+"texture": ExtResource("77_qmnfn")
 }],
 "loop": true,
 "name": &"Cam3Nothing",
@@ -968,7 +970,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("116_1xm1f")
+"texture": ExtResource("82_yfuyu")
 }],
 "loop": false,
 "name": &"Cam6Animatronic",
@@ -976,7 +978,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("115_bwgkb")
+"texture": ExtResource("83_qmnfn")
 }],
 "loop": true,
 "name": &"Cam6Nothing",
@@ -1000,7 +1002,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("79_s33c4")
+"texture": ExtResource("86_d0aju")
 }],
 "loop": false,
 "name": &"Cam8Animatronic",
@@ -1008,7 +1010,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("80_3hv4c")
+"texture": ExtResource("87_dy8ei")
 }],
 "loop": true,
 "name": &"Cam8Nothing",
@@ -2376,10 +2378,10 @@ animations = [{
 "speed": 45.0
 }]
 
-[node name="Game" type="Node2D" groups=["Persist"]]
+[node name="Game" type="Node2D" unique_id=801217745 groups=["Persist"]]
 script = ExtResource("1_pgf4p")
 
-[node name="Office" type="Control" parent="."]
+[node name="Office" type="Control" parent="." unique_id=173772100]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -2389,55 +2391,55 @@ grow_vertical = 2
 script = ExtResource("1_1o6bn")
 metadata/_edit_use_anchors_ = true
 
-[node name="WalkSound" type="AudioStreamPlayer2D" parent="Office"]
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="Office" unique_id=1693712707]
 stream = ExtResource("5_xnu4a")
 volume_db = 11.594
 pitch_scale = 0.96
 panning_strength = 0.0
 bus = &"GameReverb"
 
-[node name="CamBuzzSound" type="AudioStreamPlayer" parent="Office"]
+[node name="CamBuzzSound" type="AudioStreamPlayer" parent="Office" unique_id=1078928745]
 stream = ExtResource("4_bdqdv")
 volume_db = 5.621
 bus = &"GameReverb"
 
-[node name="RunningSound" type="AudioStreamPlayer" parent="Office"]
+[node name="RunningSound" type="AudioStreamPlayer" parent="Office" unique_id=345824643]
 stream = ExtResource("4_8qswn")
 volume_db = -15.981
 pitch_scale = 0.96
 bus = &"GameReverb"
 
-[node name="OminiousSound1" type="AudioStreamPlayer" parent="Office"]
+[node name="OminiousSound1" type="AudioStreamPlayer" parent="Office" unique_id=427789119]
 stream = ExtResource("2_spd4q")
 volume_db = -40.667
 bus = &"GameReverb"
 
-[node name="OminiousSound2" type="AudioStreamPlayer" parent="Office"]
+[node name="OminiousSound2" type="AudioStreamPlayer" parent="Office" unique_id=658298490]
 stream = ExtResource("3_ixtdc")
 volume_db = -40.667
 bus = &"GameReverb"
 
-[node name="OminiousSound3" type="AudioStreamPlayer" parent="Office"]
+[node name="OminiousSound3" type="AudioStreamPlayer" parent="Office" unique_id=483160773]
 stream = ExtResource("4_ruyut")
 volume_db = -39.713
 bus = &"GameReverb"
 
-[node name="FlashLightSound" type="AudioStreamPlayer" parent="Office"]
+[node name="FlashLightSound" type="AudioStreamPlayer" parent="Office" unique_id=1215763858]
 stream = ExtResource("9_ilysl")
 volume_db = -1.908
 pitch_scale = 1.18
 
-[node name="PowerDownSound" type="AudioStreamPlayer" parent="Office"]
+[node name="PowerDownSound" type="AudioStreamPlayer" parent="Office" unique_id=1388111080]
 stream = ExtResource("8_qouja")
 volume_db = -22.486
 
-[node name="CamSelected" type="AudioStreamPlayer" parent="Office"]
+[node name="CamSelected" type="AudioStreamPlayer" parent="Office" unique_id=1548058344]
 stream = ExtResource("10_02fa5")
 volume_db = -12.453
 pitch_scale = 0.92
 bus = &"UI_VFX"
 
-[node name="AnimationPlayerOffice" type="AnimatedSprite2D" parent="Office"]
+[node name="AnimationPlayerOffice" type="AnimatedSprite2D" parent="Office" unique_id=945157737]
 modulate = Color(1.27, 1.27, 1.27, 1)
 position = Vector2(958, 536)
 scale = Vector2(0.773958, 0.773958)
@@ -2445,33 +2447,33 @@ sprite_frames = SubResource("SpriteFrames_pidd4")
 animation = &"animation_view_front"
 frame_progress = 1.0
 
-[node name="UiPc" type="Control" parent="Office"]
+[node name="UiPc" type="Control" parent="Office" unique_id=827521990]
 material = SubResource("ShaderMaterial_wljb1")
 anchors_preset = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="CamFeed" type="Control" parent="Office/UiPc"]
+[node name="CamFeed" type="Control" parent="Office/UiPc" unique_id=1311225079]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="CameraFeed" type="AnimatedSprite2D" parent="Office/UiPc/CamFeed"]
-modulate = Color(2.4325802, 2.4325802, 2.4325802, 1)
+[node name="CameraFeed" type="AnimatedSprite2D" parent="Office/UiPc/CamFeed" unique_id=229030294]
+modulate = Color(2.3133948, 2.3133948, 2.3133948, 1)
 position = Vector2(1153.0829, 587.8701)
 rotation = -5.54186e-05
 scale = Vector2(0.376592, 0.3625015)
 sprite_frames = SubResource("SpriteFrames_7025r")
 animation = &"Cam1Animatronic"
 
-[node name="Ardent" type="Sprite2D" parent="Office/UiPc/CamFeed"]
+[node name="Ardent" type="Sprite2D" parent="Office/UiPc/CamFeed" unique_id=1773597370]
 visible = false
 modulate = Color(0.601223, 0.601223, 0.601223, 1)
 position = Vector2(1156.5, 585.5)
 scale = Vector2(0.37447914, 0.35833335)
 texture = ExtResource("262_y8e17")
 
-[node name="CameraStatic" type="AnimatedSprite2D" parent="Office/UiPc/CamFeed"]
+[node name="CameraStatic" type="AnimatedSprite2D" parent="Office/UiPc/CamFeed" unique_id=33451919]
 self_modulate = Color(1, 1, 1, 0.36862746)
 position = Vector2(1154, 589.5)
 scale = Vector2(0.3760417, 0.3675926)
@@ -2480,7 +2482,7 @@ animation = &"CamStatic"
 autoplay = "CamStatic"
 frame_progress = 0.6368351
 
-[node name="Cameras" type="Label" parent="Office/UiPc"]
+[node name="Cameras" type="Label" parent="Office/UiPc" unique_id=1264887270]
 layout_mode = 0
 offset_left = 1393.0
 offset_top = 393.0
@@ -2491,7 +2493,7 @@ text = "CAM 1
 label_settings = SubResource("LabelSettings_xnu4a")
 metadata/_edit_use_anchors_ = true
 
-[node name="PowerText" type="Label" parent="Office/UiPc"]
+[node name="PowerText" type="Label" parent="Office/UiPc" unique_id=2066334125]
 use_parent_material = true
 layout_mode = 0
 offset_left = 597.8651
@@ -2502,7 +2504,7 @@ rotation = 0.0141439
 text = "% POWER"
 label_settings = SubResource("LabelSettings_wljb1")
 
-[node name="Power" type="Label" parent="Office/UiPc"]
+[node name="Power" type="Label" parent="Office/UiPc" unique_id=1006534220]
 use_parent_material = true
 layout_mode = 0
 offset_left = 538.447
@@ -2515,7 +2517,7 @@ label_settings = SubResource("LabelSettings_wljb1")
 visible_characters = 3
 visible_ratio = 0.343
 
-[node name="GameHour" type="Label" parent="Office/UiPc"]
+[node name="GameHour" type="Label" parent="Office/UiPc" unique_id=309048443]
 layout_mode = 0
 offset_left = 538.447
 offset_top = 438.0
@@ -2526,7 +2528,7 @@ text = "12:00"
 label_settings = SubResource("LabelSettings_v8ala")
 metadata/_edit_use_anchors_ = true
 
-[node name="StageButton" type="TextureButton" parent="Office/UiPc"]
+[node name="StageButton" type="TextureButton" parent="Office/UiPc" unique_id=1244483715]
 layout_mode = 0
 offset_left = 540.0
 offset_top = 511.0
@@ -2537,7 +2539,7 @@ button_pressed = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="DinningHallButton" type="TextureButton" parent="Office/UiPc"]
+[node name="DinningHallButton" type="TextureButton" parent="Office/UiPc" unique_id=2065501894]
 layout_mode = 0
 offset_left = 540.0
 offset_top = 580.0
@@ -2547,7 +2549,7 @@ toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="PASButton" type="TextureButton" parent="Office/UiPc"]
+[node name="PASButton" type="TextureButton" parent="Office/UiPc" unique_id=1247183578]
 layout_mode = 0
 offset_left = 468.0
 offset_top = 580.0
@@ -2557,7 +2559,7 @@ toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="HallwayButton" type="TextureButton" parent="Office/UiPc"]
+[node name="HallwayButton" type="TextureButton" parent="Office/UiPc" unique_id=732504864]
 layout_mode = 0
 offset_left = 541.0
 offset_top = 648.0
@@ -2567,7 +2569,7 @@ toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="HallwayLeftButton" type="TextureButton" parent="Office/UiPc"]
+[node name="HallwayLeftButton" type="TextureButton" parent="Office/UiPc" unique_id=929909924]
 layout_mode = 0
 offset_left = 506.0
 offset_top = 671.0
@@ -2577,7 +2579,7 @@ toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="HallwayRightButton" type="TextureButton" parent="Office/UiPc"]
+[node name="HallwayRightButton" type="TextureButton" parent="Office/UiPc" unique_id=1898108746]
 layout_mode = 0
 offset_left = 576.0
 offset_top = 670.0
@@ -2587,7 +2589,7 @@ toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="DoorLeftCornerButton" type="TextureButton" parent="Office/UiPc"]
+[node name="DoorLeftCornerButton" type="TextureButton" parent="Office/UiPc" unique_id=724215772]
 layout_mode = 0
 offset_left = 506.0
 offset_top = 751.0
@@ -2597,7 +2599,7 @@ toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="DoorRightCornerButton" type="TextureButton" parent="Office/UiPc"]
+[node name="DoorRightCornerButton" type="TextureButton" parent="Office/UiPc" unique_id=1556685931]
 layout_mode = 0
 offset_left = 576.0
 offset_top = 750.0
@@ -2607,7 +2609,7 @@ toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="BackroomButton" type="TextureButton" parent="Office/UiPc"]
+[node name="BackroomButton" type="TextureButton" parent="Office/UiPc" unique_id=1134427856]
 layout_mode = 0
 offset_left = 636.0
 offset_top = 703.0
@@ -2617,17 +2619,17 @@ toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
 
-[node name="Tutorial" type="Control" parent="Office"]
+[node name="Tutorial" type="Control" parent="Office" unique_id=984619428]
 anchors_preset = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="camfed" type="Control" parent="Office/Tutorial"]
+[node name="camfed" type="Control" parent="Office/Tutorial" unique_id=1394304505]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Office/Tutorial/camfed"]
+[node name="Label" type="Label" parent="Office/Tutorial/camfed" unique_id=2051871003]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -4.075
@@ -2644,7 +2646,7 @@ text = "Tady přepínáš kamery ----------------------->
 Stačí kliknout na kameru na kterou chceš přepnout"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="Office/Tutorial/camfed"]
+[node name="Label3" type="Label" parent="Office/Tutorial/camfed" unique_id=641085304]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.225
@@ -2662,7 +2664,7 @@ pokud se ti energie dostane na nulu
 tak se ti vše vypne. "
 metadata/_edit_use_anchors_ = true
 
-[node name="Label2" type="Label" parent="Office/Tutorial/camfed"]
+[node name="Label2" type="Label" parent="Office/Tutorial/camfed" unique_id=696461914]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -2.675
@@ -2681,13 +2683,13 @@ Přesunutím myši na okraj obrazovky se otočíš danným směrem"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="sideview" type="Control" parent="Office/Tutorial"]
+[node name="sideview" type="Control" parent="Office/Tutorial" unique_id=1917894595]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Office/Tutorial/sideview"]
+[node name="Label" type="Label" parent="Office/Tutorial/sideview" unique_id=376882266]
 layout_mode = 0
 offset_left = 624.0
 offset_top = 867.0
@@ -2700,7 +2702,7 @@ Pro zapnutí svítilny zmáčkni a podrž toto tlačítko dokud neodejde"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Buttons" type="Control" parent="Office"]
+[node name="Buttons" type="Control" parent="Office" unique_id=1165384505]
 anchors_preset = 0
 offset_left = -74.0
 offset_top = 15.0
@@ -2708,7 +2710,7 @@ offset_right = -31.0
 offset_bottom = 73.0
 metadata/_edit_use_anchors_ = true
 
-[node name="ButtonRightSide" type="Button" parent="Office/Buttons"]
+[node name="ButtonRightSide" type="Button" parent="Office/Buttons" unique_id=190792094]
 modulate = Color(0.576471, 0.576471, 0.576471, 1)
 layout_mode = 0
 offset_left = 1875.0
@@ -2722,7 +2724,7 @@ text = ">>"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="ButtonLeftSide" type="Button" parent="Office/Buttons"]
+[node name="ButtonLeftSide" type="Button" parent="Office/Buttons" unique_id=1247011546]
 modulate = Color(0.577008, 0.577008, 0.577008, 1)
 layout_mode = 0
 offset_left = 74.0
@@ -2736,7 +2738,7 @@ text = "<<"
 flat = true
 metadata/_edit_use_anchors_ = true
 
-[node name="LightButton" type="TextureButton" parent="Office"]
+[node name="LightButton" type="TextureButton" parent="Office" unique_id=1382276759]
 visible = false
 modulate = Color(1, 1, 1, 0.207843)
 layout_mode = 0
@@ -2748,64 +2750,61 @@ action_mode = 0
 texture_normal = ExtResource("176_bdqdv")
 texture_pressed = ExtResource("177_f4ip4")
 
-[node name="DebugLabel" type="Label" parent="Office"]
+[node name="DebugLabel" type="Label" parent="Office" unique_id=63596821]
 layout_mode = 0
 offset_right = 232.0
 offset_bottom = 98.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Ricky" parent="Office" instance=ExtResource("245_gpphh")]
-camera = 6
+[node name="Ricky" parent="Office" unique_id=573207625 instance=ExtResource("245_gpphh")]
 
-[node name="Ardent" parent="Office" instance=ExtResource("246_ilysl")]
+[node name="Ardent" parent="Office" unique_id=455127975 instance=ExtResource("246_ilysl")]
 layout_mode = 1
 camera = 10
 
-[node name="AmbientSounds" type="Control" parent="."]
+[node name="AmbientSounds" type="Control" parent="." unique_id=907353372]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Creepyambience1" type="AudioStreamPlayer" parent="AmbientSounds"]
+[node name="Creepyambience1" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=509000874]
 stream = ExtResource("205_oa88d")
 volume_db = -51.19
 pitch_scale = 0.99
 bus = &"GameReverb"
 
-[node name="Creepyambience2" type="AudioStreamPlayer" parent="AmbientSounds"]
+[node name="Creepyambience2" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=957942802]
 stream = ExtResource("206_lygv6")
 volume_db = -40.53
 bus = &"GameReverb"
 
-[node name="AmbientSoundsTimer" type="Timer" parent="AmbientSounds"]
+[node name="AmbientSoundsTimer" type="Timer" parent="AmbientSounds" unique_id=139212619]
 wait_time = 30.0
 autostart = true
 
-[node name="ComputerFanSound" type="AudioStreamPlayer" parent="."]
+[node name="ComputerFanSound" type="AudioStreamPlayer" parent="." unique_id=573453652]
 stream = ExtResource("49_8qswn")
 volume_db = -6.551
 pitch_scale = 0.75
 autoplay = true
 
-[node name="TimerHour" type="Timer" parent="."]
+[node name="TimerHour" type="Timer" parent="." unique_id=1436701010]
 wait_time = 45.0
 autostart = true
 
-[node name="TimerPower" type="Timer" parent="."]
+[node name="TimerPower" type="Timer" parent="." unique_id=1156359033]
 wait_time = 2.277
 autostart = true
 
-[node name="JumpscarePlayer" type="AnimatedSprite2D" parent="."]
+[node name="JumpscarePlayer" type="AnimatedSprite2D" parent="." unique_id=1066607825]
 visible = false
 modulate = Color(0.9818757, 0.9818757, 0.9818757, 1)
 position = Vector2(980.1891, 538.99994)
 scale = Vector2(1.0410849, 1.0388888)
 sprite_frames = SubResource("SpriteFrames_pgf4p")
-animation = &"ardent_jumpscare"
-frame = 20
-frame_progress = 1.0
+animation = &"ricky_jumpscare"
 
 [connection signal="pressed" from="Office/UiPc/StageButton" to="Office" method="_on_stage_button_pressed"]
 [connection signal="pressed" from="Office/UiPc/DinningHallButton" to="Office" method="_on_dinning_hall_button_pressed"]
