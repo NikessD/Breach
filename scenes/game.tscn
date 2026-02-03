@@ -175,10 +175,8 @@
 [ext_resource type="Texture2D" uid="uid://c5jl6qwwwtcqk" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086484.jpg" id="174_8mmbw"]
 [ext_resource type="Texture2D" uid="uid://dnuj2yb4f6yit" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086485.jpg" id="175_pv8hx"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="176_4kxhu"]
-[ext_resource type="Texture2D" uid="uid://wldxxn6nc2jk" path="res://sprites/LighticonOFF.png" id="176_bdqdv"]
 [ext_resource type="Texture2D" uid="uid://n6536a51ttum" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086486.jpg" id="176_kqppc"]
 [ext_resource type="Texture2D" uid="uid://cnojicdjpixiw" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086487.jpg" id="177_7mn41"]
-[ext_resource type="Texture2D" uid="uid://dru8e0it3mvlg" path="res://sprites/LifhtIconON.png" id="177_f4ip4"]
 [ext_resource type="Texture2D" uid="uid://c7av6mymeal11" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086488.jpg" id="178_7ogn3"]
 [ext_resource type="Texture2D" uid="uid://b8bb6ddmg01g2" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086489.jpg" id="179_4bjq3"]
 [ext_resource type="Texture2D" uid="uid://d2tiykr1cbjib" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086490.jpg" id="180_6pj24"]
@@ -214,6 +212,8 @@
 [ext_resource type="Texture2D" uid="uid://xe8wyxyjhnjq" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086518.jpg" id="208_jb1xo"]
 [ext_resource type="Texture2D" uid="uid://digjr0k4tt5o5" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086519.jpg" id="209_m6iyp"]
 [ext_resource type="FontFile" uid="uid://c7gvdxmesi0hw" path="res://fonts/HydrophiliaIced-Regular.ttf" id="213_vpp0n"]
+[ext_resource type="Texture2D" uid="uid://bo4hscyll5cwo" path="res://sprites/png_light_off.png" id="213_yfuyu"]
+[ext_resource type="Texture2D" uid="uid://cnkx8p6fn01ww" path="res://sprites/png_light_on.png" id="214_qmnfn"]
 [ext_resource type="PackedScene" uid="uid://d4d3qe4rm77wx" path="res://scenes/Ricky.tscn" id="245_gpphh"]
 [ext_resource type="PackedScene" uid="uid://ihr427hih7bu" path="res://scenes/ardent.tscn" id="246_ilysl"]
 [ext_resource type="Texture2D" uid="uid://cfble5rd0yi8d" path="res://animations/jumpscare_ardent/0001.png0010.png" id="251_2gupq"]
@@ -2649,9 +2649,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Label3" type="Label" parent="Office/Tutorial/camfed" unique_id=641085304]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.225
+anchor_left = 0.275
 anchor_top = 0.125
-anchor_right = 0.225
+anchor_right = 0.275
 anchor_bottom = 1.0
 offset_left = 139.0
 offset_top = 397.0
@@ -2667,10 +2667,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Label2" type="Label" parent="Office/Tutorial/camfed" unique_id=696461914]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -2.675
-anchor_top = 0.025
-anchor_right = -2.675
-anchor_bottom = 1.575
+anchor_left = -2.825
+anchor_top = -0.225
+anchor_right = -2.825
+anchor_bottom = 1.325
 offset_left = 783.0
 offset_top = 283.0
 offset_right = 1729.0
@@ -2690,7 +2690,12 @@ offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Office/Tutorial/sideview" unique_id=376882266]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.15
+anchor_top = -1.125
+anchor_right = 1.15
+anchor_bottom = -1.125
 offset_left = 624.0
 offset_top = 867.0
 offset_right = 1351.0
@@ -2740,15 +2745,15 @@ metadata/_edit_use_anchors_ = true
 
 [node name="LightButton" type="TextureButton" parent="Office" unique_id=1382276759]
 visible = false
-modulate = Color(1, 1, 1, 0.207843)
+modulate = Color(1, 1, 1, 0.7058824)
 layout_mode = 0
-offset_left = 765.0
-offset_top = 847.0
-offset_right = 1052.0
-offset_bottom = 1003.0
+offset_left = 891.0
+offset_top = 870.0
+offset_right = 1091.0
+offset_bottom = 1070.0
 action_mode = 0
-texture_normal = ExtResource("176_bdqdv")
-texture_pressed = ExtResource("177_f4ip4")
+texture_normal = ExtResource("213_yfuyu")
+texture_pressed = ExtResource("214_qmnfn")
 
 [node name="DebugLabel" type="Label" parent="Office" unique_id=63596821]
 layout_mode = 0

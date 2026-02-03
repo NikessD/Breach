@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dru8e0it3mvlg"
-path="res://.godot/imported/LifhtIconON.png-d03df8e0e49c8652672cbc54869f9d72.ctex"
+uid="uid://cnkx8p6fn01ww"
+path="res://.godot/imported/png_light_on.png-f277f40a0d58ea3d8976509e3e4b6c8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/LifhtIconON.png"
-dest_files=["res://.godot/imported/LifhtIconON.png-d03df8e0e49c8652672cbc54869f9d72.ctex"]
+source_file="res://sprites/png_light_on.png"
+dest_files=["res://.godot/imported/png_light_on.png-f277f40a0d58ea3d8976509e3e4b6c8e.ctex"]
 
 [params]
 

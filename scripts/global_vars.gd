@@ -18,6 +18,6 @@ var config = ConfigFile.new()
 
 
 
-var masterVOL
-var vfxVOL
-var ambienceVOL
+var masterVOL: float = 1
+var vfxVOL: float = 1
+var ambienceVOL: float = 1

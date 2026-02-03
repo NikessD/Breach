@@ -40,7 +40,7 @@ func _on_anger_timer_timeout() -> void:
 		kill()
 		anger_timer.stop()
 		move_timer.stop()
-	elif (GlobalVars.camera_clicked == camera):
+	elif (GlobalVars.camera_clicked == camera and GlobalVars.view_front):
 		anger += 20
 	else:
 		anger_timer.stop()
