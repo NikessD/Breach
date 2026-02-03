@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwja7wppt6ki4"]
+[gd_scene format=3 uid="uid://bwja7wppt6ki4"]
 
 [ext_resource type="Script" uid="uid://n6bq2qax8afk" path="res://scripts/game_over_screen.gd" id="1_l37p8"]
-[ext_resource type="Texture2D" uid="uid://7iok1a57g3jt" path="res://animations/Untitled.png" id="2_wa2qn"]
+[ext_resource type="Texture2D" uid="uid://cemdp1eiq8hkn" path="res://sprites/ricky_deathscreen.png" id="2_cyfkl"]
 [ext_resource type="AudioStream" uid="uid://r3tpkqqvbmu4" path="res://sounds/GameOverSound.mp3" id="3_jw6e5"]
-[ext_resource type="Texture2D" uid="uid://cxlus75bm8ern" path="res://sprites/DefaultBackground_Kreslicí plátno 1.png" id="4_cyfkl"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="4_xx0b3"]
 
 [sub_resource type="Animation" id="Animation_cyfkl"]
@@ -67,31 +66,31 @@ _data = {
 &"RESET": SubResource("Animation_xx0b3")
 }
 
-[node name="GameOverScreen" type="Node2D"]
+[node name="GameOverScreen" type="Node2D" unique_id=2129340038]
 script = ExtResource("1_l37p8")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1393816226]
 offset_left = -49.00006
 offset_top = -36.0
-offset_right = 2040.0
+offset_right = 2143.0
 offset_bottom = 1101.0
 color = Color(0, 0, 0, 1)
 
-[node name="Untitled" type="Sprite2D" parent="."]
+[node name="Untitled" type="Sprite2D" parent="." unique_id=1603643558]
 position = Vector2(1002.99994, 555.99994)
 scale = Vector2(1.074074, 1.074074)
-texture = ExtResource("2_wa2qn")
+texture = ExtResource("2_cyfkl")
 
-[node name="GameOverTimer" type="Timer" parent="."]
+[node name="GameOverTimer" type="Timer" parent="." unique_id=1713325327]
 wait_time = 2.612
 one_shot = true
 autostart = true
 
-[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+[node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=1382290222]
 stream = ExtResource("3_jw6e5")
 volume_db = -26.468
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=969330266]
 modulate = Color(0.70980394, 0.70980394, 0.70980394, 0.7764706)
 offset_left = 508.0
 offset_top = 929.0
@@ -102,16 +101,8 @@ theme_override_font_sizes/font_size = 161
 text = "GAME OVER
 "
 
-[node name="DefaultBackgroundKreslicíPlátno1" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(992, 500)
-scale = Vector2(1.0947917, 1.1101851)
-texture = ExtResource("4_cyfkl")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_5i0af")
-}
-autoplay = "FadeIn"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1777511104]
+libraries/ = SubResource("AnimationLibrary_5i0af")
+autoplay = &"FadeIn"
 
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_timer_timeout"]
