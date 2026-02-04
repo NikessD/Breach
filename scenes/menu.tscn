@@ -122,13 +122,13 @@
 [ext_resource type="Texture2D" uid="uid://dnh8mutj4ypo4" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086512.jpg" id="123_jw4hc"]
 [ext_resource type="Texture2D" uid="uid://djr6mrms2pvk2" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086513.jpg" id="124_5jxax"]
 [ext_resource type="Texture2D" uid="uid://de2d6bk8peoxc" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086514.jpg" id="125_y0qgx"]
+[ext_resource type="Texture2D" uid="uid://bb5doov6gh62t" path="res://sprites/BREACH_logo_ver2.png" id="126_3oclc"]
 [ext_resource type="Texture2D" uid="uid://8hfl2yksny5x" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086515.jpg" id="126_kojhj"]
 [ext_resource type="Texture2D" uid="uid://ut3f1e6ihd58" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086516.jpg" id="127_ghkup"]
 [ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/ButtonClicked.mp3" id="128_3oclc"]
 [ext_resource type="Texture2D" uid="uid://dkqht3bh5kax7" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086517.jpg" id="128_r15ia"]
 [ext_resource type="Texture2D" uid="uid://xe8wyxyjhnjq" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086518.jpg" id="129_p18f8"]
 [ext_resource type="Texture2D" uid="uid://digjr0k4tt5o5" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086519.jpg" id="130_ygene"]
-[ext_resource type="Texture2D" uid="uid://drmev11gutqe7" path="res://sprites/BREACH_logo.png" id="131_t8wjt"]
 [ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/Menu/ButtonHover.wav" id="132_i4wbw"]
 [ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/Menu/IntoGame.wav" id="137_i4wbw"]
 [ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://sprites/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
@@ -138,19 +138,14 @@
 [sub_resource type="Theme" id="Theme_o0tnf"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uj3em"]
-load_path = "res://.godot/imported/Night1.png-e3ff220e52a853ab6df98c3932cc6025.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3oclc"]
-load_path = "res://.godot/imported/Night2.png-3f6e82684e36abcc0f20a5cc5cd1d169.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gse20"]
-load_path = "res://.godot/imported/Night3.png-07e0f5ead19c605e762287a793c1db50.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jhquw"]
-load_path = "res://.godot/imported/Night4.png-95ffb0126f44fc1c7c1d9707593014e1.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e5ub6"]
-load_path = "res://.godot/imported/Night5.png-84ef1dc682a239537eec0227f2a9c9f2.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i6lef"]
 animations = [{
@@ -585,6 +580,19 @@ font_size = 100
 [sub_resource type="SystemFont" id="SystemFont_i6lef"]
 font_names = PackedStringArray("LCD Solid")
 
+[sub_resource type="Theme" id="Theme_3oclc"]
+HSlider/styles/grabber_area = null
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gse20"]
+content_margin_top = 11.0
+thickness = 11
+
+[sub_resource type="Theme" id="Theme_jhquw"]
+default_font_size = 0
+HSlider/icons/grabber = null
+HSlider/icons/grabber_highlight = null
+HSlider/styles/slider = SubResource("StyleBoxLine_gse20")
+
 [node name="MainMenu" type="Control" unique_id=1274546302]
 material = SubResource("CanvasItemMaterial_11y2r")
 layout_mode = 3
@@ -647,7 +655,7 @@ offset_bottom = 40.0
 [node name="Logo" type="Sprite2D" parent="Menu" unique_id=12588475]
 position = Vector2(300.07404, 179.04167)
 scale = Vector2(0.41932872, 0.41932872)
-texture = ExtResource("131_t8wjt")
+texture = ExtResource("126_3oclc")
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="Menu" unique_id=1806530835]
 stream = ExtResource("132_i4wbw")
@@ -678,7 +686,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 55.0
 offset_top = 622.0
-offset_right = 216.0
+offset_right = 308.0
 offset_bottom = 1040.0
 grow_vertical = 0
 theme = SubResource("Theme_b6cxs")
@@ -715,11 +723,6 @@ theme_override_font_sizes/font_size = 50
 text = "QUIT"
 flat = true
 
-[node name="FnasLogo" type="Sprite2D" parent="Menu" unique_id=1536126350]
-visible = false
-position = Vector2(216, 296)
-scale = Vector2(0.179951, 0.179951)
-
 [node name="AzimuthNormalFlag" type="Sprite2D" parent="Menu" unique_id=1905102023]
 position = Vector2(1846.4993, 1002.8125)
 scale = Vector2(0.030106487, 0.030106494)
@@ -732,7 +735,7 @@ offset_top = 1053.0
 offset_right = 1918.0
 offset_bottom = 1076.0
 theme_override_fonts/font = ExtResource("6_13sgg")
-text = "VER - 0.8.0"
+text = "VER - 0.8.3"
 
 [node name="LoadingScreen" type="Control" parent="." unique_id=1262903751]
 visible = false
@@ -806,44 +809,58 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 40
-text = "Master
-"
+text = "Master"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
 [node name="Master volume" type="HSlider" parent="Settings/MarginContainer/VBoxContainer" unique_id=896629259]
 layout_mode = 2
+theme = SubResource("Theme_3oclc")
 max_value = 2.0
 step = 0.01
 value = 1.0
 tick_count = 11
 ticks_on_borders = true
 
-[node name="Label" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=215161811]
+[node name="Spacer" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=355617558]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 40
-text = "VFX
-"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
+[node name="Label" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=215161811]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 40
+text = "VFX"
+horizontal_alignment = 1
+uppercase = true
+
 [node name="VFX" type="HSlider" parent="Settings/MarginContainer/VBoxContainer" unique_id=1965168956]
 layout_mode = 2
+theme = SubResource("Theme_jhquw")
 max_value = 1.0
 step = 0.01
 value = 0.5
 tick_count = 11
 ticks_on_borders = true
 
+[node name="Spacer2" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=1674610384]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="Label2" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=612893752]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 40
-text = "Ambience
-"
+text = "Ambience"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true

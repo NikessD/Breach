@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jopq3vy1ilja"
-path="res://.godot/imported/RightHallway_Without.png-49ca20ce7415f1f718f3d8481a7b273f.ctex"
+uid="uid://dymp3ow8wp7ah"
+path="res://.godot/imported/rndr_leftHallway_animatronic.png-6d68167c9d1e31bca97bfc6f89ba75c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/Cam_Renders/HallwayRightDoor/RightHallway_Without.png"
-dest_files=["res://.godot/imported/RightHallway_Without.png-49ca20ce7415f1f718f3d8481a7b273f.ctex"]
+source_file="res://animations/Cam_Renders/HallwayLeftDoor/rndr_leftHallway_animatronic.png"
+dest_files=["res://.godot/imported/rndr_leftHallway_animatronic.png-6d68167c9d1e31bca97bfc6f89ba75c2.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.8
+compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
