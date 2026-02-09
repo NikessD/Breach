@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dq58rj15aheoq" path="res://scripts/office.gd" id="1_1o6bn"]
 [ext_resource type="Script" uid="uid://dnprw1g0tlcm8" path="res://scenes/game.gd" id="1_pgf4p"]
-[ext_resource type="AudioStream" uid="uid://bxt0qmpqksl4l" path="res://sounds/OminiousSound1.mp3" id="2_spd4q"]
-[ext_resource type="AudioStream" uid="uid://b81fbds6e2pnc" path="res://sounds/OminiousSound2.mp3" id="3_ixtdc"]
+[ext_resource type="AudioStream" uid="uid://bxt0qmpqksl4l" path="res://sounds/ambient/OminiousSound1.mp3" id="2_spd4q"]
+[ext_resource type="AudioStream" uid="uid://b81fbds6e2pnc" path="res://sounds/ambient/OminiousSound2.mp3" id="3_ixtdc"]
 [ext_resource type="AudioStream" uid="uid://bgxeua8ndfre8" path="res://sounds/Running.mp3" id="4_8qswn"]
 [ext_resource type="AudioStream" uid="uid://83g8lvti7f0d" path="res://sounds/CamBuzzSound.mp3" id="4_bdqdv"]
-[ext_resource type="AudioStream" uid="uid://rul8uamd01gv" path="res://sounds/OminiousSound3.mp3" id="4_ruyut"]
+[ext_resource type="AudioStream" uid="uid://rul8uamd01gv" path="res://sounds/ambient/OminiousSound3.mp3" id="4_ruyut"]
 [ext_resource type="AudioStream" uid="uid://lhh4cacsrvfg" path="res://sounds/walk_hall.mp3" id="5_xnu4a"]
 [ext_resource type="AudioStream" uid="uid://dsfejvc4etgcy" path="res://sounds/PowerDownSound.mp3" id="8_qouja"]
-[ext_resource type="AudioStream" uid="uid://1wlyih21qbd7" path="res://sounds/torch-turned-on-flashlight-click-457506.mp3" id="9_ilysl"]
-[ext_resource type="AudioStream" uid="uid://c6wrh1kqs2vwa" path="res://sounds/CamSelected.mp3" id="10_02fa5"]
+[ext_resource type="AudioStream" uid="uid://1wlyih21qbd7" path="res://sounds/UI/torch-turned-on-flashlight-click-457506.mp3" id="9_ilysl"]
+[ext_resource type="AudioStream" uid="uid://c6wrh1kqs2vwa" path="res://sounds/UI/CamSelected.mp3" id="10_02fa5"]
 [ext_resource type="Texture2D" uid="uid://dse6ax2vs3xr8" path="res://animations/office/TwitchingLEFT/TwitchingLeftDoor.png0000.png" id="14_6ayyo"]
 [ext_resource type="Texture2D" uid="uid://dr6b6nom5co2g" path="res://animations/office/TwitchingLEFT/TwitchingLeftDoor.png0001.png" id="15_e3pfn"]
 [ext_resource type="Texture2D" uid="uid://b0he5eoakhv80" path="res://animations/office/TwitchingLEFT/TwitchingLeftDoor.png0002.png" id="16_yfuyu"]
@@ -212,8 +212,8 @@
 [ext_resource type="Texture2D" uid="uid://xe8wyxyjhnjq" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086518.jpg" id="208_jb1xo"]
 [ext_resource type="Texture2D" uid="uid://digjr0k4tt5o5" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086519.jpg" id="209_m6iyp"]
 [ext_resource type="FontFile" uid="uid://c7gvdxmesi0hw" path="res://fonts/HydrophiliaIced-Regular.ttf" id="213_vpp0n"]
-[ext_resource type="Texture2D" uid="uid://bo4hscyll5cwo" path="res://sprites/png_light_off.png" id="213_yfuyu"]
-[ext_resource type="Texture2D" uid="uid://cnkx8p6fn01ww" path="res://sprites/png_light_on.png" id="214_qmnfn"]
+[ext_resource type="Texture2D" uid="uid://bo4hscyll5cwo" path="res://sprites/UI/png_light_off.png" id="213_yfuyu"]
+[ext_resource type="Texture2D" uid="uid://cnkx8p6fn01ww" path="res://sprites/UI/png_light_on.png" id="214_qmnfn"]
 [ext_resource type="PackedScene" uid="uid://d4d3qe4rm77wx" path="res://scenes/Ricky.tscn" id="245_gpphh"]
 [ext_resource type="PackedScene" uid="uid://ihr427hih7bu" path="res://scenes/ardent.tscn" id="246_ilysl"]
 [ext_resource type="Texture2D" uid="uid://cfble5rd0yi8d" path="res://animations/jumpscare_ardent/0001.png0010.png" id="251_2gupq"]
@@ -240,8 +240,8 @@
 [ext_resource type="Texture2D" uid="uid://c5xyuabif84ew" path="res://animations/jumpscare_ardent/0001.png0030.png" id="271_2dol1"]
 [ext_resource type="Texture2D" uid="uid://du1ng1bljknbi" path="res://animations/jumpscare_ricky/rndr_jumpscare_ricky0005.png" id="272_1f6y8"]
 [ext_resource type="Texture2D" uid="uid://d2m2js5r8eifp" path="res://animations/jumpscare_ricky/rndr_jumpscare_ricky0006.png" id="273_0pfl8"]
-[ext_resource type="Texture2D" uid="uid://crqqy2jpst5la" path="res://sprites/sprt_cambutton_deselected.png" id="273_njubb"]
-[ext_resource type="Texture2D" uid="uid://bxwsngfr242cs" path="res://sprites/sprt_cambutton_selected.png" id="274_gm21d"]
+[ext_resource type="Texture2D" uid="uid://crqqy2jpst5la" path="res://sprites/UI/sprt_cambutton_deselected.png" id="273_njubb"]
+[ext_resource type="Texture2D" uid="uid://bxwsngfr242cs" path="res://sprites/UI/sprt_cambutton_selected.png" id="274_gm21d"]
 [ext_resource type="Texture2D" uid="uid://cs3yhm03ed0sh" path="res://animations/jumpscare_ricky/rndr_jumpscare_ricky0007.png" id="274_q0i7y"]
 [ext_resource type="Texture2D" uid="uid://4yauxwnbcd1x" path="res://animations/jumpscare_ricky/rndr_jumpscare_ricky0008.png" id="275_pieqp"]
 [ext_resource type="Texture2D" uid="uid://mbqiv7ydqq6f" path="res://animations/jumpscare_ricky/rndr_jumpscare_ricky0009.png" id="276_tx6kw"]
@@ -2451,6 +2451,54 @@ frame_progress = 1.0
 material = SubResource("ShaderMaterial_wljb1")
 anchors_preset = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Office/UiPc" unique_id=419052927]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 569.0
+offset_right = 572.0
+offset_bottom = 609.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Office/UiPc" unique_id=1536607918]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 577.0
+offset_right = 502.0
+offset_bottom = 610.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Office/UiPc" unique_id=1484197349]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 507.0
+offset_right = 575.0
+offset_bottom = 540.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Office/UiPc" unique_id=346141263]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 645.0
+offset_right = 604.0
+offset_bottom = 703.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Office/UiPc" unique_id=181714064]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 749.0
+offset_right = 606.0
+offset_bottom = 778.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Office/UiPc" unique_id=2089671812]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 696.0
+offset_right = 665.0
+offset_bottom = 732.0
+color = Color(0, 0, 0, 1)
 
 [node name="CamFeed" type="Control" parent="Office/UiPc" unique_id=1311225079]
 anchors_preset = 0

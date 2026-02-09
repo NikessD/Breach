@@ -184,6 +184,7 @@ func camera_11_compute():
 
 
 func kill():
+	GlobalVars.ricky_killer = true
 	$"../LightButton".set_visible(false)
 	$"../UiPc".set_visible(false)
 	$"../Buttons".set_visible(false)

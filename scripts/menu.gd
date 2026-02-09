@@ -79,15 +79,17 @@ func _on_quit_pressed() -> void:
 
 func _on_play_mouse_entered() -> void:
 	$Menu/HoverSound.play()
+	$Menu/MenuButtons/ButtonBackgoundSprite.set_position(Vector2(132, 143))
 
 
 func _on_options_mouse_entered() -> void:
 	$Menu/HoverSound.play()
+	$Menu/MenuButtons/ButtonBackgoundSprite.set_position(Vector2(125, 207))
 
 
 func _on_quit_mouse_entered() -> void:
 	$Menu/HoverSound.play()
-
+	$Menu/MenuButtons/ButtonBackgoundSprite.set_position(Vector2(134, 267))
 
 func _on_exit_pressed() -> void:
 	$StaticTimer.start()
@@ -152,3 +154,4 @@ func _on_settings_pressed() -> void:
 
 func _on_settings_mouse_entered() -> void:
 	$Menu/HoverSound.play()
+	$Menu/MenuButtons/ButtonBackgoundSprite.set_position(Vector2(125, 207))

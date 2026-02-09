@@ -122,13 +122,16 @@
 [ext_resource type="Texture2D" uid="uid://dnh8mutj4ypo4" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086512.jpg" id="123_jw4hc"]
 [ext_resource type="Texture2D" uid="uid://djr6mrms2pvk2" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086513.jpg" id="124_5jxax"]
 [ext_resource type="Texture2D" uid="uid://de2d6bk8peoxc" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086514.jpg" id="125_y0qgx"]
-[ext_resource type="Texture2D" uid="uid://bb5doov6gh62t" path="res://sprites/BREACH_logo_ver2.png" id="126_3oclc"]
+[ext_resource type="Texture2D" uid="uid://uudtgpklhdar" path="res://sprites/BREACH_logov3.png" id="126_e5ub6"]
 [ext_resource type="Texture2D" uid="uid://8hfl2yksny5x" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086515.jpg" id="126_kojhj"]
 [ext_resource type="Texture2D" uid="uid://ut3f1e6ihd58" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086516.jpg" id="127_ghkup"]
-[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/ButtonClicked.mp3" id="128_3oclc"]
+[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/ButtonClicked.mp3" id="128_3oclc"]
 [ext_resource type="Texture2D" uid="uid://dkqht3bh5kax7" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086517.jpg" id="128_r15ia"]
+[ext_resource type="Texture2D" uid="uid://bma301wnlfe65" path="res://sprites/UI/bd/af_button_behinddesign1.png" id="129_e5ub6"]
 [ext_resource type="Texture2D" uid="uid://xe8wyxyjhnjq" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086518.jpg" id="129_p18f8"]
+[ext_resource type="Texture2D" uid="uid://b1lyyhdsmnn5q" path="res://sprites/UI/bd/af_button_behinddesign2.png" id="130_t8wjt"]
 [ext_resource type="Texture2D" uid="uid://digjr0k4tt5o5" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086519.jpg" id="130_ygene"]
+[ext_resource type="Texture2D" uid="uid://bbyl3r4fkdd46" path="res://sprites/UI/bd/af_button_behinddesign3.png" id="131_748ik"]
 [ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/Menu/ButtonHover.wav" id="132_i4wbw"]
 [ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/Menu/IntoGame.wav" id="137_i4wbw"]
 [ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://sprites/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
@@ -573,6 +576,56 @@ animations = [{
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aaywf"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4wbw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("129_e5ub6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_t8wjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_748ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_t8wjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_t8wjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_748ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_748ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_e5ub6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_748ik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_t8wjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_e5ub6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_e5ub6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_e5ub6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_748ik")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_13sgg"]
 font = ExtResource("6_13sgg")
 font_size = 100
@@ -655,7 +708,7 @@ offset_bottom = 40.0
 [node name="Logo" type="Sprite2D" parent="Menu" unique_id=12588475]
 position = Vector2(300.07404, 179.04167)
 scale = Vector2(0.41932872, 0.41932872)
-texture = ExtResource("126_3oclc")
+texture = ExtResource("126_e5ub6")
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="Menu" unique_id=1806530835]
 stream = ExtResource("132_i4wbw")
@@ -722,6 +775,16 @@ theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 50
 text = "QUIT"
 flat = true
+
+[node name="ButtonBackgoundSprite" type="AnimatedSprite2D" parent="Menu/MenuButtons" unique_id=710062019]
+visible = false
+modulate = Color(1, 1, 1, 0.6039216)
+position = Vector2(93.68294, 140.00002)
+scale = Vector2(1.3649999, 0.8800003)
+sprite_frames = SubResource("SpriteFrames_i4wbw")
+autoplay = "default"
+frame_progress = 0.16001305
+offset = Vector2(29.17, 0)
 
 [node name="AzimuthNormalFlag" type="Sprite2D" parent="Menu" unique_id=1905102023]
 position = Vector2(1846.4993, 1002.8125)

@@ -15,7 +15,8 @@ var hour = 1
 var config = ConfigFile.new()
 
 
-
+var ardent_killer: bool
+var ricky_killer: bool
 
 
 var masterVOL: float = 1

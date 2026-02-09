@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxwsngfr242cs"
-path="res://.godot/imported/sprt_cambutton_selected.png-f817d6d9ae39f82f61319db4f2a06cdf.ctex"
+uid="uid://cd5wthifdakxd"
+path="res://.godot/imported/asprt_cambutton_hovered.png-92229978f4e44149d25e579994d10970.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sprt_cambutton_selected.png"
-dest_files=["res://.godot/imported/sprt_cambutton_selected.png-f817d6d9ae39f82f61319db4f2a06cdf.ctex"]
+source_file="res://sprites/UI/asprt_cambutton_hovered.png"
+dest_files=["res://.godot/imported/asprt_cambutton_hovered.png-92229978f4e44149d25e579994d10970.ctex"]
 
 [params]
 
