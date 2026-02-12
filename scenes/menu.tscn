@@ -122,7 +122,7 @@
 [ext_resource type="Texture2D" uid="uid://dnh8mutj4ypo4" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086512.jpg" id="123_jw4hc"]
 [ext_resource type="Texture2D" uid="uid://djr6mrms2pvk2" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086513.jpg" id="124_5jxax"]
 [ext_resource type="Texture2D" uid="uid://de2d6bk8peoxc" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086514.jpg" id="125_y0qgx"]
-[ext_resource type="Texture2D" uid="uid://uudtgpklhdar" path="res://sprites/BREACH_logov3.png" id="126_e5ub6"]
+[ext_resource type="Texture2D" uid="uid://bh5kxpor5n6xp" path="res://sprites/UI/BREACH_logoV6.png" id="126_e5ub6"]
 [ext_resource type="Texture2D" uid="uid://8hfl2yksny5x" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086515.jpg" id="126_kojhj"]
 [ext_resource type="Texture2D" uid="uid://ut3f1e6ihd58" path="res://animations/Cam_Renders/CameraStatic/CameraStatic00086516.jpg" id="127_ghkup"]
 [ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/ButtonClicked.mp3" id="128_3oclc"]
@@ -680,7 +680,6 @@ stream = ExtResource("2_g6gyw")
 volume_db = -10.894
 pitch_scale = 0.9
 autoplay = true
-bus = &"MenuMusic"
 parameters/looping = true
 
 [node name="BackGround" type="AnimatedSprite2D" parent="." unique_id=590299307]
@@ -706,8 +705,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Logo" type="Sprite2D" parent="Menu" unique_id=12588475]
-position = Vector2(300.07404, 179.04167)
-scale = Vector2(0.41932872, 0.41932872)
+position = Vector2(257.76044, 269.5741)
+scale = Vector2(0.38677663, 0.3867766)
 texture = ExtResource("126_e5ub6")
 
 [node name="HoverSound" type="AudioStreamPlayer" parent="Menu" unique_id=1806530835]

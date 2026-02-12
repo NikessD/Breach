@@ -2396,33 +2396,27 @@ stream = ExtResource("5_xnu4a")
 volume_db = 11.594
 pitch_scale = 0.96
 panning_strength = 0.0
-bus = &"GameReverb"
 
 [node name="CamBuzzSound" type="AudioStreamPlayer" parent="Office" unique_id=1078928745]
 stream = ExtResource("4_bdqdv")
 volume_db = 5.621
-bus = &"GameReverb"
 
 [node name="RunningSound" type="AudioStreamPlayer" parent="Office" unique_id=345824643]
 stream = ExtResource("4_8qswn")
 volume_db = -15.981
 pitch_scale = 0.96
-bus = &"GameReverb"
 
 [node name="OminiousSound1" type="AudioStreamPlayer" parent="Office" unique_id=427789119]
 stream = ExtResource("2_spd4q")
 volume_db = -40.667
-bus = &"GameReverb"
 
 [node name="OminiousSound2" type="AudioStreamPlayer" parent="Office" unique_id=658298490]
 stream = ExtResource("3_ixtdc")
 volume_db = -40.667
-bus = &"GameReverb"
 
 [node name="OminiousSound3" type="AudioStreamPlayer" parent="Office" unique_id=483160773]
 stream = ExtResource("4_ruyut")
 volume_db = -39.713
-bus = &"GameReverb"
 
 [node name="FlashLightSound" type="AudioStreamPlayer" parent="Office" unique_id=1215763858]
 stream = ExtResource("9_ilysl")
@@ -2437,7 +2431,6 @@ volume_db = -22.486
 stream = ExtResource("10_02fa5")
 volume_db = -12.453
 pitch_scale = 0.92
-bus = &"UI_VFX"
 
 [node name="AnimationPlayerOffice" type="AnimatedSprite2D" parent="Office" unique_id=945157737]
 modulate = Color(1.27, 1.27, 1.27, 1)
@@ -2486,9 +2479,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="Office/UiPc" unique_id=181714064]
 layout_mode = 0
-offset_left = 506.0
+offset_left = 504.0
 offset_top = 749.0
-offset_right = 606.0
+offset_right = 604.0
 offset_bottom = 778.0
 color = Color(0, 0, 0, 1)
 
@@ -2577,94 +2570,105 @@ metadata/_edit_use_anchors_ = true
 
 [node name="StageButton" type="TextureButton" parent="Office/UiPc" unique_id=1244483715]
 layout_mode = 0
-offset_left = 540.0
-offset_top = 511.0
-offset_right = 566.0
-offset_bottom = 537.0
+offset_left = 538.0
+offset_top = 507.0
+offset_right = 570.0
+offset_bottom = 539.0
 toggle_mode = true
 button_pressed = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="DinningHallButton" type="TextureButton" parent="Office/UiPc" unique_id=2065501894]
 layout_mode = 0
-offset_left = 540.0
-offset_top = 580.0
-offset_right = 565.0
-offset_bottom = 606.0
+offset_left = 538.0
+offset_top = 575.0
+offset_right = 570.0
+offset_bottom = 607.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="PASButton" type="TextureButton" parent="Office/UiPc" unique_id=1247183578]
 layout_mode = 0
-offset_left = 468.0
-offset_top = 580.0
-offset_right = 493.0
-offset_bottom = 606.0
+offset_left = 465.0
+offset_top = 576.0
+offset_right = 497.0
+offset_bottom = 608.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
+stretch_mode = 0
 
 [node name="HallwayButton" type="TextureButton" parent="Office/UiPc" unique_id=732504864]
 layout_mode = 0
-offset_left = 541.0
-offset_top = 648.0
-offset_right = 566.0
-offset_bottom = 674.0
+offset_left = 540.0
+offset_top = 639.0
+offset_right = 572.0
+offset_bottom = 671.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
+stretch_mode = 0
 
 [node name="HallwayLeftButton" type="TextureButton" parent="Office/UiPc" unique_id=929909924]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 671.0
-offset_right = 531.0
-offset_bottom = 697.0
+offset_left = 493.0
+offset_top = 679.0
+offset_right = 525.0
+offset_bottom = 711.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
+stretch_mode = 0
 
 [node name="HallwayRightButton" type="TextureButton" parent="Office/UiPc" unique_id=1898108746]
 layout_mode = 0
-offset_left = 576.0
-offset_top = 670.0
-offset_right = 601.0
-offset_bottom = 696.0
+offset_left = 583.0
+offset_top = 677.0
+offset_right = 615.0
+offset_bottom = 709.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
+stretch_mode = 0
 
 [node name="DoorLeftCornerButton" type="TextureButton" parent="Office/UiPc" unique_id=724215772]
 layout_mode = 0
-offset_left = 506.0
-offset_top = 751.0
-offset_right = 531.0
-offset_bottom = 777.0
+offset_left = 493.0
+offset_top = 747.0
+offset_right = 525.0
+offset_bottom = 779.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
+stretch_mode = 0
 
 [node name="DoorRightCornerButton" type="TextureButton" parent="Office/UiPc" unique_id=1556685931]
 layout_mode = 0
-offset_left = 576.0
-offset_top = 750.0
-offset_right = 601.0
-offset_bottom = 776.0
+offset_left = 583.0
+offset_top = 746.0
+offset_right = 615.0
+offset_bottom = 778.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
+stretch_mode = 0
 
 [node name="BackroomButton" type="TextureButton" parent="Office/UiPc" unique_id=1134427856]
 layout_mode = 0
-offset_left = 636.0
-offset_top = 703.0
-offset_right = 661.0
+offset_left = 633.0
+offset_top = 697.0
+offset_right = 665.0
 offset_bottom = 729.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
 texture_pressed = ExtResource("274_gm21d")
+stretch_mode = 0
 
 [node name="Tutorial" type="Control" parent="Office" unique_id=984619428]
 anchors_preset = 0
@@ -2710,6 +2714,7 @@ text = "Tvoje zbývající energie a čas je tady, ------->
 pokud se ti energie dostane na nulu 
 tak se ti vše vypne. "
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Label2" type="Label" parent="Office/Tutorial/camfed" unique_id=696461914]
 layout_mode = 1
@@ -2794,13 +2799,15 @@ metadata/_edit_use_anchors_ = true
 visible = false
 modulate = Color(1, 1, 1, 0.7058824)
 layout_mode = 0
-offset_left = 891.0
-offset_top = 870.0
-offset_right = 1091.0
-offset_bottom = 1070.0
+offset_left = 877.0
+offset_top = 833.0
+offset_right = 1120.0
+offset_bottom = 1076.0
 action_mode = 0
 texture_normal = ExtResource("213_yfuyu")
 texture_pressed = ExtResource("214_qmnfn")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="DebugLabel" type="Label" parent="Office" unique_id=63596821]
 layout_mode = 0
@@ -2825,12 +2832,10 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("205_oa88d")
 volume_db = -51.19
 pitch_scale = 0.99
-bus = &"GameReverb"
 
 [node name="Creepyambience2" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=957942802]
 stream = ExtResource("206_lygv6")
 volume_db = -40.53
-bus = &"GameReverb"
 
 [node name="AmbientSoundsTimer" type="Timer" parent="AmbientSounds" unique_id=139212619]
 wait_time = 30.0

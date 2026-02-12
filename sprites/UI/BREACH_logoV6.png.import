@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7iok1a57g3jt"
-path="res://.godot/imported/Untitled.png-2f5fac16a9a7da275a410ab9f07e7845.ctex"
+uid="uid://bh5kxpor5n6xp"
+path="res://.godot/imported/BREACH_logoV6.png-877c70c5060c3fcd4b807a758a81b5e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-2f5fac16a9a7da275a410ab9f07e7845.ctex"]
+source_file="res://sprites/UI/BREACH_logoV6.png"
+dest_files=["res://.godot/imported/BREACH_logoV6.png-877c70c5060c3fcd4b807a758a81b5e3.ctex"]
 
 [params]
 
