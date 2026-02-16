@@ -3,15 +3,10 @@
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
 [ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/Music/river's end.mp3" id="2_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://cxlus75bm8ern" path="res://sprites/DefaultBackground_Kreslicí plátno 1.png" id="2_i6lef"]
-[ext_resource type="Texture2D" uid="uid://myiy1w5nsipj" path="res://sprites/MenuBackgounds/MenuBackground.png" id="3_81l6r"]
 [ext_resource type="Texture2D" uid="uid://nrvqyrufeocm" path="res://sprites/MenuBackgounds/0001.png" id="3_rsfmq"]
 [ext_resource type="Texture2D" uid="uid://soumsu723jea" path="res://sprites/MenuBackgounds/0002.png" id="4_oi1it"]
 [ext_resource type="Texture2D" uid="uid://bcdbtcfkaj4va" path="res://sprites/MenuBackgounds/0003.png" id="5_fy8yy"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="6_13sgg"]
-[ext_resource type="Texture2D" uid="uid://b80snh2yt11x2" path="res://sprites/cenzor/VS1.png" id="15_7jp70"]
-[ext_resource type="Texture2D" uid="uid://cgxferwi63xaf" path="res://sprites/cenzor/VS2.png" id="16_3dmrc"]
-[ext_resource type="Texture2D" uid="uid://bwpokbp0j2qfk" path="res://sprites/cenzor/VS3.png" id="17_81l6r"]
-[ext_resource type="Texture2D" uid="uid://b8nirl6jdeo0q" path="res://sprites/cenzor/VS4.png" id="18_rsfmq"]
 [ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/ButtonClicked.mp3" id="128_3oclc"]
 [ext_resource type="Texture2D" uid="uid://bma301wnlfe65" path="res://sprites/UI/bd/af_button_behinddesign1.png" id="129_e5ub6"]
 [ext_resource type="Texture2D" uid="uid://b1lyyhdsmnn5q" path="res://sprites/UI/bd/af_button_behinddesign2.png" id="130_t8wjt"]
@@ -49,9 +44,6 @@ load_path = "res://.godot/imported/StaticTexture (4).png-2ef5d5e16eae5b01b90af55
 [sub_resource type="SpriteFrames" id="SpriteFrames_i6lef"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_81l6r")
-}, {
 "duration": 1.0,
 "texture": ExtResource("3_rsfmq")
 }, {
@@ -330,50 +322,6 @@ animations = [{
 "speed": 40.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_oi1it"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("15_7jp70")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_3dmrc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_81l6r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_rsfmq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_7jp70")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_81l6r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_3dmrc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_rsfmq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_3dmrc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_7jp70")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_81l6r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_rsfmq")
-}],
-"loop": true,
-"name": &"default",
-"speed": 1.0
-}]
-
 [sub_resource type="Theme" id="Theme_b6cxs"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aaywf"]
@@ -475,6 +423,7 @@ autostart = true
 
 [node name="BackGroundChange_Timer" type="Timer" parent="." unique_id=859613023]
 wait_time = 1.422
+autostart = true
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="." unique_id=716738802]
 stream = ExtResource("2_g6gyw")
@@ -489,14 +438,6 @@ position = Vector2(969.735, 541.5)
 scale = Vector2(1.02367, 1.01944)
 sprite_frames = SubResource("SpriteFrames_i6lef")
 animation = &"MenuAnim_NEW"
-metadata/_edit_lock_ = true
-
-[node name="BREACHCensor" type="AnimatedSprite2D" parent="." unique_id=1941031506]
-position = Vector2(1340.0001, 536)
-scale = Vector2(0.6321949, 0.6321948)
-sprite_frames = SubResource("SpriteFrames_oi1it")
-autoplay = "default"
-frame_progress = 0.4193967
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1061635636]
 visible = false
@@ -514,8 +455,7 @@ scale = Vector2(1.5351563, 1.5333334)
 sprite_frames = SubResource("SpriteFrames_i6lef")
 animation = &"Static"
 autoplay = "Static"
-frame_progress = 0.5262295
-metadata/_edit_lock_ = true
+frame_progress = 0.07518231
 
 [node name="Menu" type="Control" parent="." unique_id=2134854497]
 anchors_preset = 0
@@ -563,7 +503,7 @@ layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.9490196, 0.06666667, 0.06666667, 1)
 theme_override_fonts/font = ExtResource("6_13sgg")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 80
 text = "NEW GAME
 "
 flat = true
@@ -574,7 +514,7 @@ layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.9490196, 0.06666667, 0.06666667, 1)
 theme_override_fonts/font = ExtResource("6_13sgg")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 80
 text = "SETTINGS
 "
 flat = true

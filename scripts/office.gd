@@ -229,7 +229,7 @@ func camera_change():
 				9:
 					$UiPc/CamFeed/CameraFeed.play("Cam8Animatronic")
 				10:
-					$UiPc/CamFeed/CameraFeed.play("Cam9")
+					$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
 				
 	else:
 		match GlobalVars.camera_clicked:
@@ -250,8 +250,7 @@ func camera_change():
 			9:
 				$UiPc/CamFeed/CameraFeed.play("Cam8Nothing")
 			10:
-				$UiPc/CamFeed/CameraFeed.play("Cam9")
-				
+				$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
 	if GlobalVars.camera_clicked == 10:
 		$"../Office/CamBuzzSound".play()
 	else:

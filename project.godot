@@ -15,13 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Breach"
-config/version="V.8.2."
+config/version="v0.8.3"
 run/main_scene="uid://bhqcnvyxjgoh1"
 config/features=PackedStringArray("4.6")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="uid://b11y71iq8f31e"
-config/icon="uid://b4bul3c02wycy"
+config/icon="uid://bh5kxpor5n6xp"
 boot_splash/minimum_display_time=2000
 
 [audio]

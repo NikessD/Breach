@@ -22,15 +22,19 @@ func _process(delta):
 
 
 func _ready() -> void:
-	var err = GlobalVars.config.load("res://save.cfg")	
+	var err = GlobalVars.config.load("user://save.cfg")	
 	if err != OK:
 		GlobalVars.config = ConfigFile.new()
 		GlobalVars.config.set_value("night number", "night_number", 1)
-		GlobalVars.config.save("res://save.cfg")
+		GlobalVars.config.save("user://save.cfg")
 	else:
 		GlobalVars.night_number = GlobalVars.config.get_value("night number", "night_number", GlobalVars.night_number)
-		if GlobalVars.night_number != 1:
+		if GlobalVars.night_number == null:
+			GlobalVars.config.set_value("night number", "night_number", 1)
 			$Menu/MenuButtons/Play.text = "NIGHT " + str(GlobalVars.night_number)
+		elif GlobalVars.night_number != 1:
+			$Menu/MenuButtons/Play.text = "NIGHT " + str(GlobalVars.night_number)
+
 	#match GlobalVars.night:	
 		#1:
 			#$BackGround.play("Night1")
@@ -48,6 +52,7 @@ func _ready() -> void:
 	
 func _on_play_pressed() -> void:
 	ResourceLoader.load_threaded_request("res://scenes/game.tscn")
+	$ColorRect2.self_modulate.a = 0
 	$StaticTimer.stop()
 	$MenuTheme.stop()
 	$Menu/Background/MenuStatic.stop()
@@ -55,7 +60,9 @@ func _on_play_pressed() -> void:
 	$LoadingScreen/NightNumber.text = "NIGHT " + str(GlobalVars.night_number)
 	$Menu.set_visible(false)
 	$LoadingScreen.set_visible(true)
+	$ColorRect2.set_visible(true)
 	for n in range(100):
+		$ColorRect2.self_modulate.a += 0.1
 		$Static.self_modulate.a += 0.1
 		await get_tree().process_frame
 	await get_tree().create_timer(3).timeout
@@ -95,7 +102,7 @@ func _on_exit_pressed() -> void:
 	$StaticTimer.start()
 	$Menu/ClickSound.play()
 	show_and_hide($Menu, $Settings)
-
+	$ColorRect2.set_visible(false)
 
 func volume(bus_index, value):
 	AudioServer.set_bus_volume_db(bus_index, value)
@@ -136,14 +143,26 @@ func _on_exit_mouse_entered() -> void:
 
 
 func _on_back_ground_change_timer_timeout() -> void:
-	$BackGround.frame = randi_range(0,2)
+	var random = randi_range(0,10)
+	if random == 0:
+		$BackGround.frame = 0
+	elif random == 1:
+		for x in range(5):
+			$BackGround.frame = 1
+			await get_tree().create_timer(0.2).timeout
+			$BackGround.frame = 0
+	elif random == 2:
+		for x in range(5):
+			$BackGround.frame = 2
+			await get_tree().create_timer(0.2).timeout
+			$BackGround.frame = 0
 	$BackGroundChange_Timer.wait_time = randf_range(0.1, 0.4)
 	$BackGroundChange_Timer.start()
 
 
 func _on_static_timer_timeout() -> void:
-	$Static.self_modulate.a = randf_range(0.4,1)
-	$BackGround.self_modulate.a = randf_range(0.4,1)
+	$Static.self_modulate.a = randf_range(0.4,0.6)
+	$BackGround.self_modulate.a = randf_range(0.8,1)
 
 
 func _on_settings_pressed() -> void:
@@ -151,7 +170,9 @@ func _on_settings_pressed() -> void:
 	$StaticTimer.stop()
 	show_and_hide($Settings, $Menu)
 	$Menu/ClickSound.play()
+	$ColorRect2.set_visible(true)
 
+	
 func _on_settings_mouse_entered() -> void:
 	$Menu/HoverSound.play()
 	$Menu/MenuButtons/ButtonBackgoundSprite.set_position(Vector2(125, 207))
