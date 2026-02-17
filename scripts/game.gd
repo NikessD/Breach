@@ -1,29 +1,30 @@
 extends Node2D
 
+## Obecná inicializace hry + ostatní věci při jejím běhu
+
 @onready var office = $Office
 @onready var ricky = $Office/Ricky
 @onready var ardent = $Office/Ardent
+@onready var creepy_ambience1: AudioStreamPlayer = $AmbientSounds/CreepyAmbience1
+@onready var creepy_ambience2: AudioStreamPlayer = $AmbientSounds/CreepyAmbience2
 
-var nvm: int 
 
 func _ready():
 	office.begining_set_ai()
-	
+
+
 func _on_ambient_sounds_timer_timeout() -> void:
-	$AmbientSounds/Creepyambience2.play()
-	$AmbientSounds/Creepyambience1.play()
-	$AmbientSounds/Creepyambience2.volume_db = -1000000000
-	$AmbientSounds/Creepyambience1.volume_db = -1000000000
+	creepy_ambience2.play()
+	creepy_ambience1.play()
+	creepy_ambience2.volume_db = -1000000000
+	creepy_ambience1.volume_db = -1000000000
 	var random_ambient = randi_range(1,10)
 	if random_ambient == 8:
-		$AmbientSounds/Creepyambience1.volume_db = -51
-		$AmbientSounds/Creepyambience2.volume_db = -1000000000
+		creepy_ambience1.volume_db = -51
+		creepy_ambience2.volume_db = -1000000000
 	elif random_ambient == 1:
-		$AmbientSounds/Creepyambience1.volume_db = -1000000000
-		$AmbientSounds/Creepyambience2.volume_db = -27
-
-
-
+		creepy_ambience1.volume_db = -1000000000
+		creepy_ambience2.volume_db = -27
 
 
 func begining_set_ai():
@@ -49,7 +50,3 @@ func begining_set_ai():
 		null:
 			ardent.ai = 20
 			ricky.ai = 20
-
-
-func _on_pas_button_pressed() -> void:
-	pass # Replace with function body.

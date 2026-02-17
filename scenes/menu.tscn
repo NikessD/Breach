@@ -1,24 +1,20 @@
 [gd_scene format=3 uid="uid://bhqcnvyxjgoh1"]
 
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
-[ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/Music/river's end.mp3" id="2_g6gyw"]
-[ext_resource type="Texture2D" uid="uid://cxlus75bm8ern" path="res://sprites/DefaultBackground_Kreslicí plátno 1.png" id="2_i6lef"]
-[ext_resource type="Texture2D" uid="uid://myiy1w5nsipj" path="res://sprites/MenuBackgounds/MenuBackground.png" id="3_81l6r"]
-[ext_resource type="Texture2D" uid="uid://nrvqyrufeocm" path="res://sprites/MenuBackgounds/0001.png" id="3_rsfmq"]
-[ext_resource type="Texture2D" uid="uid://soumsu723jea" path="res://sprites/MenuBackgounds/0002.png" id="4_oi1it"]
-[ext_resource type="Texture2D" uid="uid://bcdbtcfkaj4va" path="res://sprites/MenuBackgounds/0003.png" id="5_fy8yy"]
+[ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/menu/music/river's end.mp3" id="2_g6gyw"]
+[ext_resource type="Texture2D" uid="uid://myiy1w5nsipj" path="res://textures/menu_backgrounds/MenuBackground.png" id="3_81l6r"]
+[ext_resource type="Texture2D" uid="uid://nrvqyrufeocm" path="res://textures/menu_backgrounds/0001.png" id="3_rsfmq"]
+[ext_resource type="Texture2D" uid="uid://soumsu723jea" path="res://textures/menu_backgrounds/0002.png" id="4_oi1it"]
+[ext_resource type="Texture2D" uid="uid://bcdbtcfkaj4va" path="res://textures/menu_backgrounds/0003.png" id="5_fy8yy"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="6_13sgg"]
-[ext_resource type="Texture2D" uid="uid://b80snh2yt11x2" path="res://sprites/cenzor/VS1.png" id="15_7jp70"]
-[ext_resource type="Texture2D" uid="uid://cgxferwi63xaf" path="res://sprites/cenzor/VS2.png" id="16_3dmrc"]
-[ext_resource type="Texture2D" uid="uid://bwpokbp0j2qfk" path="res://sprites/cenzor/VS3.png" id="17_81l6r"]
-[ext_resource type="Texture2D" uid="uid://b8nirl6jdeo0q" path="res://sprites/cenzor/VS4.png" id="18_rsfmq"]
-[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/ButtonClicked.mp3" id="128_3oclc"]
-[ext_resource type="Texture2D" uid="uid://bma301wnlfe65" path="res://sprites/UI/bd/af_button_behinddesign1.png" id="129_e5ub6"]
-[ext_resource type="Texture2D" uid="uid://b1lyyhdsmnn5q" path="res://sprites/UI/bd/af_button_behinddesign2.png" id="130_t8wjt"]
-[ext_resource type="Texture2D" uid="uid://bbyl3r4fkdd46" path="res://sprites/UI/bd/af_button_behinddesign3.png" id="131_748ik"]
-[ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/Menu/ButtonHover.wav" id="132_i4wbw"]
-[ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/Menu/IntoGame.wav" id="137_i4wbw"]
-[ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://sprites/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
+[ext_resource type="Texture2D" uid="uid://b80snh2yt11x2" path="res://animations/menu/cenzorship/VS1.png" id="15_7jp70"]
+[ext_resource type="Texture2D" uid="uid://cgxferwi63xaf" path="res://animations/menu/cenzorship/VS2.png" id="16_3dmrc"]
+[ext_resource type="Texture2D" uid="uid://bwpokbp0j2qfk" path="res://animations/menu/cenzorship/VS3.png" id="17_81l6r"]
+[ext_resource type="Texture2D" uid="uid://b8nirl6jdeo0q" path="res://animations/menu/cenzorship/VS4.png" id="18_rsfmq"]
+[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/buttons/ButtonClicked.mp3" id="128_3oclc"]
+[ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/UI/buttons/ButtonHover.wav" id="132_i4wbw"]
+[ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/menu/IntoGame.wav" id="137_i4wbw"]
+[ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://textures/logos/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_11y2r"]
 
@@ -378,55 +374,66 @@ animations = [{
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aaywf"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_81l6r"]
+load_path = "res://.godot/imported/af_button_behinddesign1.png-0db8f05af4357803e56d1df8d45112cd.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rsfmq"]
+load_path = "res://.godot/imported/af_button_behinddesign2.png-6a45c77c815bc98cf6323ea79619462b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oi1it"]
+load_path = "res://.godot/imported/af_button_behinddesign3.png-fd021b524c98e24cc8a90259172c933e.ctex"
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_i4wbw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("129_e5ub6")
+"texture": SubResource("CompressedTexture2D_81l6r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("130_t8wjt")
+"texture": SubResource("CompressedTexture2D_rsfmq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("131_748ik")
+"texture": SubResource("CompressedTexture2D_oi1it")
 }, {
 "duration": 1.0,
-"texture": ExtResource("130_t8wjt")
+"texture": SubResource("CompressedTexture2D_rsfmq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("130_t8wjt")
+"texture": SubResource("CompressedTexture2D_rsfmq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("131_748ik")
+"texture": SubResource("CompressedTexture2D_oi1it")
 }, {
 "duration": 1.0,
-"texture": ExtResource("131_748ik")
+"texture": SubResource("CompressedTexture2D_oi1it")
 }, {
 "duration": 1.0,
-"texture": ExtResource("129_e5ub6")
+"texture": SubResource("CompressedTexture2D_81l6r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("131_748ik")
+"texture": SubResource("CompressedTexture2D_oi1it")
 }, {
 "duration": 1.0,
-"texture": ExtResource("130_t8wjt")
+"texture": SubResource("CompressedTexture2D_rsfmq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("129_e5ub6")
+"texture": SubResource("CompressedTexture2D_81l6r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("129_e5ub6")
+"texture": SubResource("CompressedTexture2D_81l6r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("129_e5ub6")
+"texture": SubResource("CompressedTexture2D_81l6r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("131_748ik")
+"texture": SubResource("CompressedTexture2D_oi1it")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fy8yy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_13sgg"]
 font = ExtResource("6_13sgg")
@@ -491,7 +498,7 @@ sprite_frames = SubResource("SpriteFrames_i6lef")
 animation = &"MenuAnim_NEW"
 metadata/_edit_lock_ = true
 
-[node name="BREACHCensor" type="AnimatedSprite2D" parent="." unique_id=1941031506]
+[node name="Censorship" type="AnimatedSprite2D" parent="." unique_id=1941031506]
 position = Vector2(1340.0001, 536)
 scale = Vector2(0.6321949, 0.6321948)
 sprite_frames = SubResource("SpriteFrames_oi1it")
@@ -622,7 +629,7 @@ offset_bottom = 40.0
 visible = false
 position = Vector2(972, 535)
 scale = Vector2(1.03125, 1.05)
-texture = ExtResource("2_i6lef")
+texture = SubResource("CompressedTexture2D_fy8yy")
 
 [node name="NightNumber" type="Label" parent="LoadingScreen" unique_id=547786746]
 layout_mode = 0

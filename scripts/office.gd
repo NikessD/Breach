@@ -1,24 +1,24 @@
 extends Node
 
-
 var tutorial_door_view_first: bool = false
 var tutorial_camera_view_first: bool = false
-
-var ominious_sound_number = 0
+var ominious_sound_number: int = 0
 var power: float = 100
 var previous_cam: int = 0
 
-@onready var ricky = $Ricky
-@onready var ardent = $Ardent
-@onready var node_camera_tutorial = $Tutorial/camfed
-@onready var node_flashlight_tutorial = $Tutorial/sideview
-@onready var node_office_animationplayer = $AnimationPlayerOffice
-@onready var node_viewbuttons = $ViewMoveButtons
-@onready var button_view_left = $ViewMoveButtons/ButtonLeftSide
-@onready var button_view_right = $ViewMoveButtons/ButtonRightSide
-@onready var label_hour = $UiPc/GameHour
-@onready var label_power = $UiPc/Power
-@onready var sprite_camera_static = $UiPc/CamFeed/CameraStatic
+@onready var ricky: Animatronic = $Ricky
+@onready var ardent: Control  = $Ardent
+@onready var node_camera_tutorial: Control = $Tutorial/CamFeed
+@onready var node_flashlight_tutorial: Control = $Tutorial/SideView
+@onready var node_viewbuttons: Control = $ViewMoveButtons
+@onready var node_office_animationplayer: AnimatedSprite2D = $AnimationPlayerOffice
+@onready var sprite_camerafeed: AnimatedSprite2D = $UiPc/CamFeed/CameraFeed
+@onready var sprite_camera_static: AnimatedSprite2D = $UiPc/CamFeed/CameraStatic
+@onready var button_view_left: Sprite2D = $ViewMoveButtons/ButtonLeftSide
+@onready var button_view_right: Button = $ViewMoveButtons/ButtonRightSide
+@onready var sprite_lightbutton: Button = $LightButton
+@onready var label_hour: Label = $UiPc/GameHour
+@onready var label_power: Label = $UiPc/Power
 
 
 func _ready() -> void:
@@ -41,16 +41,16 @@ func _process(delta: float) -> void:
 		power -= 0.015
 	if power > 0:
 		power -= 0.003
-		
+
 	power = snapped(power,0.001) 
 	label_power.text = str(power) + " POWER"
 	if power <= 0 and power < 0:
-		linegring_death()
+		blackout()
 
 	ominious_sound_number = randi_range(0,100000)
 	match ominious_sound_number:
 		1:
-			$OminiousSound1.play()
+			$OminiousSound1.stream("Omini")
 		2:
 			$OminiousSound2.play()
 		3:
@@ -66,27 +66,18 @@ func button_anim_tutorial():
 
 
 func camera_static():
-	$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
+	sprite_camera_static.self_modulate.a = (10)
 	$CamBuzzSound.play()
 	await get_tree().create_timer(0.2).timeout	
-	$UiPc/CamFeed/CameraStatic.self_modulate.a = (0.2)
+	sprite_camera_static.self_modulate.a = (0.2)
 	$CamBuzzSound.stop()
-
-
-func linegring_death():
-	GlobalVars.blackout = true
-	$UiPc.set_visible(false)
-	node_viewbuttons.set_visible(false)
-	$PowerDownSound.play()
-	@warning_ignore("integer_division")
-	await get_tree().create_timer(20/GlobalVars.night_number).timeout
-	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 
 
 func _on_button_right_side_mouse_entered() -> void:
 	if GlobalVars.night_number == 1 and tutorial_camera_view_first:
 		tutorial_camera_view_first = 1
 		node_camera_tutorial.set_visible(false)
+
 	if GlobalVars.view_front == true:
 			GlobalVars.view_right = true
 			GlobalVars.view_front = false
@@ -96,13 +87,12 @@ func _on_button_right_side_mouse_entered() -> void:
 			await get_tree().create_timer(0.3).timeout
 			node_viewbuttons.set_visible(true)
 			button_view_right.set_visible(false)
-			$LightButton.set_visible(true)
-
+			sprite_lightbutton.set_visible(true)
 	elif GlobalVars.view_left == true:
 		GlobalVars.view_front = true
 		GlobalVars.view_left = false
 		node_office_animationplayer.play_backwards("animation_view_left")
-		$LightButton.set_visible(false)
+		sprite_lightbutton.set_visible(false)
 		node_viewbuttons.set_visible(false)
 		await get_tree().create_timer(0.25).timeout
 		button_view_left.set_visible(true)
@@ -127,13 +117,12 @@ func _on_button_left_side_mouse_entered():
 		await get_tree().create_timer(0.3).timeout
 		node_viewbuttons.set_visible(true)
 		button_view_left.set_visible(false)
-		$LightButton.set_visible(true)
-
+		sprite_lightbutton.set_visible(true)
 	elif GlobalVars.view_right == true:
 		GlobalVars.view_front = true
 		GlobalVars.view_right = false
 		node_office_animationplayer.play_backwards("animation_view_right")
-		$LightButton.set_visible(false)
+		sprite_lightbutton.set_visible(false)
 		node_viewbuttons.set_visible(false)
 		await get_tree().create_timer(0.25).timeout
 		button_view_right.set_visible(true)
@@ -147,6 +136,7 @@ func _on_button_left_side_mouse_entered():
 func _on_timer_hour_timeout() -> void:
 	GlobalVars.hour += 1
 	label_hour.text = str(GlobalVars.hour) + ":00"
+	
 	if GlobalVars.hour == 6:
 		get_tree().change_scene_to_file("res://scenes/night_win_screen.tscn")
 
@@ -161,27 +151,34 @@ func dvere_tutorial():
 func _on_light_button_button_down() -> void:
 	$"../Office/FlashLightSound".play() 
 	GlobalVars.light_button_is_pressed = true
-	if(GlobalVars.light_button_is_pressed and ricky.camera == 7 and GlobalVars.view_left):
+	
+	if (
+			GlobalVars.light_button_is_pressed 
+			and ricky.camera == 7 
+			and GlobalVars.view_left
+	):
 		node_office_animationplayer.play("animation_view_left_animatronic")
 		ricky.anger += 20
-	elif(GlobalVars.view_left):
+	elif GlobalVars.view_left:
 		node_office_animationplayer.play("animation_view_left_light")
 		ricky.anger += 20
-	elif(GlobalVars.light_button_is_pressed and ricky.camera == 11 and GlobalVars.view_right):
+	elif (
+			GlobalVars.light_button_is_pressed 
+			and ricky.camera == 11 
+			and GlobalVars.view_right
+	):
 		node_office_animationplayer.play("animation_view_right_animatronic")
-	elif(GlobalVars.view_right):
+	elif GlobalVars.view_right:
 		node_office_animationplayer.play("animation_view_right_light")
-	else:
-		pass
 
 
 func _on_light_button_button_up() -> void:
 	$"../Office/FlashLightSound".stop()
 	GlobalVars.light_button_is_pressed = false
 	
-	if(GlobalVars.view_left):
+	if GlobalVars.view_left:
 		node_office_animationplayer.play("animation_view_left_look")
-	elif(GlobalVars.view_right):
+	elif GlobalVars.view_right:
 		node_office_animationplayer.play("animation_view_right_look")
 	else:
 		pass
@@ -197,7 +194,6 @@ func camera_change():
 		ardent.anger_timer.start()
 		ardent.anger = randi_range(100,200)
 		$UiPc/CamFeed/Ardent.set_visible(true)
-
 	elif (
 			GlobalVars.camera_clicked != ardent.camera 
 			and GlobalVars.view_front
@@ -206,47 +202,47 @@ func camera_change():
 		ardent.anger_timer.stop()
 		$UiPc/CamFeed/Ardent.set_visible(false)
 
-	if (GlobalVars.camera_clicked == ricky.camera):
+	if GlobalVars.camera_clicked == ricky.camera:
 		match GlobalVars.camera_clicked:
 				1:
-					$UiPc/CamFeed/CameraFeed.play("Cam1Animatronic")
+					sprite_camerafeed.play("Cam1Animatronic")
 				2:
-					$UiPc/CamFeed/CameraFeed.play("Cam2Animatronic")
+					sprite_camerafeed.play("Cam2Animatronic")
 				3:
-					$UiPc/CamFeed/CameraFeed.play("Cam3Animatronic")
+					sprite_camerafeed.play("Cam3Animatronic")
 				4:
-					$UiPc/CamFeed/CameraFeed.play("Cam4Animatronic")
+					sprite_camerafeed.play("Cam4Animatronic")
 				5:
-					$UiPc/CamFeed/CameraFeed.play("Cam5Animatronic")
+					sprite_camerafeed.play("Cam5Animatronic")
 				6:
-					$UiPc/CamFeed/CameraFeed.play("Cam6Animatronic")
+					sprite_camerafeed.play("Cam6Animatronic")
 				8:
-					$UiPc/CamFeed/CameraFeed.play("Cam7Animatronic")
+					sprite_camerafeed.play("Cam7Animatronic")
 				9:
-					$UiPc/CamFeed/CameraFeed.play("Cam8Animatronic")
+					sprite_camerafeed.play("Cam8Animatronic")
 				10:
-					$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
+					sprite_camera_static.self_modulate.a = (10)
 
 	else:
 		match GlobalVars.camera_clicked:
 			1:
-				$UiPc/CamFeed/CameraFeed.play("Cam1Nothing")
+				sprite_camerafeed.play("Cam1Nothing")
 			2:
-				$UiPc/CamFeed/CameraFeed.play("Cam2Nothing")
+				sprite_camerafeed.play("Cam2Nothing")
 			3:
-				$UiPc/CamFeed/CameraFeed.play("Cam3Nothing")
+				sprite_camerafeed.play("Cam3Nothing")
 			4:
-				$UiPc/CamFeed/CameraFeed.play("Cam4Nothing")
+				sprite_camerafeed.play("Cam4Nothing")
 			5:
-				$UiPc/CamFeed/CameraFeed.play("Cam5Nothing")
+				sprite_camerafeed.play("Cam5Nothing")
 			6:
-				$UiPc/CamFeed/CameraFeed.play("Cam6Nothing")
+				sprite_camerafeed.play("Cam6Nothing")
 			8:
-				$UiPc/CamFeed/CameraFeed.play("Cam7Nothing")
+				sprite_camerafeed.play("Cam7Nothing")
 			9:
-				$UiPc/CamFeed/CameraFeed.play("Cam8Nothing")
+				sprite_camerafeed.play("Cam8Nothing")
 			10:
-				$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
+				sprite_camera_static.self_modulate.a = (10)
 
 	if GlobalVars.camera_clicked == 10:
 		$"../Office/CamBuzzSound".play()
@@ -255,7 +251,6 @@ func camera_change():
 
 
 func _on_cam_8_button_pressed() -> void:
-
 	camera_change()
 	$CamSelected.play()
 	camera_static() 
@@ -276,43 +271,16 @@ func blackout():
 	GlobalVars.blackout = true
 	$UiPc.set_visible(false)
 	$Buttons.set_visible(false)
-	$LightButton.set_visible(false)
+	sprite_lightbutton.set_visible(false)
 	$PowerDownSound.play() 
-	if (ardent.killer == true):
+	if ardent.killer:
 		ardent.kill()
 	else:
 		ricky.kill()
 
 
-func begining_set_ai():
-	match GlobalVars.night_number:
-		1:
-			ardent.ai = 0
-			ricky.ai = 3
-		2:
-			ardent.ai = 1
-			ricky.ai = 5
-		3:
-			ardent.ai = 3
-			ricky.ai = 7
-		4:
-			ardent.ai = 4
-			ricky.ai = 9
-		5:
-			ardent.ai = 6
-			ricky.ai = 12
-		6:
-			ardent.ai = 20
-			ricky.ai = 20
-		null:
-			ardent.ai = 20
-			ricky.ai = 20
-
-
 func cam_button_clicked():
-	
 	if previous_cam != GlobalVars.camera_ID:
-		
 		match previous_cam:
 			1:
 				$UiPc/StageButton.set_pressed_no_signal(false)

@@ -1,5 +1,6 @@
 extends Node2D
 
+## Konec hry
 
 func _ready() -> void:
 	if GlobalVars.ricky_killer:

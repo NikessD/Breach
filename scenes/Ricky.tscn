@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4d3qe4rm77wx"]
 
-[ext_resource type="Script" uid="uid://c3cri3fixnvyi" path="res://scripts/AnimatronicScripts/ricky.gd" id="1_7i4vx"]
+[ext_resource type="Script" uid="uid://c3cri3fixnvyi" path="res://scripts/animatronics/ricky.gd" id="1_7i4vx"]
 [ext_resource type="AudioStream" uid="uid://dwbxxphirf3n8" path="res://sounds/jumpscare.mp3" id="2_ck8in"]
 [ext_resource type="AudioStream" uid="uid://bgxeua8ndfre8" path="res://sounds/Running.mp3" id="3_s67ih"]
 

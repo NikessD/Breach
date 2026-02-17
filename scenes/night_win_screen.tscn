@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://coejka0k6xpmu" path="res://scripts/win_screen.gd" id="1_leokh"]
 [ext_resource type="AudioStream" uid="uid://d125n6yer5qvm" path="res://sounds/deep-strange-whoosh-183845.mp3" id="2_ka34s"]
-[ext_resource type="Texture2D" uid="uid://cxlus75bm8ern" path="res://sprites/DefaultBackground_Kreslicí plátno 1.png" id="2_srivd"]
+[ext_resource type="Texture2D" uid="uid://cxlus75bm8ern" path="res://textures/DefaultBackground_Kreslicí plátno 1.png" id="2_srivd"]
+
 
 [sub_resource type="SystemFont" id="SystemFont_0eiwq"]
 font_names = PackedStringArray("LCD Solid")
