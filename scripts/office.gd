@@ -1,64 +1,52 @@
 extends Node
 
-# player var
-var door_view_first = 0
-var cam_view_first = 0
-# Animatronic var
+
+var tutorial_door_view_first: bool = false
+var tutorial_camera_view_first: bool = false
+
+var ominious_sound_number = 0
+var power: float = 100
+var previous_cam: int = 0
 
 @onready var ricky = $Ricky
 @onready var ardent = $Ardent
-# player var
-var power: float = 100
-
-
-# sound var
-var ominious_sound_number = 0
-
-var previous_cam: int = 0
-
+@onready var node_camera_tutorial = $Tutorial/camfed
+@onready var node_flashlight_tutorial = $Tutorial/sideview
+@onready var node_office_animationplayer = $AnimationPlayerOffice
+@onready var node_viewbuttons = $ViewMoveButtons
+@onready var button_view_left = $ViewMoveButtons/ButtonLeftSide
+@onready var button_view_right = $ViewMoveButtons/ButtonRightSide
+@onready var label_hour = $UiPc/GameHour
+@onready var label_power = $UiPc/Power
+@onready var sprite_camera_static = $UiPc/CamFeed/CameraStatic
 
 
 func _ready() -> void:
-	
-
-	$Tutorial/camfed.set_visible(false)
-	$Tutorial/sideview.set_visible(false)
-	$AnimationPlayerOffice.play("animation_view_front")
+	node_camera_tutorial.set_visible(false)
+	node_flashlight_tutorial.set_visible(false)
+	node_office_animationplayer.play("animation_view_front")
 	GlobalVars.view_front = true
+	
 	if GlobalVars.night_number == 1:
-		$Buttons.set_visible(false)
-		$Tutorial/camfed.set_visible(true)
+		node_viewbuttons.set_visible(false)
+		node_camera_tutorial.set_visible(true)
 		await get_tree().create_timer(20).timeout
 		await get_tree().process_frame
-		$Tutorial/camfed.set_visible(false)
+		node_camera_tutorial.set_visible(false)
 		button_anim_tutorial()	
 
 
-
-
-func button_anim_tutorial():
-		$Buttons.set_visible(true)
-		await get_tree().create_timer(0.3).timeout
-		$Buttons.set_visible(false)
-		await get_tree().create_timer(0.3).timeout
-		$Buttons.set_visible(true)
-		await get_tree().create_timer(0.3).timeout
-		$Buttons.set_visible(false)
-		await get_tree().create_timer(0.3).timeout
-		$Buttons.set_visible(true)		
-		
 func _process(delta: float) -> void:
 	if GlobalVars.light_button_is_pressed == true:
 		power -= 0.015
 	if power > 0:
 		power -= 0.003
+		
 	power = snapped(power,0.001) 
-	$UiPc/Power.text = str(power) + " POWER"
+	label_power.text = str(power) + " POWER"
 	if power <= 0 and power < 0:
 		linegring_death()
 
-
-	
 	ominious_sound_number = randi_range(0,100000)
 	match ominious_sound_number:
 		1:
@@ -69,9 +57,12 @@ func _process(delta: float) -> void:
 			$OminiousSound3.play()
 
 
-
-
-
+func button_anim_tutorial():
+	for x in range(5):
+		node_viewbuttons.set_visible(false)
+		await get_tree().create_timer(0.15).timeout
+		node_viewbuttons.set_visible(true)
+		await get_tree().create_timer(0.15).timeout
 
 
 func camera_static():
@@ -81,135 +72,140 @@ func camera_static():
 	$UiPc/CamFeed/CameraStatic.self_modulate.a = (0.2)
 	$CamBuzzSound.stop()
 
+
 func linegring_death():
 	GlobalVars.blackout = true
 	$UiPc.set_visible(false)
-	$Buttons.set_visible(false)
+	node_viewbuttons.set_visible(false)
 	$PowerDownSound.play()
 	@warning_ignore("integer_division")
 	await get_tree().create_timer(20/GlobalVars.night_number).timeout
 	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
 
-# Pravý pohyb hráče
+
 func _on_button_right_side_mouse_entered() -> void:
-	if GlobalVars.night_number == 1 and cam_view_first == 1:
-		cam_view_first = 1
-		$Tutorial/camfed.set_visible(false)
+	if GlobalVars.night_number == 1 and tutorial_camera_view_first:
+		tutorial_camera_view_first = 1
+		node_camera_tutorial.set_visible(false)
 	if GlobalVars.view_front == true:
 			GlobalVars.view_right = true
 			GlobalVars.view_front = false
-			$AnimationPlayerOffice.play("animation_view_right")
+			node_office_animationplayer.play("animation_view_right")
 			$UiPc.set_visible(false)
-			$Buttons.set_visible(false)
+			node_viewbuttons.set_visible(false)
 			await get_tree().create_timer(0.3).timeout
-			$Buttons.set_visible(true)
-			$Buttons/ButtonRightSide.set_visible(false)
+			node_viewbuttons.set_visible(true)
+			button_view_right.set_visible(false)
 			$LightButton.set_visible(true)
 
 	elif GlobalVars.view_left == true:
 		GlobalVars.view_front = true
 		GlobalVars.view_left = false
-		$AnimationPlayerOffice.play_backwards("animation_view_left")
+		node_office_animationplayer.play_backwards("animation_view_left")
 		$LightButton.set_visible(false)
-		$Buttons.set_visible(false)
+		node_viewbuttons.set_visible(false)
 		await get_tree().create_timer(0.25).timeout
-		$Buttons/ButtonLeftSide.set_visible(true)
-		$Buttons.set_visible(true)
+		button_view_left.set_visible(true)
+		node_viewbuttons.set_visible(true)
 		$UiPc.set_visible(true)
 
-	if GlobalVars.night_number == 1 and door_view_first == 0:
+	if GlobalVars.night_number == 1 and tutorial_door_view_first == false:
 		dvere_tutorial()
-		
-# Levý pohyb hráče
+
+
 func _on_button_left_side_mouse_entered(): 
-	if GlobalVars.night_number == 1 and cam_view_first == 1:
-		cam_view_first = 1
-		$Tutorial/camfed.set_visible(false)
+	if GlobalVars.night_number == 1 and tutorial_camera_view_first:
+		tutorial_camera_view_first = 1
+		node_camera_tutorial.set_visible(false)
 		
 	if GlobalVars.view_front == true:
 		GlobalVars.view_left = true
 		GlobalVars.view_front = false
-		$AnimationPlayerOffice.play("animation_view_left")
+		node_office_animationplayer.play("animation_view_left")
 		$UiPc.set_visible(false)
-		$Buttons.set_visible(false)
+		node_viewbuttons.set_visible(false)
 		await get_tree().create_timer(0.3).timeout
-		$Buttons.set_visible(true)
-		$Buttons/ButtonLeftSide.set_visible(false)
+		node_viewbuttons.set_visible(true)
+		button_view_left.set_visible(false)
 		$LightButton.set_visible(true)
 
-		
 	elif GlobalVars.view_right == true:
 		GlobalVars.view_front = true
 		GlobalVars.view_right = false
-		$AnimationPlayerOffice.play_backwards("animation_view_right")
+		node_office_animationplayer.play_backwards("animation_view_right")
 		$LightButton.set_visible(false)
-		$Buttons.set_visible(false)
+		node_viewbuttons.set_visible(false)
 		await get_tree().create_timer(0.25).timeout
-		$Buttons/ButtonRightSide.set_visible(true)
-		$Buttons.set_visible(true)
+		button_view_right.set_visible(true)
+		node_viewbuttons.set_visible(true)
 		$UiPc.set_visible(true)
 
-	if GlobalVars.night_number == 1 and door_view_first == 0:
+	if GlobalVars.night_number == 1 and tutorial_door_view_first == false:
 		dvere_tutorial()
 
 
-
-#Hodiny
 func _on_timer_hour_timeout() -> void:
 	GlobalVars.hour += 1
-	$UiPc/GameHour.text = str(GlobalVars.hour) + ":00"
+	label_hour.text = str(GlobalVars.hour) + ":00"
 	if GlobalVars.hour == 6:
 		get_tree().change_scene_to_file("res://scenes/night_win_screen.tscn")
-	
-	
+
+
 func dvere_tutorial():
-	door_view_first = 1
-	$Tutorial/sideview.set_visible(true)
+	tutorial_door_view_first = 1
+	node_flashlight_tutorial.set_visible(true)
 	await get_tree().create_timer(7).timeout
-	$Tutorial/sideview.set_visible(false)
-		
-	
+	node_flashlight_tutorial.set_visible(false)
+
 
 func _on_light_button_button_down() -> void:
 	$"../Office/FlashLightSound".play() 
 	GlobalVars.light_button_is_pressed = true
-	if(GlobalVars.light_button_is_pressed == true and ricky.camera == 7 and GlobalVars.view_left == true):
-		$"../Office/AnimationPlayerOffice".play("animation_view_left_animatronic")
+	if(GlobalVars.light_button_is_pressed and ricky.camera == 7 and GlobalVars.view_left):
+		node_office_animationplayer.play("animation_view_left_animatronic")
 		ricky.anger += 20
-	elif(GlobalVars.view_left == true):
-		$"../Office/AnimationPlayerOffice".play("animation_view_left_light")
+	elif(GlobalVars.view_left):
+		node_office_animationplayer.play("animation_view_left_light")
 		ricky.anger += 20
-	elif(GlobalVars.light_button_is_pressed == true and ricky.camera == 11 and GlobalVars.view_right == true):
-		$"../Office/AnimationPlayerOffice".play("animation_view_right_animatronic")
-	elif(GlobalVars.view_right == true):
-		$"../Office/AnimationPlayerOffice".play("animation_view_right_light")
+	elif(GlobalVars.light_button_is_pressed and ricky.camera == 11 and GlobalVars.view_right):
+		node_office_animationplayer.play("animation_view_right_animatronic")
+	elif(GlobalVars.view_right):
+		node_office_animationplayer.play("animation_view_right_light")
 	else:
 		pass
+
 
 func _on_light_button_button_up() -> void:
 	$"../Office/FlashLightSound".stop()
 	GlobalVars.light_button_is_pressed = false
 	
-	if(GlobalVars.view_left == true):
-		$"../Office/AnimationPlayerOffice".play("animation_view_left_look")
-	elif(GlobalVars.view_right == true):
-		$"../Office/AnimationPlayerOffice".play("animation_view_right_look")
+	if(GlobalVars.view_left):
+		node_office_animationplayer.play("animation_view_left_look")
+	elif(GlobalVars.view_right):
+		node_office_animationplayer.play("animation_view_right_look")
 	else:
 		pass
-		
-		
-		
-func camera_change():
 
+
+func camera_change():
 	$UiPc/Cameras.text =  "CAM " + str(GlobalVars.camera_ID) 
-	
-	if (GlobalVars.camera_clicked == ardent.camera and GlobalVars.view_front == true and GlobalVars.blackout == false):
+	if (
+			GlobalVars.camera_clicked == ardent.camera 
+			and GlobalVars.view_front
+			and not GlobalVars.blackout
+	):
 		ardent.anger_timer.start()
 		ardent.anger = randi_range(100,200)
 		$UiPc/CamFeed/Ardent.set_visible(true)
-	elif (GlobalVars.camera_clicked != ardent.camera and GlobalVars.view_front == true and GlobalVars.blackout == false):
+
+	elif (
+			GlobalVars.camera_clicked != ardent.camera 
+			and GlobalVars.view_front
+			and not GlobalVars.blackout
+	):
 		ardent.anger_timer.stop()
 		$UiPc/CamFeed/Ardent.set_visible(false)
+
 	if (GlobalVars.camera_clicked == ricky.camera):
 		match GlobalVars.camera_clicked:
 				1:
@@ -230,7 +226,7 @@ func camera_change():
 					$UiPc/CamFeed/CameraFeed.play("Cam8Animatronic")
 				10:
 					$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
-				
+
 	else:
 		match GlobalVars.camera_clicked:
 			1:
@@ -251,24 +247,20 @@ func camera_change():
 				$UiPc/CamFeed/CameraFeed.play("Cam8Nothing")
 			10:
 				$UiPc/CamFeed/CameraStatic.self_modulate.a = (10)
+
 	if GlobalVars.camera_clicked == 10:
 		$"../Office/CamBuzzSound".play()
 	else:
 		$"../Office/CamBuzzSound".stop()
 
-	
 
-	 
-
-	
-
-	
 func _on_cam_8_button_pressed() -> void:
 
 	camera_change()
 	$CamSelected.play()
 	camera_static() 
-	
+
+
 func _on_cam_9_button_pressed() -> void:
 	GlobalVars.camera_clicked = 10
 	GlobalVars.camera_ID = 9
@@ -278,7 +270,7 @@ func _on_cam_9_button_pressed() -> void:
 
 
 func blackout():
-	$AnimationPlayerOffice.play("anim_blackout")
+	node_office_animationplayer.play("anim_blackout")
 	ardent.move_timer.stop()
 	ricky.move_timer.stop()
 	GlobalVars.blackout = true
@@ -318,8 +310,9 @@ func begining_set_ai():
 
 
 func cam_button_clicked():
-
+	
 	if previous_cam != GlobalVars.camera_ID:
+		
 		match previous_cam:
 			1:
 				$UiPc/StageButton.set_pressed_no_signal(false)
@@ -339,6 +332,7 @@ func cam_button_clicked():
 				$UiPc/DoorRightCornerButton.set_pressed_no_signal(false)
 			9:
 				$UiPc/BackroomButton.set_pressed_no_signal(false)
+
 	match GlobalVars.camera_ID:
 		1:
 			$UiPc/StageButton.set_pressed_no_signal(true)

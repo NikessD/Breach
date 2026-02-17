@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://d4d3qe4rm77wx"]
 
-[ext_resource type="Script" uid="uid://c3cri3fixnvyi" path="res://animatronic.gd" id="1_7i4vx"]
+[ext_resource type="Script" uid="uid://c3cri3fixnvyi" path="res://scripts/AnimatronicScripts/ricky.gd" id="1_7i4vx"]
 [ext_resource type="AudioStream" uid="uid://dwbxxphirf3n8" path="res://sounds/jumpscare.mp3" id="2_ck8in"]
+[ext_resource type="AudioStream" uid="uid://bgxeua8ndfre8" path="res://sounds/Running.mp3" id="3_s67ih"]
 
-[node name="Ricky" type="Node" unique_id=1182052003 node_paths=PackedStringArray("move_timer", "kill_timer", "kill_sound")]
+[node name="Ricky" type="Node" unique_id=1182052003 node_paths=PackedStringArray("move_timer", "kill_timer", "kill_sound", "sound_door_runaway")]
 script = ExtResource("1_7i4vx")
 nickname = "Ricky"
 move_timer = NodePath("MoveTimer")
 kill_timer = NodePath("KillTimer")
 kill_sound = NodePath("KillSound")
+sound_door_runaway = NodePath("RunningSound")
 metadata/_custom_type_script = "uid://c3cri3fixnvyi"
 
 [node name="MoveTimer" type="Timer" parent="." unique_id=812632292]
@@ -22,6 +24,11 @@ wait_time = 0.203
 stream = ExtResource("2_ck8in")
 volume_db = -19.065
 pitch_scale = 1.73
+
+[node name="RunningSound" type="AudioStreamPlayer" parent="." unique_id=2121790855]
+stream = ExtResource("3_s67ih")
+volume_db = -15.981
+pitch_scale = 0.96
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
 [connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

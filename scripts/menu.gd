@@ -15,12 +15,6 @@ func _process(delta):
 
 
 
-
-
-
-
-
-
 func _ready() -> void:
 	var err = GlobalVars.config.load("user://save.cfg")	
 	if err != OK:
