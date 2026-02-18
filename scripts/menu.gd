@@ -11,9 +11,15 @@ var progress: = 0.0
 
 func _ready() -> void:
 	Saveload._load()
+	print("----------------------")
+	print(str(GlobalVars.volume[0]))
+	print(str(GlobalVars.volume[1]))
 	GlobalVars.night_number = Saveload.contents_to_save.night_number
 	GlobalVars.volume[1] = Saveload.contents_to_save.vfx_volume
 	GlobalVars.volume[0] = Saveload.contents_to_save.master_volume
+	print("----------------------")
+	print(str(GlobalVars.volume[0]))
+	print(str(GlobalVars.volume[1]))
 	slider_volume_master._set_volume()
 	slider_volume_vfx._set_volume()
 	$Menu/MenuButtons/Play.text = "NIGHT " + str(GlobalVars.night_number)
@@ -110,14 +116,7 @@ func _on_exit_pressed() -> void:
 	Saveload.contents_to_save.master_volume = GlobalVars.volume[0] 
 	Saveload.contents_to_save.vfx_volume = GlobalVars.volume[1] 
 	Saveload._save()
-	print(str(slider_volume_master.bus_index))
-	print(str(abs(slider_volume_vfx.bus_index)))
-	print("----------------------")
-	print(str(Saveload.contents_to_save.master_volume))
-	print(str(Saveload.contents_to_save.vfx_volume))
-	print("----------------------")
-	print(str(GlobalVars.volume[0]))
-	print(str(GlobalVars.volume[1]))
+
 
 
 func _on_exit_mouse_entered() -> void:

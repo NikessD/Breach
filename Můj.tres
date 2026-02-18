@@ -1,7 +1,7 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://dfw0wol66nt3i"]
+[gd_resource type="AudioBusLayout" format=3 uid="uid://d01apahqy1dn8"]
 
 [resource]
-bus/1/name = &"Master Copy"
+bus/1/name = &"vfx"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
