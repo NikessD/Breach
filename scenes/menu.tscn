@@ -2,23 +2,29 @@
 
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
 [ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/menu/music/river's end.mp3" id="2_g6gyw"]
-[ext_resource type="Texture2D" uid="uid://myiy1w5nsipj" path="res://textures/menu_backgrounds/MenuBackground.png" id="3_81l6r"]
-[ext_resource type="Texture2D" uid="uid://nrvqyrufeocm" path="res://textures/menu_backgrounds/0001.png" id="3_rsfmq"]
-[ext_resource type="Texture2D" uid="uid://soumsu723jea" path="res://textures/menu_backgrounds/0002.png" id="4_oi1it"]
-[ext_resource type="Texture2D" uid="uid://bcdbtcfkaj4va" path="res://textures/menu_backgrounds/0003.png" id="5_fy8yy"]
+[ext_resource type="Texture2D" uid="uid://myiy1w5nsipj" path="res://textures/ui/menu/backgrounds/MenuBackground.png" id="3_81l6r"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="6_13sgg"]
-[ext_resource type="Texture2D" uid="uid://b80snh2yt11x2" path="res://animations/menu/cenzorship/VS1.png" id="15_7jp70"]
-[ext_resource type="Texture2D" uid="uid://cgxferwi63xaf" path="res://animations/menu/cenzorship/VS2.png" id="16_3dmrc"]
-[ext_resource type="Texture2D" uid="uid://bwpokbp0j2qfk" path="res://animations/menu/cenzorship/VS3.png" id="17_81l6r"]
-[ext_resource type="Texture2D" uid="uid://b8nirl6jdeo0q" path="res://animations/menu/cenzorship/VS4.png" id="18_rsfmq"]
-[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/buttons/ButtonClicked.mp3" id="128_3oclc"]
-[ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/UI/buttons/ButtonHover.wav" id="132_i4wbw"]
+[ext_resource type="Texture2D" uid="uid://b80snh2yt11x2" path="res://textures/ui/menu/logos/cenzorship/VS1.png" id="15_7jp70"]
+[ext_resource type="Texture2D" uid="uid://cgxferwi63xaf" path="res://textures/ui/menu/logos/cenzorship/VS2.png" id="16_3dmrc"]
+[ext_resource type="Texture2D" uid="uid://bwpokbp0j2qfk" path="res://textures/ui/menu/logos/cenzorship/VS3.png" id="17_81l6r"]
+[ext_resource type="Texture2D" uid="uid://b8nirl6jdeo0q" path="res://textures/ui/menu/logos/cenzorship/VS4.png" id="18_rsfmq"]
+[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/ui/buttons/ButtonClicked.mp3" id="128_3oclc"]
+[ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/ui/buttons/ButtonHover.wav" id="132_i4wbw"]
 [ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/menu/IntoGame.wav" id="137_i4wbw"]
-[ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://textures/logos/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
+[ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://textures/ui/menu/logos/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_11y2r"]
 
 [sub_resource type="Theme" id="Theme_o0tnf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ufwb2"]
+load_path = "res://.godot/imported/0001.png-f26107e27014513ad435b80053862122.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6cdou"]
+load_path = "res://.godot/imported/0002.png-e9f4ac594c9bf742b7fd291dc9baf819.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i42df"]
+load_path = "res://.godot/imported/0003.png-0a5e7302af98a707f97b329b31a27d4b.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uj3em"]
 
@@ -49,13 +55,13 @@ animations = [{
 "texture": ExtResource("3_81l6r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_rsfmq")
+"texture": SubResource("CompressedTexture2D_ufwb2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_oi1it")
+"texture": SubResource("CompressedTexture2D_6cdou")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_fy8yy")
+"texture": SubResource("CompressedTexture2D_i42df")
 }],
 "loop": true,
 "name": &"MenuAnim_NEW",

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ihr427hih7bu"]
 
 [ext_resource type="Script" uid="uid://bdav4tnqn7xk1" path="res://scripts/animatronics/ardent.gd" id="1_2du4y"]
-[ext_resource type="AudioStream" uid="uid://dwbxxphirf3n8" path="res://sounds/jumpscare.mp3" id="2_byk1r"]
-[ext_resource type="AudioStream" uid="uid://dn0ik7y8e1xdc" path="res://sounds/Ardent/dragon-death-102428.mp3" id="3_byk1r"]
+[ext_resource type="AudioStream" uid="uid://dwbxxphirf3n8" path="res://sounds/game/jumpscare/jumpscare.mp3" id="2_byk1r"]
+[ext_resource type="AudioStream" uid="uid://dn0ik7y8e1xdc" path="res://sounds/game/jumpscare/ardent/dragon-death-102428.mp3" id="3_byk1r"]
 
 [node name="Control" type="Control" unique_id=122090073 node_paths=PackedStringArray("move_timer", "kill_timer", "anger_timer", "kill_sound")]
 layout_mode = 3

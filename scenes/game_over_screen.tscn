@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://n6bq2qax8afk" path="res://scripts/game_over_screen.gd" id="1_l37p8"]
 [ext_resource type="Texture2D" uid="uid://cemdp1eiq8hkn" path="res://textures/tex_ricky_deathscreen.png" id="2_cyfkl"]
 [ext_resource type="Texture2D" uid="uid://cvp2ri0h7ggpc" path="res://textures/tex_ardent_deathscreen.png" id="2_xx0b3"]
-[ext_resource type="AudioStream" uid="uid://r3tpkqqvbmu4" path="res://sounds/GameOverSound.mp3" id="3_jw6e5"]
+[ext_resource type="AudioStream" uid="uid://r3tpkqqvbmu4" path="res://sounds/game/GameOverSound.mp3" id="3_jw6e5"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="4_xx0b3"]
 
 [sub_resource type="Animation" id="Animation_cyfkl"]

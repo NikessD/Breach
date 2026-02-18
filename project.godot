@@ -49,11 +49,11 @@ folder_colors={
 "res://Scény/": "purple",
 "res://Sprity/": "green",
 "res://Zvuky/": "pink",
-"res://animations/": "orange",
+"res://fonts/": "red",
 "res://scenes/": "blue",
 "res://scripts/": "green",
 "res://sounds/": "purple",
-"res://textures/": "pink"
+"res://textures/": "orange"
 }
 
 [input]

@@ -47,15 +47,6 @@ func _process(delta: float) -> void:
 	if power <= 0 and power < 0:
 		blackout()
 
-	ominious_sound_number = randi_range(0,100000)
-	match ominious_sound_number:
-		1:
-			$OminiousSound1.stream("Omini")
-		2:
-			$OminiousSound2.play()
-		3:
-			$OminiousSound3.play()
-
 
 func button_anim_tutorial():
 	for x in range(5):
