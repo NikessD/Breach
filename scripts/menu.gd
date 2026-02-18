@@ -3,23 +3,27 @@ extends Control
 var loader: ResourceLoader
 var progress: = 0.0
 
+
 @onready var background: AnimatedSprite2D = $BackGround
+@onready var slider_volume_master: HSlider = $Settings/MarginContainer/VBoxContainer/volume_slider
+@onready var slider_volume_vfx: HSlider = $Settings/MarginContainer/VBoxContainer/volume_slider2
 
 
 func _ready() -> void:
-	var err = GlobalVars.config.load("user://save.cfg")	
-	if err != OK:
-		GlobalVars.config = ConfigFile.new()
-		GlobalVars.config.set_value("night number", "night_number", 1)
-		GlobalVars.config.save("user://save.cfg")
-	else:
-		GlobalVars.night_number = GlobalVars.config.get_value("night number", "night_number", GlobalVars.night_number)
-		if GlobalVars.night_number == null:
-			GlobalVars.config.set_value("night number", "night_number", 1)
-			$Menu/MenuButtons/Play.text = "NIGHT " + str(GlobalVars.night_number)
-		elif GlobalVars.night_number != 1:
-			$Menu/MenuButtons/Play.text = "NIGHT " + str(GlobalVars.night_number)
-
+	Saveload._load()
+	GlobalVars.night_number = Saveload.contents_to_save.night_number
+	GlobalVars.volume[1] = Saveload.contents_to_save.vfx_volume
+	GlobalVars.volume[0] = Saveload.contents_to_save.master_volume
+	slider_volume_master._set_volume()
+	slider_volume_vfx._set_volume()
+	$Menu/MenuButtons/Play.text = "NIGHT " + str(GlobalVars.night_number)
+	$StaticTimer.stop()
+	$Static.self_modulate.a = 10
+	var tween = create_tween()
+	tween.parallel().tween_property($Static, "self_modulate:a", 0.0, 0.5)
+	await get_tree().create_timer(0.5).timeout
+	$StaticTimer.start()
+	
 
 func _process(delta):
 	var status = ResourceLoader.load_threaded_get_status("res://scenes/game.tscn")
@@ -27,42 +31,6 @@ func _process(delta):
 	if status == ResourceLoader.THREAD_LOAD_LOADED:
 		var packed_scene = ResourceLoader.load_threaded_get("res://scenes/game.tscn")
 		get_tree().change_scene_to_packed(packed_scene)
-
-
-func volume(bus_index, value):
-	AudioServer.set_bus_volume_db(bus_index, value)
-
-
-func _on_master_volume_value_changed(value: float) -> void:
-		value = GlobalVars.masterVOL
-		volume(0,linear_to_db(value))
-		GlobalVars.config.set_value("options", "masterVOL", GlobalVars.masterVOL)
-		GlobalVars.config.save("res://save.cfg")
-
-
-func _on_vfx_value_changed(value: float) -> void:
-	var err = GlobalVars.config.load("res://save.cfg")	
-	if err != OK:
-		GlobalVars.config = ConfigFile.new()
-		GlobalVars.config.set_value("options", "vfxVOL", GlobalVars.vfxVOL)
-		GlobalVars.config.save("res://save.cfg")
-	else:
-		GlobalVars.vfxVOL = value
-		volume(2,linear_to_db(value))
-		GlobalVars.config.set_value("options", "vfxVOL", GlobalVars.vfxVOL)
-		GlobalVars.config.save("res://save.cfg")
-
-
-func _on_ambience_value_changed(value: float) -> void:
-	var err = GlobalVars.config.load("res://save.cfg")	
-	if err != OK:
-		GlobalVars.config = ConfigFile.new()
-		GlobalVars.config.set_value("options", "ambienceVOL", GlobalVars.ambienceVOL)
-		GlobalVars.config.save("res://save.cfg")
-	else:
-		GlobalVars.ambienceVOL = value
-		volume(1,linear_to_db(value))
-		GlobalVars.config.set_value("options", "ambienceVOL", GlobalVars.ambienceVOL)
 
 
 func _on_back_ground_change_timer_timeout() -> void:
@@ -90,10 +58,10 @@ func _on_static_timer_timeout() -> void:
 
 func _on_settings_pressed() -> void:
 	$Static.self_modulate.a = 1000
+	$ColorRect2.self_modulate.a = 1000
 	$StaticTimer.stop()
 	show_and_hide($Settings, $Menu)
 	$Menu/ClickSound.play()
-	$ColorRect2.set_visible(true)
 
 
 func _on_play_pressed() -> void:
@@ -106,7 +74,6 @@ func _on_play_pressed() -> void:
 	$LoadingScreen/NightNumber.text = "NIGHT " + str(GlobalVars.night_number)
 	$Menu.set_visible(false)
 	$LoadingScreen.set_visible(true)
-	$ColorRect2.set_visible(true)
 	for n in range(100):
 		$ColorRect2.self_modulate.a += 0.1
 		$Static.self_modulate.a += 0.1
@@ -133,10 +100,28 @@ func _on_exit_pressed() -> void:
 	$StaticTimer.start()
 	$Menu/ClickSound.play()
 	show_and_hide($Menu, $Settings)
-	$ColorRect2.set_visible(false)
+	$ColorRect2.self_modulate.a = 0
+	GlobalVars.volume[0] = db_to_linear(
+		AudioServer.get_bus_volume_db(slider_volume_master.bus_index)
+	)
+	GlobalVars.volume[1] = db_to_linear(
+		AudioServer.get_bus_volume_db(slider_volume_vfx.bus_index)
+	)
+	Saveload.contents_to_save.master_volume = GlobalVars.volume[0] 
+	Saveload.contents_to_save.vfx_volume = GlobalVars.volume[1] 
+	Saveload._save()
+	print(str(slider_volume_master.bus_index))
+	print(str(abs(slider_volume_vfx.bus_index)))
+	print("----------------------")
+	print(str(Saveload.contents_to_save.master_volume))
+	print(str(Saveload.contents_to_save.vfx_volume))
+	print("----------------------")
+	print(str(GlobalVars.volume[0]))
+	print(str(GlobalVars.volume[1]))
 
 
 func _on_exit_mouse_entered() -> void:
+	Saveload._save()
 	$Menu/HoverSound.play()
 
 

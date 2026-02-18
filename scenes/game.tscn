@@ -1427,7 +1427,7 @@ scale = Vector2(0.37447914, 0.35833335)
 texture = ExtResource("262_y8e17")
 
 [node name="CameraStatic" type="AnimatedSprite2D" parent="Office/UiPc/CamFeed" unique_id=33451919]
-self_modulate = Color(1, 1, 1, 0.36862746)
+self_modulate = Color(1, 1, 1, 0.47058824)
 position = Vector2(1156.5, 588.49994)
 scale = Vector2(0.5632813, 0.54027784)
 sprite_frames = SubResource("SpriteFrames_e3n7k")

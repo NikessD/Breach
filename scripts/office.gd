@@ -14,9 +14,9 @@ var previous_cam: int = 0
 @onready var node_office_animationplayer: AnimatedSprite2D = $AnimationPlayerOffice
 @onready var sprite_camerafeed: AnimatedSprite2D = $UiPc/CamFeed/CameraFeed
 @onready var sprite_camera_static: AnimatedSprite2D = $UiPc/CamFeed/CameraStatic
-@onready var button_view_left: Sprite2D = $ViewMoveButtons/ButtonLeftSide
+@onready var button_view_left: Button = $ViewMoveButtons/ButtonLeftSide
 @onready var button_view_right: Button = $ViewMoveButtons/ButtonRightSide
-@onready var sprite_lightbutton: Button = $LightButton
+@onready var sprite_lightbutton: TextureButton = $LightButton
 @onready var label_hour: Label = $UiPc/GameHour
 @onready var label_power: Label = $UiPc/Power
 

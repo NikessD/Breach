@@ -4,10 +4,8 @@ extends Control
 func _ready() -> void:
 	if GlobalVars.night_number < 6:
 		GlobalVars.night_number += 1
-	GlobalVars.config = ConfigFile.new()
-	GlobalVars.config.save("res://save.cfg")
-	GlobalVars.config.set_value("night number", "night", GlobalVars.night_number)
-	GlobalVars.config.save("res://save.cfg")
+	Saveload.contents_to_save.night_number = GlobalVars.night_number
+	Saveload._save()
 	$"Deep-strange-whoosh-183845".play()
 	$CenterContainer/Night.text = "SHIFT COMPLETED" 
 	

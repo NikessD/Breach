@@ -21,6 +21,4 @@ var ricky_killer: bool
 var blackout: bool = false
 
 #Volume control
-var masterVOL: float = 1
-var vfxVOL: float = 1
-var ambienceVOL: float = 1
+var volume: Array = [0.5, 0.5]

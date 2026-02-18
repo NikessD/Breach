@@ -10,7 +10,7 @@ extends Node2D
 
 
 func _ready():
-	office.begining_set_ai()
+	begining_set_ai()
 
 
 func _on_ambient_sounds_timer_timeout() -> void:
