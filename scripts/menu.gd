@@ -5,8 +5,8 @@ var progress: = 0.0
 
 
 @onready var background: AnimatedSprite2D = $BackGround
-@onready var slider_volume_master: HSlider = $Settings/MarginContainer/VBoxContainer/volume_slider
-@onready var slider_volume_vfx: HSlider = $Settings/MarginContainer/VBoxContainer/volume_slider2
+@onready var slider_volume_master: HSlider = $Settings/BackColor/MarginContainer/VBoxContainer/volume_slider
+@onready var slider_volume_vfx: HSlider = $Settings/BackColor/MarginContainer/VBoxContainer/volume_slider2
 
 
 func _ready() -> void:

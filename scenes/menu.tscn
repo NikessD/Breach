@@ -18,12 +18,6 @@
 
 [sub_resource type="Theme" id="Theme_o0tnf"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ufwb2"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6cdou"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i42df"]
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uj3em"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3oclc"]
@@ -51,15 +45,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_81l6r")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_ufwb2")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_6cdou")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_i42df")
 }],
 "loop": true,
 "name": &"MenuAnim_NEW",
@@ -378,6 +363,9 @@ animations = [{
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aaywf"]
 
+[sub_resource type="Theme" id="Theme_6cdou"]
+Button/fonts/font = ExtResource("6_13sgg")
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_81l6r"]
 load_path = "res://.godot/imported/af_button_behinddesign1.png-0db8f05af4357803e56d1df8d45112cd.ctex"
 
@@ -490,10 +478,9 @@ frame_progress = 0.4193967
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1061635636]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 39.0
-offset_top = -2.0
-offset_right = 1994.0
-offset_bottom = 1108.0
+offset_top = -19.0
+offset_right = 1955.0
+offset_bottom = 1091.0
 color = Color(0, 0, 0, 1)
 
 [node name="Static" type="AnimatedSprite2D" parent="." unique_id=1970209207]
@@ -515,11 +502,13 @@ offset_bottom = 40.0
 stream = ExtResource("132_i4wbw")
 volume_db = -23.378
 pitch_scale = 0.82
+bus = &"vfx"
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="Menu" unique_id=1796533387]
 stream = ExtResource("128_3oclc")
 volume_db = -15.0
 pitch_scale = 1.03
+bus = &"vfx"
 
 [node name="Background" type="Control" parent="Menu" unique_id=652655633]
 light_mask = 2
@@ -550,6 +539,7 @@ alignment = 1
 material = SubResource("CanvasItemMaterial_aaywf")
 layout_mode = 2
 focus_mode = 0
+theme = SubResource("Theme_6cdou")
 theme_override_colors/font_hover_color = Color(0.9490196, 0.06666667, 0.06666667, 1)
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 70
@@ -632,6 +622,108 @@ offset_top = 1011.0
 offset_right = 47.0
 offset_bottom = 1051.0
 
+[node name="AzimuthNormalFlag" type="Sprite2D" parent="Settings" unique_id=1905102023]
+position = Vector2(1795.0026, -35.999992)
+scale = Vector2(0.046790645, 0.046790656)
+texture = ExtResource("138_i4wbw")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Settings" unique_id=783571333]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -1011.0
+offset_right = 33.0
+offset_bottom = -971.0
+
+[node name="BackColor" type="ColorRect" parent="Settings" unique_id=710222781]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -951.0
+offset_right = 1835.0
+offset_bottom = 6.0
+color = Color(0, 0, 0, 0.48235294)
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/BackColor" unique_id=1508727168]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.5
+offset_top = -250.5
+offset_right = 332.5
+offset_bottom = 250.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/BackColor/MarginContainer" unique_id=994891813]
+layout_mode = 2
+alignment = 1
+
+[node name="Label4" type="Label" parent="Settings/BackColor/MarginContainer/VBoxContainer" unique_id=514071991]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.87, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.518484, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 90
+text = "SOUNDS"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Spacer3" type="Label" parent="Settings/BackColor/MarginContainer/VBoxContainer" unique_id=1030815747]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="Settings/BackColor/MarginContainer/VBoxContainer" unique_id=1997022161]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 50
+text = "Master"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="volume_slider" parent="Settings/BackColor/MarginContainer/VBoxContainer" unique_id=523417480 instance=ExtResource("13_6cdou")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Spacer" type="Label" parent="Settings/BackColor/MarginContainer/VBoxContainer" unique_id=355617558]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="Settings/BackColor/MarginContainer/VBoxContainer" unique_id=215161811]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 50
+text = "VFX"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="volume_slider2" parent="Settings/BackColor/MarginContainer/VBoxContainer" unique_id=1062225067 instance=ExtResource("13_6cdou")]
+layout_mode = 2
+bus_name = "vfx"
+
+[node name="Spacer2" type="Label" parent="Settings/BackColor/MarginContainer/VBoxContainer" unique_id=1674610384]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
 [node name="Exit" type="Button" parent="Settings" unique_id=1229623204]
 layout_mode = 0
 offset_left = 50.0
@@ -645,81 +737,6 @@ theme_override_font_sizes/font_size = 50
 text = "BACK
 "
 flat = true
-
-[node name="AzimuthNormalFlag" type="Sprite2D" parent="Settings" unique_id=1905102023]
-position = Vector2(1795.0026, -35.999992)
-scale = Vector2(0.046790645, 0.046790656)
-texture = ExtResource("138_i4wbw")
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Settings" unique_id=783571333]
-layout_mode = 0
-offset_left = -7.0
-offset_top = -1011.0
-offset_right = 33.0
-offset_bottom = -971.0
-
-[node name="MarginContainer" type="MarginContainer" parent="Settings" unique_id=1508727168]
-layout_mode = 0
-offset_left = 599.0
-offset_top = -1011.0
-offset_right = 1264.0
-offset_bottom = 70.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MarginContainer" unique_id=994891813]
-layout_mode = 2
-alignment = 1
-
-[node name="Label4" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=514071991]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.7309682, 0.7309682, 0.7309682, 1)
-theme_override_fonts/font = ExtResource("6_13sgg")
-theme_override_font_sizes/font_size = 90
-text = "SOUNDS"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Label3" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=1997022161]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_13sgg")
-theme_override_font_sizes/font_size = 50
-text = "Master"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="volume_slider" parent="Settings/MarginContainer/VBoxContainer" unique_id=523417480 instance=ExtResource("13_6cdou")]
-layout_mode = 2
-bus_name = "Master"
-
-[node name="Spacer" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=355617558]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_13sgg")
-theme_override_font_sizes/font_size = 40
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Label" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=215161811]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_13sgg")
-theme_override_font_sizes/font_size = 50
-text = "VFX"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="volume_slider2" parent="Settings/MarginContainer/VBoxContainer" unique_id=1062225067 instance=ExtResource("13_6cdou")]
-layout_mode = 2
-bus_name = "vfx"
-
-[node name="Spacer2" type="Label" parent="Settings/MarginContainer/VBoxContainer" unique_id=1674610384]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("6_13sgg")
-theme_override_font_sizes/font_size = 40
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
 
 [connection signal="timeout" from="StaticTimer" to="." method="_on_static_timer_timeout"]
 [connection signal="timeout" from="BackGroundChange_Timer" to="." method="_on_back_ground_change_timer_timeout"]

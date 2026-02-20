@@ -37,7 +37,7 @@ Saveload="*uid://d0bdpjm3akjqv"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
+window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://bjp745lt386vk"
 window/icon=""
