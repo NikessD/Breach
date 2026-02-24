@@ -2,7 +2,7 @@ extends Node
 
 #General 
 var night_number: int 
-var hour: int = 1
+var hour: int = 0
 var config = ConfigFile.new()
 
 #View controll

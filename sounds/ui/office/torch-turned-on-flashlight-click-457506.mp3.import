@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://1wlyih21qbd7"
-path="res://.godot/imported/torch-turned-on-flashlight-click-457506.mp3-898b1fb1390edaad8155dc318cfd8add.mp3str"
+path="res://.godot/imported/torch-turned-on-flashlight-click-457506.mp3-efced991d9d1cc899b67dc7951f3f143.mp3str"
 
 [deps]
 
-source_file="res://sounds/ui/office/torch-turned-on-flashlight-click-457506.mp3"
-dest_files=["res://.godot/imported/torch-turned-on-flashlight-click-457506.mp3-898b1fb1390edaad8155dc318cfd8add.mp3str"]
+source_file="res://sounds/UI/office/torch-turned-on-flashlight-click-457506.mp3"
+dest_files=["res://.godot/imported/torch-turned-on-flashlight-click-457506.mp3-efced991d9d1cc899b67dc7951f3f143.mp3str"]
 
 [params]
 

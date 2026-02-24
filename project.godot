@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Breach"
-config/version="v0.8.3"
+config/version="v0.9.0"
 run/main_scene="uid://bhqcnvyxjgoh1"
 config/features=PackedStringArray("4.6")
 run/max_fps=60
@@ -37,7 +37,6 @@ Saveload="*uid://d0bdpjm3akjqv"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://bjp745lt386vk"
 window/icon=""

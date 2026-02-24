@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://e7smwe6jk6qf"
-path="res://.godot/imported/river's end.mp3-09aea9fb1646d23499d82ebdf28dbc6f.mp3str"
+path="res://.godot/imported/river's end.mp3-062d3ca946d448c899438a55ec5917aa.mp3str"
 
 [deps]
 
-source_file="res://sounds/menu/music/river's end.mp3"
-dest_files=["res://.godot/imported/river's end.mp3-09aea9fb1646d23499d82ebdf28dbc6f.mp3str"]
+source_file="res://sounds/Menu/music/river's end.mp3"
+dest_files=["res://.godot/imported/river's end.mp3-062d3ca946d448c899438a55ec5917aa.mp3str"]
 
 [params]
 
