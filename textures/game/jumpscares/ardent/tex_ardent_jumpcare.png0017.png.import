@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn60yte3y7vju"
-path="res://.godot/imported/tex_cursor.png-df5cf7eb9adfa5de9ee720302ab6b171.ctex"
+uid="uid://ci1yw2ufwnxve"
+path="res://.godot/imported/tex_ardent_jumpcare.png0017.png-d60d593cdd7c4fc693a4c081479a4bd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tex_cursor.png"
-dest_files=["res://.godot/imported/tex_cursor.png-df5cf7eb9adfa5de9ee720302ab6b171.ctex"]
+source_file="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0017.png"
+dest_files=["res://.godot/imported/tex_ardent_jumpcare.png0017.png-d60d593cdd7c4fc693a4c081479a4bd2.ctex"]
 
 [params]
 

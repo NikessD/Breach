@@ -560,11 +560,6 @@ offset_top = 1011.0
 offset_right = 47.0
 offset_bottom = 1051.0
 
-[node name="AzimuthNormalFlag" type="Sprite2D" parent="Settings" unique_id=1905102023]
-position = Vector2(1795.0026, -35.999992)
-scale = Vector2(0.046790645, 0.046790656)
-texture = ExtResource("138_i4wbw")
-
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Settings" unique_id=783571333]
 layout_mode = 0
 offset_left = -7.0
@@ -675,6 +670,11 @@ theme_override_font_sizes/font_size = 50
 text = "BACK
 "
 flat = true
+
+[node name="AzimuthNormalFlag" type="Sprite2D" parent="Settings" unique_id=1905102023]
+position = Vector2(1795.0026, -36)
+scale = Vector2(0.046790645, 0.046790656)
+texture = ExtResource("138_i4wbw")
 
 [connection signal="timeout" from="StaticTimer" to="." method="_on_static_timer_timeout"]
 [connection signal="timeout" from="BackGroundChange_Timer" to="." method="_on_back_ground_change_timer_timeout"]

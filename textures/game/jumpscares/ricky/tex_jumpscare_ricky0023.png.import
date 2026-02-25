@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn60yte3y7vju"
-path="res://.godot/imported/tex_cursor.png-df5cf7eb9adfa5de9ee720302ab6b171.ctex"
+uid="uid://copeoipe0yyq1"
+path="res://.godot/imported/tex_jumpscare_ricky0023.png-386ae676f210fd057db818dc8fd26a3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/tex_cursor.png"
-dest_files=["res://.godot/imported/tex_cursor.png-df5cf7eb9adfa5de9ee720302ab6b171.ctex"]
+source_file="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0023.png"
+dest_files=["res://.godot/imported/tex_jumpscare_ricky0023.png-386ae676f210fd057db818dc8fd26a3d.ctex"]
 
 [params]
 
