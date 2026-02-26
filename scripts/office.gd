@@ -3,8 +3,9 @@ extends Node
 var tutorial_door_view_first: bool = false
 var tutorial_camera_view_first: bool = false
 var ominious_sound_number: int = 0
-var power: float = 100
 var previous_cam: int = 0
+
+@export var power: float = 100
 
 @onready var ricky: Animatronic = $Ricky
 @onready var ardent: Control  = $Ardent
@@ -44,7 +45,7 @@ func _process(delta: float) -> void:
 
 	power = snapped(power,0.001) 
 	label_power.text = str(power) + " POWER"
-	if power <= 0 and power < 0:
+	if power <= 0 and not GlobalVars.blackout:
 		blackout()
 
 
@@ -127,7 +128,8 @@ func _on_button_left_side_mouse_entered():
 func _on_timer_hour_timeout() -> void:
 	GlobalVars.hour += 1
 	label_hour.text = str(GlobalVars.hour) + ":00"
-	
+	if !$Tutorial.visible:
+		$"../TutorialButton".set_visible(false)
 	if GlobalVars.hour == 6:
 		get_tree().change_scene_to_file("res://scenes/night_win_screen.tscn")
 
@@ -256,18 +258,26 @@ func _on_cam_9_button_pressed() -> void:
 
 
 func blackout():
-	node_office_animationplayer.play("anim_blackout")
+	$"../TutorialButton".set_visible(false)
+	$LightButton.set_visible(false)
 	ardent.move_timer.stop()
 	ricky.move_timer.stop()
 	GlobalVars.blackout = true
+	if GlobalVars.view_left:
+		node_office_animationplayer.play_backwards("animation_view_left")
+	elif GlobalVars.view_right:
+		node_office_animationplayer.play_backwards("animation_view_right")
+	await get_tree().create_timer(0.25).timeout
+	node_office_animationplayer.play("anim_blackout")
 	$UiPc.set_visible(false)
-	$Buttons.set_visible(false)
+	node_viewbuttons.set_visible(false)
 	sprite_lightbutton.set_visible(false)
 	$PowerDownSound.play() 
-	if ardent.killer:
-		ardent.kill()
-	else:
-		ricky.kill()
+	$"../ComputerFanSound".stop()
+	var random = randi_range(10,30)
+	var death_time = random - GlobalVars.night_number 
+	await get_tree().create_timer(death_time).timeout
+	ricky.kill()
 
 
 func cam_button_clicked():
@@ -379,3 +389,10 @@ func _on_backroom_button_pressed() -> void:
 	GlobalVars.camera_clicked = 10
 	GlobalVars.camera_ID = 9
 	cam_button_clicked()
+
+
+func _on_timer_blinking_timeout() -> void:
+	if GlobalVars.view_front:
+		var random = randi_range(0,100)
+		if random < 10:
+			$AnimationPlayerOffice.play("animation_view_front_blinking")

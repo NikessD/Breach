@@ -79,7 +79,7 @@ func get_cam(cam_i):
 		9:
 			return camera_9_compute()
 		10:
-			return camera_10_compute()		
+			return camera_10_compute()
 		11:	
 			return camera_11_compute()
 

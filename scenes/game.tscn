@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dnprw1g0tlcm8" path="res://scripts/game.gd" id="1_pgf4p"]
 [ext_resource type="AudioStream" uid="uid://83g8lvti7f0d" path="res://sounds/game/CamBuzzSound.mp3" id="4_bdqdv"]
 [ext_resource type="AudioStream" uid="uid://dsfejvc4etgcy" path="res://sounds/game/PowerDownSound.mp3" id="8_qouja"]
+[ext_resource type="Texture2D" uid="uid://didishfi1tj3j" path="res://textures/game/office_views/view_front/txt_view_front_dimmed.png" id="8_x2ts8"]
+[ext_resource type="Texture2D" uid="uid://d2icw08i8wh62" path="res://textures/game/office_views/view_front/txt_view_front_blackout.png" id="9_1fiuy"]
 [ext_resource type="AudioStream" uid="uid://1wlyih21qbd7" path="res://sounds/UI/office/torch-turned-on-flashlight-click-457506.mp3" id="9_ilysl"]
 [ext_resource type="AudioStream" uid="uid://c6wrh1kqs2vwa" path="res://sounds/UI/office/CamSelected.mp3" id="10_02fa5"]
 [ext_resource type="Texture2D" uid="uid://cs1lbhuwberlw" path="res://textures/game/office_views/view_front/txt_view_front.png" id="12_331gb"]
@@ -168,11 +170,98 @@ animations = [{
 "texture": ExtResource("12_331gb")
 }, {
 "duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
 "texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1fiuy")
 }],
 "loop": false,
 "name": &"anim_blackout",
-"speed": 60.0
+"speed": 40.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -261,9 +350,56 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_331gb")
 }],
-"loop": false,
+"loop": true,
 "name": &"animation_view_front",
 "speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_331gb")
+}],
+"loop": false,
+"name": &"animation_view_front_blinking",
+"speed": 60.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -318,36 +454,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("26_gm07v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_rjeju")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_rjeju")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_gm07v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_rjeju")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_gm07v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_rjeju")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_rjeju")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_gm07v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_rjeju")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_texxq")
 }],
 "loop": false,
 "name": &"animation_view_left_animatronic",
@@ -410,6 +516,36 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("26_gm07v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rjeju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rjeju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gm07v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rjeju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gm07v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rjeju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rjeju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gm07v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rjeju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_texxq")
 }],
 "loop": false,
 "name": &"animation_view_left_scared_away",
@@ -1181,6 +1317,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1o6bn")
+power = 10.0
 metadata/_edit_use_anchors_ = true
 
 [node name="WalkSound" type="AudioStreamPlayer2D" parent="Office" unique_id=1693712707]
@@ -1202,7 +1339,7 @@ bus = &"vfx"
 
 [node name="PowerDownSound" type="AudioStreamPlayer" parent="Office" unique_id=1388111080]
 stream = ExtResource("8_qouja")
-volume_db = -22.486
+volume_db = -17.359
 
 [node name="CamSelected" type="AudioStreamPlayer" parent="Office" unique_id=1548058344]
 stream = ExtResource("10_02fa5")
@@ -1214,6 +1351,7 @@ bus = &"vfx"
 position = Vector2(960.99994, 543.00006)
 sprite_frames = SubResource("SpriteFrames_pidd4")
 animation = &"anim_blackout"
+autoplay = "animation_view_front"
 
 [node name="UiPc" type="Control" parent="Office" unique_id=827521990]
 material = SubResource("ShaderMaterial_wljb1")
@@ -1231,7 +1369,7 @@ position = Vector2(1191.2001, 529.0062)
 rotation = -5.54186e-05
 scale = Vector2(0.8230823, 0.78632927)
 sprite_frames = SubResource("SpriteFrames_7025r")
-animation = &"Cam1Animatronic"
+animation = &"Cam8Nothing"
 
 [node name="Ardent" type="Sprite2D" parent="Office/UiPc/CamFeed" unique_id=1773597370]
 visible = false
@@ -1247,8 +1385,7 @@ scale = Vector2(0.49218747, 0.47638887)
 sprite_frames = SubResource("SpriteFrames_e3n7k")
 animation = &"CamStatic"
 autoplay = "CamStatic"
-frame = 37
-frame_progress = 0.8207506
+frame_progress = 0.12718956
 
 [node name="Cameras" type="Label" parent="Office/UiPc" unique_id=1264887270]
 layout_mode = 0
@@ -1308,9 +1445,9 @@ stretch_mode = 0
 
 [node name="DinningHallButton" type="TextureButton" parent="Office/UiPc" unique_id=2065501894]
 layout_mode = 0
-offset_left = 538.0
+offset_left = 536.0
 offset_top = 438.0
-offset_right = 578.0
+offset_right = 576.0
 offset_bottom = 478.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
@@ -1356,9 +1493,9 @@ stretch_mode = 0
 
 [node name="HallwayRightButton" type="TextureButton" parent="Office/UiPc" unique_id=1898108746]
 layout_mode = 0
-offset_left = 568.0
+offset_left = 567.0
 offset_top = 560.0
-offset_right = 608.0
+offset_right = 607.0
 offset_bottom = 600.0
 toggle_mode = true
 texture_normal = ExtResource("273_njubb")
@@ -1391,6 +1528,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="BackroomButton" type="TextureButton" parent="Office/UiPc" unique_id=1134427856]
+visible = false
 layout_mode = 0
 offset_left = 670.0
 offset_top = 613.0
@@ -1412,20 +1550,38 @@ offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
+[node name="TutorialTextCameras2" type="Label" parent="Office/Tutorial/CamFeed" unique_id=875232659]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8543689
+anchor_top = -5.611111
+anchor_right = 1.1812298
+anchor_bottom = -5.2222223
+offset_left = 672.82526
+offset_top = 846.44446
+offset_right = 1005.7508
+offset_bottom = 902.8889
+theme_override_fonts/font = ExtResource("213_vpp0n")
+theme_override_font_sizes/font_size = 14
+text = "<----Animatronic se může nacházet i v této místnosti, 
+ale nepůjde ho vidět, proto je důležité ho sledovat 
+a mít přehled o jeho poloze"
+metadata/_edit_use_anchors_ = true
+
 [node name="TutorialTextCameras" type="Label" parent="Office/Tutorial/CamFeed" unique_id=2051871003]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -1.6
-anchor_top = -7.675
-anchor_right = -1.6
-anchor_bottom = -6.35
+anchor_left = 1.0
+anchor_top = -6.3
+anchor_right = 1.0
+anchor_bottom = -4.975
 offset_left = 224.0
 offset_top = 690.0
 offset_right = 533.0
 offset_bottom = 727.0
 theme_override_fonts/font = ExtResource("213_vpp0n")
 theme_override_font_sizes/font_size = 14
-text = "Tady přepínáš kamery ------------>
+text = "Tady přepínáš kamery ------>
 Stačí kliknout na kameru 
 na kterou chceš přepnout"
 metadata/_edit_use_anchors_ = true
@@ -1433,10 +1589,10 @@ metadata/_edit_use_anchors_ = true
 [node name="TutorialTextTimePower" type="Label" parent="Office/Tutorial/CamFeed" unique_id=641085304]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 12.4
-anchor_top = 6.05
-anchor_right = 17.950003
-anchor_bottom = 8.975
+anchor_left = 15.275
+anchor_top = 11.025
+anchor_right = 20.825003
+anchor_bottom = 12.75
 offset_top = -1.5258789e-05
 offset_right = -0.00012207031
 theme_override_fonts/font = ExtResource("213_vpp0n")
@@ -1449,10 +1605,10 @@ metadata/_edit_use_anchors_ = true
 [node name="TutorialTextameraFeed" type="Label" parent="Office/Tutorial/CamFeed" unique_id=696461914]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.325
-anchor_top = -2.275
-anchor_right = -0.325
-anchor_bottom = -0.725
+anchor_left = -0.95
+anchor_top = -0.95
+anchor_right = -0.95
+anchor_bottom = 0.6
 offset_left = 783.0
 offset_top = 283.0
 offset_right = 1729.0
@@ -1587,8 +1743,23 @@ position = Vector2(980.1891, 538.99994)
 scale = Vector2(1.0410849, 1.0388888)
 sprite_frames = SubResource("SpriteFrames_pgf4p")
 animation = &"ricky_jumpscare"
-frame = 40
-frame_progress = 1.0
+
+[node name="TimerBlinking" type="Timer" parent="." unique_id=7158448]
+wait_time = 10.0
+autostart = true
+
+[node name="TutorialButton" type="Button" parent="." unique_id=254201818]
+offset_left = 937.0
+offset_top = 4.0
+offset_right = 1036.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0, 0, 1)
+theme_override_fonts/font = ExtResource("176_4kxhu")
+theme_override_font_sizes/font_size = 13
+text = "Click for 
+tutorial"
+flat = true
 
 [connection signal="pressed" from="Office/UiPc/StageButton" to="Office" method="_on_stage_button_pressed"]
 [connection signal="pressed" from="Office/UiPc/DinningHallButton" to="Office" method="_on_dinning_hall_button_pressed"]
@@ -1605,3 +1776,5 @@ frame_progress = 1.0
 [connection signal="button_up" from="Office/LightButton" to="Office" method="_on_light_button_button_up"]
 [connection signal="timeout" from="AmbientSounds/AmbientSoundsTimer" to="." method="_on_ambient_sounds_timer_timeout"]
 [connection signal="timeout" from="TimerHour" to="Office" method="_on_timer_hour_timeout"]
+[connection signal="timeout" from="TimerBlinking" to="Office" method="_on_timer_blinking_timeout"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]

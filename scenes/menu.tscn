@@ -428,7 +428,6 @@ scale = Vector2(1.5351563, 1.5333334)
 sprite_frames = SubResource("SpriteFrames_i6lef")
 animation = &"Static"
 autoplay = "Static"
-frame_progress = 0.39792415
 metadata/_edit_lock_ = true
 
 [node name="Menu" type="Control" parent="." unique_id=2134854497]
@@ -522,7 +521,7 @@ offset_top = 1053.0
 offset_right = 1918.0
 offset_bottom = 1076.0
 theme_override_fonts/font = ExtResource("6_13sgg")
-text = "VER - 0.9.0"
+text = "VER - 1.0.0"
 
 [node name="LoadingScreen" type="Control" parent="." unique_id=1262903751]
 visible = false

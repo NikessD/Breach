@@ -50,3 +50,15 @@ func begining_set_ai():
 		null:
 			ardent.ai = 20
 			ricky.ai = 20
+
+
+func _on_tutorial_button_pressed() -> void:
+	if $Office/Tutorial/CamFeed.visible and GlobalVars.view_front:
+		$Office/Tutorial/CamFeed.set_visible(false)
+	elif !$Office/Tutorial/CamFeed.visible and GlobalVars.view_front:
+		$Office/Tutorial/CamFeed.set_visible(true)
+		
+	if $Office/Tutorial/SideView.visible and !GlobalVars.view_front:
+		$Office/Tutorial/SideView.set_visible(false)
+	elif !$Office/Tutorial/SideView.visible and !GlobalVars.view_front:
+		$Office/Tutorial/SideView.set_visible(true)

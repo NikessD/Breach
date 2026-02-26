@@ -2,12 +2,190 @@
 
 [ext_resource type="Script" uid="uid://coejka0k6xpmu" path="res://scripts/win_screen.gd" id="1_leokh"]
 [ext_resource type="AudioStream" uid="uid://d125n6yer5qvm" path="res://sounds/game/deep-strange-whoosh-183845.mp3" id="2_ka34s"]
-[ext_resource type="Texture2D" path="res://textures/DefaultBackground_Kreslicí plátno 1.png" id="2_srivd"]
-
+[ext_resource type="Texture2D" uid="uid://lhy1nbg35ae0" path="res://textures/staticbuzz/StaticTexture (1).png" id="3_o7rnw"]
+[ext_resource type="Texture2D" uid="uid://b7eat6ih8s1ri" path="res://textures/staticbuzz/StaticTexture (2).png" id="4_ra01a"]
+[ext_resource type="Texture2D" uid="uid://v32mhqvppn1t" path="res://textures/staticbuzz/StaticTexture (3).png" id="5_0ol00"]
+[ext_resource type="Texture2D" uid="uid://df3nld8pyyk61" path="res://textures/staticbuzz/StaticTexture (4).png" id="6_iqwqv"]
 
 [sub_resource type="SystemFont" id="SystemFont_0eiwq"]
 font_names = PackedStringArray("LCD Solid")
 oversampling = 10.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_leokh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ol00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ra01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqwqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o7rnw")
+}],
+"loop": true,
+"name": &"Static",
+"speed": 30.0
+}]
 
 [node name="Control" type="Control" unique_id=844730635]
 layout_mode = 3
@@ -21,11 +199,6 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_leokh")
-
-[node name="DefaultBackgroundKreslicíPlátno1" type="Sprite2D" parent="." unique_id=958290896]
-position = Vector2(955, 541)
-scale = Vector2(1.02083, 1.04259)
-texture = ExtResource("2_srivd")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1215152783]
 layout_mode = 1
@@ -58,5 +231,13 @@ pitch_scale = 0.78
 [node name="Timer" type="Timer" parent="." unique_id=1344553310]
 wait_time = 6.823
 autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1220215591]
+visible = false
+position = Vector2(963.55554, 545)
+scale = Vector2(1.5305555, 1.5305556)
+sprite_frames = SubResource("SpriteFrames_leokh")
+animation = &"Static"
+frame_progress = 0.9386576
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -11,4 +11,7 @@ func _ready() -> void:
 	
 
 func _on_timer_timeout() -> void:
+	$AnimatedSprite2D.set_visible(true)
+	$AnimatedSprite2D.play("Static")
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
