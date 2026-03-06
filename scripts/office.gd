@@ -396,3 +396,7 @@ func _on_timer_blinking_timeout() -> void:
 		var random = randi_range(0,100)
 		if random < 10:
 			$AnimationPlayerOffice.play("animation_view_front_blinking")
+
+
+func _on_shock_button_pressed() -> void:
+	camera_static()
