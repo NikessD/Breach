@@ -42,6 +42,7 @@
 [ext_resource type="AudioStream" uid="uid://nlilqa01kk1y" path="res://sounds/game/ComputerFanSoundLOOP.mp3" id="49_8qswn"]
 [ext_resource type="Texture2D" uid="uid://c26r1b2bwyau7" path="res://textures/game/office_views/right/view_door/flashlight_on_ricky.png" id="52_331gb"]
 [ext_resource type="Texture2D" uid="uid://cj7svb5o38ibm" path="res://textures/game/office_views/right/view_door/flashlight_on_empty.png" id="53_bdqdv"]
+[ext_resource type="Texture2D" uid="uid://cme052b1td8oq" path="res://textures/cage_temp.png" id="58_fikvi"]
 [ext_resource type="Texture2D" uid="uid://b3dyq8mt5wcsl" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0004.png" id="72_1uieh"]
 [ext_resource type="Texture2D" uid="uid://bg4mcmyvjyl75" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0005.png" id="73_x2ts8"]
 [ext_resource type="Texture2D" uid="uid://cd3fys8q56d1e" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0006.png" id="74_1fiuy"]
@@ -1370,6 +1371,13 @@ scale = Vector2(0.8230823, 0.78632927)
 sprite_frames = SubResource("SpriteFrames_7025r")
 animation = &"Cam1Animatronic"
 autoplay = "Cam1Animatronic"
+
+[node name="Cage" type="Sprite2D" parent="Office/UiPc/CamFeed" unique_id=1413922300]
+visible = false
+modulate = Color(0.601223, 0.601223, 0.601223, 1)
+position = Vector2(1183.5, 526.5)
+scale = Vector2(0.4914063, 0.44027787)
+texture = ExtResource("58_fikvi")
 
 [node name="Ardent" type="Sprite2D" parent="Office/UiPc/CamFeed" unique_id=1773597370]
 visible = false
