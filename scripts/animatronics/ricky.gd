@@ -30,10 +30,10 @@ func _on_move_timer_timeout() -> void:
 
 func get_cam(cam_i):
 	match cam_i:
-		1, 3:
+		1:
 			return 2
 		2: 
-			return randi_range(3,4)
+			return 4
 		4:
 			var side_choose = randi_range(1, 2)
 			if previous_side == side_choose:

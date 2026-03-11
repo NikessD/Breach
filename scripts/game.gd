@@ -5,6 +5,7 @@ extends Node2D
 @onready var office = $Office
 @onready var ricky = $Office/Ricky
 @onready var ardent = $Office/Ardent
+@onready var cage = $Office/Cage
 @onready var creepy_ambience1: AudioStreamPlayer = $AmbientSounds/CreepyAmbience1
 @onready var creepy_ambience2: AudioStreamPlayer = $AmbientSounds/CreepyAmbience2
 
@@ -32,24 +33,31 @@ func begining_set_ai():
 		1:
 			ardent.ai = 0
 			ricky.ai = 3
+			cage.ai = 1
 		2:
 			ardent.ai = 1
 			ricky.ai = 5
+			cage.ai = 4
 		3:
 			ardent.ai = 3
 			ricky.ai = 7
+			cage.ai = 6
 		4:
 			ardent.ai = 4
 			ricky.ai = 9
+			cage.ai = 8
 		5:
 			ardent.ai = 6
 			ricky.ai = 12
+			cage.ai = 10
 		6:
 			ardent.ai = 20
 			ricky.ai = 20
+			cage.ai = 20
 		null:
 			ardent.ai = 20
 			ricky.ai = 20
+			cage.ai = 20
 
 
 func _on_tutorial_button_pressed() -> void:

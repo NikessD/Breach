@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://c26r1b2bwyau7" path="res://textures/game/office_views/right/view_door/flashlight_on_ricky.png" id="52_331gb"]
 [ext_resource type="Texture2D" uid="uid://cj7svb5o38ibm" path="res://textures/game/office_views/right/view_door/flashlight_on_empty.png" id="53_bdqdv"]
 [ext_resource type="Texture2D" uid="uid://cme052b1td8oq" path="res://textures/cage_temp.png" id="58_fikvi"]
+[ext_resource type="PackedScene" uid="uid://bidd0qrfm35ne" path="res://scripts/animatronics/cage.tscn" id="71_l0ny2"]
 [ext_resource type="Texture2D" uid="uid://b3dyq8mt5wcsl" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0004.png" id="72_1uieh"]
 [ext_resource type="Texture2D" uid="uid://bg4mcmyvjyl75" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0005.png" id="73_x2ts8"]
 [ext_resource type="Texture2D" uid="uid://cd3fys8q56d1e" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0006.png" id="74_1fiuy"]
@@ -131,6 +132,7 @@
 [ext_resource type="Texture2D" uid="uid://cnekumqd5s2ka" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0043.png" id="131_x5xn3"]
 [ext_resource type="Texture2D" uid="uid://cfyts1yg3xqnv" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0044.png" id="132_152wt"]
 [ext_resource type="Texture2D" uid="uid://du6ngo3yl4m18" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0045.png" id="133_rjeju"]
+[ext_resource type="AudioStream" uid="uid://c1dpivkf7vht5" path="res://sounds/game/speaker-buzz-82989.mp3" id="143_iwdqm"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="176_4kxhu"]
 [ext_resource type="AudioStream" uid="uid://dms1qvpickor2" path="res://sounds/game/ambient/creepyambience1.mp3" id="205_oa88d"]
 [ext_resource type="AudioStream" uid="uid://j4o5pm4okeih" path="res://sounds/game/ambient/creepyambience2.mp3" id="206_lygv6"]
@@ -1180,6 +1182,92 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("72_1uieh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_x2ts8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_1fiuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_fikvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_iwdqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_l0ny2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_h1bth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_6cwij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_k2jov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_osiit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_wvj0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_d1om7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_g0jan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_uh8v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_1fd0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_0mjh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_bkxpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_y2jf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_g33qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_hy75c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_vaoao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_uaaia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_k4q15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_7bpt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_rowo6")
+}],
+"loop": false,
+"name": &"cage_jumpscare",
+"speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("93_deyyv")
 }, {
 "duration": 1.0,
@@ -1305,6 +1393,131 @@ animations = [{
 "loop": false,
 "name": &"ricky_jumpscare",
 "speed": 40.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fikvi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_n5r5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_y8e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_y8e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_y8e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_y8e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_y8e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_y8e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_bqsge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_n5r5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_n5r5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_n5r5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_n5r5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_y8e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_y8e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_y8e17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_x1ulb")
+}],
+"loop": false,
+"name": &"halucination",
+"speed": 60.0
 }]
 
 [node name="Game" type="Node2D" unique_id=801217745 groups=["Persist"]]
@@ -1727,6 +1940,9 @@ stretch_mode = 0
 
 [node name="Ricky" parent="Office" unique_id=573207625 instance=ExtResource("245_gpphh")]
 
+[node name="Cage" parent="Office" unique_id=1402374273 instance=ExtResource("71_l0ny2")]
+layout_mode = 1
+
 [node name="Ardent" parent="Office" unique_id=455127975 instance=ExtResource("246_ilysl")]
 layout_mode = 1
 camera = 10
@@ -1772,7 +1988,7 @@ modulate = Color(0.9818757, 0.9818757, 0.9818757, 1)
 position = Vector2(980.1891, 538.99994)
 scale = Vector2(1.0410849, 1.0388888)
 sprite_frames = SubResource("SpriteFrames_pgf4p")
-animation = &"ricky_jumpscare"
+animation = &"cage_jumpscare"
 
 [node name="TimerBlinking" type="Timer" parent="." unique_id=7158448]
 wait_time = 10.0
@@ -1791,7 +2007,28 @@ text = "Click for
 tutorial"
 flat = true
 
+[node name="TimerHalucination" type="Timer" parent="." unique_id=1637656348]
+wait_time = 30.0
+autostart = true
+
+[node name="Halucination" type="AnimatedSprite2D" parent="." unique_id=1073232393]
+visible = false
+modulate = Color(10.450525, 10.450525, 10.450525, 0.1882353)
+self_modulate = Color(5.2297173, 5.2297173, 5.2297173, 1)
+position = Vector2(963, 540)
+sprite_frames = SubResource("SpriteFrames_fikvi")
+animation = &"halucination"
+frame = 38
+frame_progress = 1.0
+
+[node name="HalucinationSound" type="AudioStreamPlayer" parent="." unique_id=1904491496]
+stream = ExtResource("143_iwdqm")
+volume_db = -18.27
+pitch_scale = 0.79
+bus = &"vfx"
+
 [connection signal="pressed" from="Office/UiPc/ShockButton" to="Office" method="_on_shock_button_pressed"]
+[connection signal="pressed" from="Office/UiPc/ShockButton" to="Office/Cage" method="_on_shock_button_pressed"]
 [connection signal="pressed" from="Office/UiPc/StageButton" to="Office" method="_on_stage_button_pressed"]
 [connection signal="pressed" from="Office/UiPc/DinningHallButton" to="Office" method="_on_dinning_hall_button_pressed"]
 [connection signal="pressed" from="Office/UiPc/PASButton" to="Office" method="_on_pas_button_pressed"]
@@ -1809,3 +2046,4 @@ flat = true
 [connection signal="timeout" from="TimerHour" to="Office" method="_on_timer_hour_timeout"]
 [connection signal="timeout" from="TimerBlinking" to="Office" method="_on_timer_blinking_timeout"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="timeout" from="TimerHalucination" to="Office" method="_on_timer_halucination_timeout"]

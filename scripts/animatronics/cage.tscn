@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bidd0qrfm35ne"]
+
+[ext_resource type="Script" uid="uid://bv8p4nf1iqbug" path="res://cage.gd" id="1_05tt0"]
+
+[node name="Cage" type="Control" unique_id=1402374273 node_paths=PackedStringArray("move_timer", "kill_sound")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05tt0")
+nickname = "Cage"
+move_timer = NodePath("MoveTimer")
+kill_sound = NodePath("KillSound")
+
+[node name="MoveTimer" type="Timer" parent="." unique_id=33933179]
+wait_time = 5.0
+autostart = true
+
+[node name="KillSound" type="AudioStreamPlayer" parent="." unique_id=1129992587]
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

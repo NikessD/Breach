@@ -7,6 +7,7 @@ var previous_cam: int = 0
 
 @export var power: float = 100
 
+@onready var cage: Control = $Cage
 @onready var ricky: Animatronic = $Ricky
 @onready var ardent: Control  = $Ardent
 @onready var node_camera_tutorial: Control = $Tutorial/CamFeed
@@ -400,3 +401,29 @@ func _on_timer_blinking_timeout() -> void:
 
 func _on_shock_button_pressed() -> void:
 	camera_static()
+
+
+func _on_timer_halucination_timeout() -> void:
+	var random = randi_range(1,10)
+	if random > 9:
+		$"../HalucinationSound".play()
+		$"../Halucination".set_visible(true)
+		$"../Halucination".play("halucination")
+		await get_tree().create_timer(0.6).timeout
+		$"../Halucination".set_visible(false)
+		$"../Halucination".stop()
+		$"../HalucinationSound".stop()
+		
+		
+		
+		
+func camera_cage_stage():
+	match cage.stage:
+		0:
+			sprite_camerafeed.frame = 0
+		1:
+			sprite_camerafeed.frame = 1
+		2:
+			sprite_camerafeed.frame = 2
+		3:
+			sprite_camerafeed.frame = 3
