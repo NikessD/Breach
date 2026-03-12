@@ -112,7 +112,6 @@ func _on_exit_pressed() -> void:
 	Saveload._save()
 
 
-
 func _on_exit_mouse_entered() -> void:
 	Saveload._save()
 	$Menu/HoverSound.play()
@@ -136,3 +135,22 @@ func _on_quit_mouse_entered() -> void:
 func _on_settings_mouse_entered() -> void:
 	$Menu/HoverSound.play()
 	$Menu/MenuButtons/ButtonBackgoundSprite.set_position(Vector2(125, 207))
+
+
+func _on_custom_night_pressed() -> void:
+	$Menu/ClickSound.play()
+	show_and_hide($CustomNight, $Menu)
+	$Static.self_modulate.a = 1000
+	$ColorRect2.self_modulate.a = 1000
+	$StaticTimer.stop()
+
+
+func _on_exit_custom_night_pressed() -> void:
+	$StaticTimer.start()
+	$Menu/ClickSound.play() 
+	show_and_hide($Menu, $CustomNight)
+	$ColorRect2.self_modulate.a = 0
+
+
+func _on_exit_custom_night_mouse_entered() -> void:
+	$Menu/HoverSound.play()

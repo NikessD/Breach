@@ -179,6 +179,7 @@ func _on_light_button_button_up() -> void:
 
 
 func camera_change():
+	sprite_camerafeed.frame = 0
 	$UiPc/Cameras.text =  "CAM " + str(GlobalVars.camera_ID) 
 	if (
 			GlobalVars.camera_clicked == ardent.camera 
@@ -202,8 +203,6 @@ func camera_change():
 					sprite_camerafeed.play("Cam1Animatronic")
 				2:
 					sprite_camerafeed.play("Cam2Animatronic")
-				3:
-					sprite_camerafeed.play("Cam3Animatronic")
 				4:
 					sprite_camerafeed.play("Cam4Animatronic")
 				5:
@@ -224,7 +223,9 @@ func camera_change():
 			2:
 				sprite_camerafeed.play("Cam2Nothing")
 			3:
-				sprite_camerafeed.play("Cam3Nothing")
+				sprite_camerafeed.play("Cam3Cage")
+				sprite_camerafeed.stop()
+				camera_cage_stage()
 			4:
 				sprite_camerafeed.play("Cam4Nothing")
 			5:
@@ -401,6 +402,7 @@ func _on_timer_blinking_timeout() -> void:
 
 func _on_shock_button_pressed() -> void:
 	camera_static()
+	camera_change()
 
 
 func _on_timer_halucination_timeout() -> void:

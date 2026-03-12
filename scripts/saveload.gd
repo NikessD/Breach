@@ -16,7 +16,6 @@ func _save():
 	file.store_var(contents_to_save.duplicate())
 	file.close()
 
-
 func _load():
 	if FileAccess.file_exists(save_location):
 		var file = FileAccess.open(save_location, FileAccess.READ)

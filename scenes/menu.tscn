@@ -484,6 +484,17 @@ text = "NEW GAME
 "
 flat = true
 
+[node name="CustomNight" type="Button" parent="Menu/MenuButtons" unique_id=1484552830]
+material = SubResource("CanvasItemMaterial_aaywf")
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.9490196, 0.06666667, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 70
+text = "CUSTOM NIGHT
+"
+flat = true
+
 [node name="Settings" type="Button" parent="Menu/MenuButtons" unique_id=579899558]
 material = SubResource("CanvasItemMaterial_aaywf")
 layout_mode = 2
@@ -675,11 +686,42 @@ position = Vector2(1795.0026, -36)
 scale = Vector2(0.046790645, 0.046790656)
 texture = ExtResource("138_i4wbw")
 
+[node name="CustomNight" type="Control" parent="." unique_id=107344465]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ExitCustomNight" type="Button" parent="CustomNight" unique_id=390933473]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 956.0
+offset_right = 224.0
+offset_bottom = 1051.0
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.9490196, 0.06666667, 0.06666667, 1)
+theme_override_fonts/font = SubResource("SystemFont_i6lef")
+theme_override_font_sizes/font_size = 50
+text = "BACK
+"
+flat = true
+
+[node name="Label" type="Label" parent="CustomNight" unique_id=119966936]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 502.0
+offset_right = 1441.0
+offset_bottom = 604.0
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 100
+text = "IN DEVELOPMENT"
+
 [connection signal="timeout" from="StaticTimer" to="." method="_on_static_timer_timeout"]
 [connection signal="timeout" from="BackGroundChange_Timer" to="." method="_on_back_ground_change_timer_timeout"]
 [connection signal="focus_entered" from="Menu/MenuButtons/Play" to="." method="_on_play_focus_entered"]
 [connection signal="mouse_entered" from="Menu/MenuButtons/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="Menu/MenuButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/MenuButtons/CustomNight" to="." method="_on_custom_night_pressed"]
 [connection signal="focus_entered" from="Menu/MenuButtons/Settings" to="." method="_on_settings_focus_entered"]
 [connection signal="mouse_entered" from="Menu/MenuButtons/Settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="pressed" from="Menu/MenuButtons/Settings" to="." method="_on_settings_pressed"]
@@ -687,3 +729,5 @@ texture = ExtResource("138_i4wbw")
 [connection signal="pressed" from="Menu/MenuButtons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="mouse_entered" from="Settings/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="Settings/Exit" to="." method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="CustomNight/ExitCustomNight" to="." method="_on_exit_custom_night_mouse_entered"]
+[connection signal="pressed" from="CustomNight/ExitCustomNight" to="." method="_on_exit_custom_night_pressed"]

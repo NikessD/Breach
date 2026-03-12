@@ -785,17 +785,18 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("76_yfuyu")
-}],
-"loop": false,
-"name": &"Cam3Animatronic",
-"speed": 5.0
 }, {
-"frames": [{
+"duration": 1.0,
+"texture": ExtResource("86_d0aju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_yfuyu")
+}, {
 "duration": 1.0,
 "texture": ExtResource("77_qmnfn")
 }],
-"loop": true,
-"name": &"Cam3Nothing",
+"loop": false,
+"name": &"Cam3Cage",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1582,7 +1583,7 @@ position = Vector2(1191.2001, 529.0062)
 rotation = -5.54186e-05
 scale = Vector2(0.8230823, 0.78632927)
 sprite_frames = SubResource("SpriteFrames_7025r")
-animation = &"Cam1Animatronic"
+animation = &"Cam3Cage"
 autoplay = "Cam1Animatronic"
 
 [node name="Cage" type="Sprite2D" parent="Office/UiPc/CamFeed" unique_id=1413922300]

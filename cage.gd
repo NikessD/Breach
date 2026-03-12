@@ -16,15 +16,14 @@ var movement_random_number: int = 0
 @onready var animation_camera_static: AnimatedSprite2D = $"../UiPc/CamFeed/CameraStatic"
 @onready var jumpscare_player:  AnimatedSprite2D= $"../../JumpscarePlayer"
 @onready var sound_camera_buzz: AudioStreamPlayer = $"../CamBuzzSound"
-@onready var button_shock: Button = $"../UiPc/ShockButton"
-
+@onready var button_shock: TextureButton = $"../UiPc/ShockButton"
 
 
 
 func _on_move_timer_timeout() -> void:
 	movement_random_number = randi_range(0, 20)
 	if movement_random_number <= ai and ai > 0:
-		stage + 1
+		stage = stage + 1
 		if stage == 2:
 			killer = true
 			kill()
