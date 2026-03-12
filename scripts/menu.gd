@@ -7,8 +7,9 @@ var progress: = 0.0
 @onready var background: AnimatedSprite2D = $BackGround
 @onready var slider_volume_master: HSlider = $Settings/BackColor/MarginContainer/VBoxContainer/volume_slider
 @onready var slider_volume_vfx: HSlider = $Settings/BackColor/MarginContainer/VBoxContainer/volume_slider2
-
-
+@onready var node_custom_night_ricky: Control = $CustomNight/CustomNightRicky
+@onready var node_custom_night_ardent: Control = $CustomNight/CustomNightArdent
+@onready var node_custom_night_cage: Control = $CustomNight/CustomNightCage
 func _ready() -> void:
 	Saveload._load()
 	GlobalVars.night_number = Saveload.contents_to_save.night_number
@@ -66,6 +67,7 @@ func _on_settings_pressed() -> void:
 
 func _on_play_pressed() -> void:
 	ResourceLoader.load_threaded_request("res://scenes/game.tscn")
+	GlobalVars.custom_night = false
 	$ColorRect2.self_modulate.a = 0
 	$StaticTimer.stop()
 	$MenuTheme.stop()
@@ -154,3 +156,25 @@ func _on_exit_custom_night_pressed() -> void:
 
 func _on_exit_custom_night_mouse_entered() -> void:
 	$Menu/HoverSound.play()
+
+
+func _on_playcustom_night_pressed() -> void:
+	ResourceLoader.load_threaded_request("res://scenes/game.tscn")
+	GlobalVars.custom_night = true
+	$ColorRect2.self_modulate.a = 0
+	$StaticTimer.stop()
+	$MenuTheme.stop()
+	$Menu/Background/MenuStatic.stop()
+	$StartButtonSound.play()
+	$LoadingScreen/NightNumber.text = "CUSTOM NIGHT"
+	$Menu.set_visible(false)
+	$CustomNight.set_visible(false)
+	$LoadingScreen.set_visible(true)
+	GlobalVars.ricky_custom_night_ai = node_custom_night_ricky.custom_ai
+	GlobalVars.ardent_custom_night_ai = node_custom_night_ardent.custom_ai
+	GlobalVars.cage_custom_night_ai = node_custom_night_cage.custom_ai
+	for n in range(100):
+		$ColorRect2.self_modulate.a += 0.1
+		$Static.self_modulate.a += 0.1
+		await get_tree().process_frame
+	await get_tree().create_timer(3).timeout

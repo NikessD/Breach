@@ -12,7 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://b80snh2yt11x2" path="res://textures/ui/menu/logos/cenzorship/VS1.png" id="15_7jp70"]
 [ext_resource type="Texture2D" uid="uid://cgxferwi63xaf" path="res://textures/ui/menu/logos/cenzorship/VS2.png" id="16_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://bwpokbp0j2qfk" path="res://textures/ui/menu/logos/cenzorship/VS3.png" id="17_81l6r"]
+[ext_resource type="Script" uid="uid://dq0wafujfrjbl" path="res://scenes/custom_night.gd" id="18_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://b8nirl6jdeo0q" path="res://textures/ui/menu/logos/cenzorship/VS4.png" id="18_rsfmq"]
+[ext_resource type="PackedScene" uid="uid://1o4h7rj2ncj3" path="res://scripts/custom_night_animatronic.tscn" id="19_81l6r"]
+[ext_resource type="Texture2D" uid="uid://cemdp1eiq8hkn" path="res://textures/tex_ricky_deathscreen.png" id="20_oi1it"]
+[ext_resource type="Texture2D" uid="uid://cvp2ri0h7ggpc" path="res://textures/tex_ardent_deathscreen.png" id="20_rsfmq"]
+[ext_resource type="Texture2D" uid="uid://d4clpod5auisb" path="res://textures/game/renr_endo_front.png" id="22_fy8yy"]
 [ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/ui/buttons/ButtonClicked.mp3" id="128_3oclc"]
 [ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/ui/buttons/ButtonHover.wav" id="132_i4wbw"]
 [ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/menu/IntoGame.wav" id="137_i4wbw"]
@@ -556,6 +561,9 @@ theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 100
 text = "NIGHT 1"
 label_settings = SubResource("LabelSettings_13sgg")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="StartButtonSound" type="AudioStreamPlayer" parent="." unique_id=926367735]
 stream = ExtResource("137_i4wbw")
@@ -691,6 +699,15 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("18_3dmrc")
+
+[node name="BackColor" type="ColorRect" parent="CustomNight" unique_id=1805098789]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 59.0
+offset_right = 1835.0
+offset_bottom = 1016.0
+color = Color(0, 0, 0, 0.5529412)
 
 [node name="ExitCustomNight" type="Button" parent="CustomNight" unique_id=390933473]
 layout_mode = 0
@@ -709,12 +726,75 @@ flat = true
 [node name="Label" type="Label" parent="CustomNight" unique_id=119966936]
 layout_mode = 0
 offset_left = 584.0
-offset_top = 502.0
+offset_top = 140.0
 offset_right = 1441.0
-offset_bottom = 604.0
+offset_bottom = 242.0
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 8
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 100
-text = "IN DEVELOPMENT"
+text = "CUSTOM NIGHT"
+
+[node name="CustomNightRicky" parent="CustomNight" unique_id=1037571813 node_paths=PackedStringArray("animatronic_sprite") instance=ExtResource("19_81l6r")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.83
+offset_left = 21.0
+offset_top = 317.0
+offset_right = -52.200005
+offset_bottom = 277.0
+scale = Vector2(1.56, 1.56)
+animatronic_name = "Ricky"
+animatronic_sprite = NodePath("SpriteRicky")
+
+[node name="SpriteRicky" type="Sprite2D" parent="CustomNight/CustomNightRicky" unique_id=1180333069]
+position = Vector2(274.00003, 102.000015)
+scale = Vector2(0.21884379, 0.21884385)
+texture = ExtResource("20_oi1it")
+
+[node name="CustomNightArdent" parent="CustomNight" unique_id=710479226 instance=ExtResource("19_81l6r")]
+layout_mode = 1
+offset_left = 554.0
+offset_top = 321.0
+offset_right = 514.0
+offset_bottom = 281.0
+scale = Vector2(1.56, 1.56)
+animatronic_name = "Ardent"
+
+[node name="SpriteArdent" type="Sprite2D" parent="CustomNight/CustomNightArdent" unique_id=1182769623]
+position = Vector2(276, 106.99999)
+scale = Vector2(0.20925929, 0.20925927)
+texture = ExtResource("20_rsfmq")
+
+[node name="CustomNightCage" parent="CustomNight" unique_id=805328634 instance=ExtResource("19_81l6r")]
+layout_mode = 1
+offset_left = 1041.0
+offset_top = 323.0
+offset_right = 1001.0
+offset_bottom = 283.0
+scale = Vector2(1.56, 1.56)
+
+[node name="SpriteCage" type="Sprite2D" parent="CustomNight/CustomNightCage" unique_id=710949377]
+position = Vector2(276, 106.99999)
+scale = Vector2(0.20925929, 0.20925927)
+texture = ExtResource("22_fy8yy")
+
+[node name="PlaycustomNight" type="Button" parent="CustomNight" unique_id=486029099]
+material = SubResource("CanvasItemMaterial_aaywf")
+layout_mode = 0
+offset_left = 577.0
+offset_top = 917.0
+offset_right = 1356.0
+offset_bottom = 995.0
+focus_mode = 0
+theme = SubResource("Theme_6cdou")
+theme_override_colors/font_hover_color = Color(0.9490196, 0.06666667, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 70
+text = "START CUSTOM NIGHT
+"
+flat = true
 
 [connection signal="timeout" from="StaticTimer" to="." method="_on_static_timer_timeout"]
 [connection signal="timeout" from="BackGroundChange_Timer" to="." method="_on_back_ground_change_timer_timeout"]
@@ -731,3 +811,4 @@ text = "IN DEVELOPMENT"
 [connection signal="pressed" from="Settings/Exit" to="." method="_on_exit_pressed"]
 [connection signal="mouse_entered" from="CustomNight/ExitCustomNight" to="." method="_on_exit_custom_night_mouse_entered"]
 [connection signal="pressed" from="CustomNight/ExitCustomNight" to="." method="_on_exit_custom_night_pressed"]
+[connection signal="pressed" from="CustomNight/PlaycustomNight" to="." method="_on_playcustom_night_pressed"]
