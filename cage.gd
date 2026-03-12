@@ -18,13 +18,13 @@ var movement_random_number: int = 0
 @onready var sound_camera_buzz: AudioStreamPlayer = $"../CamBuzzSound"
 @onready var button_shock: TextureButton = $"../UiPc/ShockButton"
 
-
-
 func _on_move_timer_timeout() -> void:
 	movement_random_number = randi_range(0, 20)
 	if movement_random_number <= ai and ai > 0:
 		stage = stage + 1
-		if stage == 2:
+		office.camera_change()
+		office.camera_static()
+		if stage == 3:
 			killer = true
 			kill()
 
@@ -43,3 +43,5 @@ func kill():
 func _on_shock_button_pressed() -> void:
 	if GlobalVars.camera_clicked == 3 and stage > 0:
 		stage = 0
+		office.camera_static()
+		office.camera_change()

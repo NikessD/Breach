@@ -224,7 +224,6 @@ func camera_change():
 				sprite_camerafeed.play("Cam2Nothing")
 			3:
 				sprite_camerafeed.play("Cam3Cage")
-				sprite_camerafeed.stop()
 				camera_cage_stage()
 			4:
 				sprite_camerafeed.play("Cam4Nothing")
@@ -400,10 +399,6 @@ func _on_timer_blinking_timeout() -> void:
 			$AnimationPlayerOffice.play("animation_view_front_blinking")
 
 
-func _on_shock_button_pressed() -> void:
-	camera_static()
-	camera_change()
-
 
 func _on_timer_halucination_timeout() -> void:
 	var random = randi_range(1,10)
@@ -415,10 +410,8 @@ func _on_timer_halucination_timeout() -> void:
 		$"../Halucination".set_visible(false)
 		$"../Halucination".stop()
 		$"../HalucinationSound".stop()
-		
-		
-		
-		
+
+
 func camera_cage_stage():
 	match cage.stage:
 		0:

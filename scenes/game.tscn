@@ -797,7 +797,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Cam3Cage",
-"speed": 5.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,

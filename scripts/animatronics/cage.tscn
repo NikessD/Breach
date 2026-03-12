@@ -16,7 +16,7 @@ move_timer = NodePath("MoveTimer")
 kill_sound = NodePath("KillSound")
 
 [node name="MoveTimer" type="Timer" parent="." unique_id=33933179]
-wait_time = 5.0
+wait_time = 7.5
 autostart = true
 
 [node name="KillSound" type="AudioStreamPlayer" parent="." unique_id=1129992587]
