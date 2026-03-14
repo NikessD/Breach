@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cemdp1eiq8hkn" path="res://textures/tex_ricky_deathscreen.png" id="2_cyfkl"]
 [ext_resource type="Texture2D" uid="uid://cvp2ri0h7ggpc" path="res://textures/tex_ardent_deathscreen.png" id="2_xx0b3"]
 [ext_resource type="AudioStream" uid="uid://r3tpkqqvbmu4" path="res://sounds/game/GameOverSound.mp3" id="3_jw6e5"]
+[ext_resource type="Texture2D" uid="uid://c10nyecv1w04f" path="res://textures/tex_cage_deathscreen.png" id="4_5i0af"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="4_xx0b3"]
 
 [sub_resource type="Animation" id="Animation_cyfkl"]
@@ -19,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3.2),
 "transitions": PackedFloat32Array(0.31863996, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(2.4061394, 2.4061394, 2.4061394, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -113,6 +114,12 @@ position = Vector2(1002.99994, 555.99994)
 scale = Vector2(1.074074, 1.074074)
 texture = ExtResource("2_cyfkl")
 
+[node name="CageDeath" type="Sprite2D" parent="." unique_id=1751076874]
+visible = false
+position = Vector2(888, 499.99994)
+scale = Vector2(1.099074, 1.0990741)
+texture = ExtResource("4_5i0af")
+
 [node name="GameOverTimer" type="Timer" parent="." unique_id=1713325327]
 wait_time = 2.612
 one_shot = true
@@ -124,11 +131,14 @@ volume_db = -26.468
 
 [node name="Label" type="Label" parent="." unique_id=969330266]
 modulate = Color(0.70980394, 0.70980394, 0.70980394, 0.7764706)
-offset_left = 508.0
-offset_top = 929.0
-offset_right = 1395.0
-offset_bottom = 1090.0
+offset_left = 467.0
+offset_top = 919.0
+offset_right = 1354.0
+offset_bottom = 1080.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.49803922, 0.16862746, 0.14509805, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 7
 theme_override_fonts/font = ExtResource("4_xx0b3")
 theme_override_font_sizes/font_size = 161
 text = "GAME OVER"

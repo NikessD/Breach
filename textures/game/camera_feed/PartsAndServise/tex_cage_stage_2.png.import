@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddusqlu5j50eb"
-path="res://.godot/imported/rndr_partsAndServise_animatronic.png-b849f8bdec394220b0ec0da61bfe440e.ctex"
+uid="uid://u5s7kmhdbfgh"
+path="res://.godot/imported/tex_cage_stage_2.png-5612cf9b6a241e884a7da9d6c5efc810.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/game/camera_feed/PartsAndServise/rndr_partsAndServise_animatronic.png"
-dest_files=["res://.godot/imported/rndr_partsAndServise_animatronic.png-b849f8bdec394220b0ec0da61bfe440e.ctex"]
+source_file="res://textures/game/camera_feed/PartsAndServise/tex_cage_stage_2.png"
+dest_files=["res://.godot/imported/tex_cage_stage_2.png-5612cf9b6a241e884a7da9d6c5efc810.ctex"]
 
 [params]
 

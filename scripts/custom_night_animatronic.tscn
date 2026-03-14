@@ -1,7 +1,32 @@
 [gd_scene format=3 uid="uid://1o4h7rj2ncj3"]
 
 [ext_resource type="Script" uid="uid://cwf0pbrnkuc5i" path="res://custom_night_animatronic.gd" id="1_uqemq"]
+[ext_resource type="Texture2D" uid="uid://lhy1nbg35ae0" path="res://textures/staticbuzz/StaticTexture (1).png" id="2_8fho3"]
+[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/buttons/ButtonClicked.mp3" id="2_kj5lc"]
+[ext_resource type="Texture2D" uid="uid://df3nld8pyyk61" path="res://textures/staticbuzz/StaticTexture (4).png" id="2_pxdk8"]
+[ext_resource type="Texture2D" uid="uid://b7eat6ih8s1ri" path="res://textures/staticbuzz/StaticTexture (2).png" id="3_kj5lc"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="3_pxdk8"]
+[ext_resource type="Texture2D" uid="uid://v32mhqvppn1t" path="res://textures/staticbuzz/StaticTexture (3).png" id="4_7uu2h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dq2sl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8fho3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kj5lc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7uu2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pxdk8")
+}],
+"loop": true,
+"name": &"customnight_animatronic_background",
+"speed": 20.0
+}]
 
 [node name="CustomNightAnimatronic" type="Control" unique_id=1037571813 node_paths=PackedStringArray("animatronic_sprite", "label_animatronic", "label_animatronic_ai")]
 layout_mode = 3
@@ -14,9 +39,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uqemq")
 animatronic_name = "Cage"
-animatronic_sprite = NodePath("Sprite2D")
+animatronic_sprite = NodePath("")
 label_animatronic = NodePath("VBoxContainer/Name")
 label_animatronic_ai = NodePath("HBoxContainer/LabelAiValue")
+
+[node name="ButtonClicked" type="AudioStreamPlayer" parent="." unique_id=66217361]
+stream = ExtResource("2_kj5lc")
+volume_db = -13.183
+pitch_scale = 1.17
+bus = &"vfx"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1802819336]
 layout_mode = 0
@@ -24,7 +55,7 @@ offset_left = -1.5258789e-05
 offset_right = 223.99998
 offset_bottom = 224.0
 scale = Vector2(1.2800012, 1.2800012)
-color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+color = Color(0.29803923, 0, 0.050980393, 0.34509805)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=530568417]
 layout_mode = 0
@@ -33,9 +64,14 @@ offset_top = 336.0
 offset_right = 115.0
 offset_bottom = 416.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=742879573]
-position = Vector2(144, 184.00003)
-scale = Vector2(0.22685185, 0.22685185)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1443532668]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(143, 143.00002)
+scale = Vector2(0.22500001, 0.4)
+sprite_frames = SubResource("SpriteFrames_dq2sl")
+animation = &"customnight_animatronic_background"
+autoplay = "customnight_animatronic_background"
+frame_progress = 0.6439194
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=28203183]
 layout_mode = 0
@@ -58,10 +94,10 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2074701660]
 layout_mode = 0
-offset_left = 88.0
 offset_top = 336.0
-offset_right = 208.0
+offset_right = 288.0
 offset_bottom = 416.0
+alignment = 1
 
 [node name="ButtonSubtract" type="Button" parent="HBoxContainer" unique_id=232754208]
 layout_mode = 2

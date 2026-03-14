@@ -5,8 +5,8 @@ var tutorial_camera_view_first: bool = false
 var ominious_sound_number: int = 0
 var previous_cam: int = 0
 
-enum Cameras {STAGE = 1, DINING = 2, PAS = 3, HALLWAY = 4, LEFTHALLWAY = 5, 
-LEFTCORNER = 6, LEFTDOOR = 7, RIGHTHALLWAY = 8, RIGHTCORNER = 9, REDACTED = 10, RIGHTDOOR = 11}
+#enum Cameras {STAGE = 1, DINING = 2, PAS = 3, HALLWAY = 4, LEFTHALLWAY = 5, 
+#LEFTCORNER = 6, LEFTDOOR = 7, RIGHTHALLWAY = 8, RIGHTCORNER = 9, REDACTED = 10, RIGHTDOOR = 11} 
 
 @export var power: float = 100
 
@@ -22,6 +22,7 @@ LEFTCORNER = 6, LEFTDOOR = 7, RIGHTHALLWAY = 8, RIGHTCORNER = 9, REDACTED = 10, 
 @onready var button_view_left: Button = $ViewMoveButtons/ButtonLeftSide
 @onready var button_view_right: Button = $ViewMoveButtons/ButtonRightSide
 @onready var sprite_lightbutton: TextureButton = $LightButton
+@onready var button_shock: TextureButton = $UiPc/ShockButton
 @onready var label_hour: Label = $UiPc/GameHour
 @onready var label_power: Label = $UiPc/Power
 
@@ -240,6 +241,13 @@ func camera_change():
 				sprite_camerafeed.play("Cam8Nothing")
 			10:
 				sprite_camera_static.self_modulate.a = (10)
+	
+	if GlobalVars.camera_clicked == 3:
+		button_shock.set_visible(true) 
+		$UiPc/ShockText.set_visible(true) 
+	else:
+		$UiPc/ShockText.set_visible(false) 
+		button_shock.set_visible(false) 
 
 	if GlobalVars.camera_clicked == 10:
 		$"../Office/CamBuzzSound".play()

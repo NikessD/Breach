@@ -774,7 +774,6 @@ empty_selection_clipboard_enabled = false
 virtual_keyboard_enabled = false
 
 [node name="CustomNight" type="Control" parent="." unique_id=107344465]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

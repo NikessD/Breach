@@ -24,6 +24,7 @@ var camera_ID: int = 1
 #Kill states
 var ardent_killer: bool
 var ricky_killer: bool
+var cage_killer: bool
 var blackout: bool = false
 
 #Volume control

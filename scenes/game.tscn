@@ -39,17 +39,20 @@
 [ext_resource type="Texture2D" uid="uid://58moh24to7yo" path="res://textures/game/office_views/right/motion/view_movement_right0013.png" id="34_x5xn3"]
 [ext_resource type="Texture2D" uid="uid://c2b84i5l5osav" path="res://textures/game/office_views/right/motion/view_movement_right0014.png" id="35_152wt"]
 [ext_resource type="Texture2D" uid="uid://bqxfl4ckjaup2" path="res://textures/game/office_views/right/motion/view_movement_right0015.png" id="36_rjeju"]
+[ext_resource type="Texture2D" uid="uid://cht570qeledqr" path="res://textures/game/camera_feed/PartsAndServise/tex_cage_stage_1.png" id="46_l0ny2"]
+[ext_resource type="Texture2D" uid="uid://u5s7kmhdbfgh" path="res://textures/game/camera_feed/PartsAndServise/tex_cage_stage_2.png" id="47_6cwij"]
+[ext_resource type="Texture2D" uid="uid://bl7wobf0giupu" path="res://textures/game/camera_feed/PartsAndServise/tex_cage_stage_3.png" id="48_bqsge"]
 [ext_resource type="AudioStream" uid="uid://nlilqa01kk1y" path="res://sounds/game/ComputerFanSoundLOOP.mp3" id="49_8qswn"]
 [ext_resource type="Texture2D" uid="uid://c26r1b2bwyau7" path="res://textures/game/office_views/right/view_door/flashlight_on_ricky.png" id="52_331gb"]
 [ext_resource type="Texture2D" uid="uid://cj7svb5o38ibm" path="res://textures/game/office_views/right/view_door/flashlight_on_empty.png" id="53_bdqdv"]
 [ext_resource type="Texture2D" uid="uid://cme052b1td8oq" path="res://textures/cage_temp.png" id="58_fikvi"]
+[ext_resource type="AudioStream" uid="uid://cy23tb25rv4p" path="res://sounds/game/CageShock.wav" id="69_bqsge"]
 [ext_resource type="PackedScene" uid="uid://bidd0qrfm35ne" path="res://scripts/animatronics/cage.tscn" id="71_l0ny2"]
 [ext_resource type="Texture2D" uid="uid://b3dyq8mt5wcsl" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0004.png" id="72_1uieh"]
 [ext_resource type="Texture2D" uid="uid://bg4mcmyvjyl75" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0005.png" id="73_x2ts8"]
 [ext_resource type="Texture2D" uid="uid://cd3fys8q56d1e" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0006.png" id="74_1fiuy"]
 [ext_resource type="Texture2D" uid="uid://dfoxkyym5h38c" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0007.png" id="75_fikvi"]
 [ext_resource type="Texture2D" uid="uid://cp0gx7cyefmyq" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0008.png" id="76_iwdqm"]
-[ext_resource type="Texture2D" uid="uid://ddusqlu5j50eb" path="res://textures/game/camera_feed/PartsAndServise/rndr_partsAndServise_animatronic.png" id="76_yfuyu"]
 [ext_resource type="Texture2D" uid="uid://5tbfepmejprr" path="res://textures/game/camera_feed/HallwayRightDoor/rndr_rightHallway_empty.png" id="77_152wt"]
 [ext_resource type="Texture2D" uid="uid://bywjjrwamff7d" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0009.png" id="77_l0ny2"]
 [ext_resource type="Texture2D" uid="uid://4yyl54jaw30o" path="res://textures/game/camera_feed/PartsAndServise/rndr_partsAndServise_empty.png" id="77_qmnfn"]
@@ -784,13 +787,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("76_yfuyu")
+"texture": ExtResource("46_l0ny2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("86_d0aju")
+"texture": ExtResource("47_6cwij")
 }, {
 "duration": 1.0,
-"texture": ExtResource("82_yfuyu")
+"texture": ExtResource("48_bqsge")
 }, {
 "duration": 1.0,
 "texture": ExtResource("77_qmnfn")
@@ -1669,6 +1672,7 @@ label_settings = SubResource("LabelSettings_v8ala")
 metadata/_edit_use_anchors_ = true
 
 [node name="ShockButton" type="TextureButton" parent="Office/UiPc" unique_id=1323623989]
+visible = false
 layout_mode = 0
 offset_left = 731.0
 offset_top = 573.0
@@ -1679,6 +1683,11 @@ texture_pressed = ExtResource("274_gm21d")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="CageShock" type="AudioStreamPlayer" parent="Office/UiPc/ShockButton" unique_id=2081186080]
+stream = ExtResource("69_bqsge")
+volume_db = -7.324
+pitch_scale = 0.55
 
 [node name="StageButton" type="TextureButton" parent="Office/UiPc" unique_id=1244483715]
 layout_mode = 0
