@@ -8,37 +8,60 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1401.0
-offset_bottom = -649.0
+offset_right = -1632.0
+offset_bottom = -672.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uqemq")
 animatronic_name = "Cage"
 animatronic_sprite = NodePath("Sprite2D")
-label_animatronic = NodePath("Name")
+label_animatronic = NodePath("VBoxContainer/Name")
 label_animatronic_ai = NodePath("HBoxContainer/LabelAiValue")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1802819336]
+layout_mode = 0
+offset_left = -1.5258789e-05
+offset_right = 223.99998
+offset_bottom = 224.0
+scale = Vector2(1.2800012, 1.2800012)
+color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=530568417]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 336.0
+offset_right = 115.0
+offset_bottom = 416.0
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=742879573]
-position = Vector2(271.00006, 156)
+position = Vector2(144, 184.00003)
 scale = Vector2(0.22685185, 0.22685185)
 
-[node name="Name" type="Label" parent="." unique_id=922360640]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=28203183]
 layout_mode = 0
-offset_left = 207.0
-offset_top = 240.0
-offset_right = 305.0
-offset_bottom = 281.0
+offset_left = 40.0
+offset_top = 296.0
+offset_right = 248.0
+offset_bottom = 341.0
+alignment = 1
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=922360640]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pxdk8")
 theme_override_font_sizes/font_size = 40
 text = "TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1802762138]
+[node name="Container" type="Container" parent="VBoxContainer" unique_id=2119860816]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2074701660]
 layout_mode = 0
-offset_left = 198.0
-offset_top = 303.0
-offset_right = 311.0
-offset_bottom = 362.0
-alignment = 1
+offset_left = 88.0
+offset_top = 336.0
+offset_right = 208.0
+offset_bottom = 416.0
 
 [node name="ButtonSubtract" type="Button" parent="HBoxContainer" unique_id=232754208]
 layout_mode = 2

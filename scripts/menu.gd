@@ -3,13 +3,13 @@ extends Control
 var loader: ResourceLoader
 var progress: = 0.0
 
-
 @onready var background: AnimatedSprite2D = $BackGround
 @onready var slider_volume_master: HSlider = $Settings/BackColor/MarginContainer/VBoxContainer/volume_slider
 @onready var slider_volume_vfx: HSlider = $Settings/BackColor/MarginContainer/VBoxContainer/volume_slider2
 @onready var node_custom_night_ricky: Control = $CustomNight/CustomNightRicky
 @onready var node_custom_night_ardent: Control = $CustomNight/CustomNightArdent
 @onready var node_custom_night_cage: Control = $CustomNight/CustomNightCage
+
 func _ready() -> void:
 	Saveload._load()
 	GlobalVars.night_number = Saveload.contents_to_save.night_number
@@ -157,6 +157,14 @@ func _on_exit_custom_night_pressed() -> void:
 func _on_exit_custom_night_mouse_entered() -> void:
 	$Menu/HoverSound.play()
 
+
+func _on_button_credits_pressed() -> void:
+	show_and_hide($Credits,$Settings)
+	$Menu/ClickSound.play() 
+
+func _on_button_credits_exit_pressed() -> void:
+	show_and_hide($Settings,$Credits)
+	$Menu/ClickSound.play() 
 
 func _on_playcustom_night_pressed() -> void:
 	ResourceLoader.load_threaded_request("res://scenes/game.tscn")

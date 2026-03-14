@@ -29,7 +29,7 @@ func _on_ambient_sounds_timer_timeout() -> void:
 
 
 func begining_set_ai():
-	if GlobalVars.custom_night == true:
+	if GlobalVars.custom_night:
 		ricky.ai = GlobalVars.ricky_custom_night_ai
 		ardent.ai = GlobalVars.ardent_custom_night_ai
 		cage.ai = GlobalVars.cage_custom_night_ai

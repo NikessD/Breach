@@ -5,6 +5,9 @@ var tutorial_camera_view_first: bool = false
 var ominious_sound_number: int = 0
 var previous_cam: int = 0
 
+enum Cameras {STAGE = 1, DINING = 2, PAS = 3, HALLWAY = 4, LEFTHALLWAY = 5, 
+LEFTCORNER = 6, LEFTDOOR = 7, RIGHTHALLWAY = 8, RIGHTCORNER = 9, REDACTED = 10, RIGHTDOOR = 11}
+
 @export var power: float = 100
 
 @onready var cage: Control = $Cage
@@ -29,7 +32,7 @@ func _ready() -> void:
 	node_office_animationplayer.play("animation_view_front")
 	GlobalVars.view_front = true
 	
-	if GlobalVars.night_number == 1:
+	if GlobalVars.night_number == 1 and not GlobalVars.custom_night:
 		node_viewbuttons.set_visible(false)
 		node_camera_tutorial.set_visible(true)
 		await get_tree().create_timer(20).timeout
