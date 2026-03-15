@@ -105,37 +105,77 @@
 [ext_resource type="Texture2D" uid="uid://d3aiyjjye5cei" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0017.png" id="105_h1bth"]
 [ext_resource type="Texture2D" uid="uid://n427yfu12xay" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0018.png" id="106_6cwij"]
 [ext_resource type="Texture2D" uid="uid://d04menf0v7ow8" path="res://textures/game/camera_feed/Stage/rndr_stage_animatronic.png" id="106_gpphh"]
+[ext_resource type="Texture2D" uid="uid://bg4ivbgpv1ti1" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0001.png" id="106_rso44"]
+[ext_resource type="Texture2D" uid="uid://0jnte442bsvb" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0002.png" id="107_7fux8"]
 [ext_resource type="Texture2D" uid="uid://c1jia7dait7jn" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0019.png" id="107_bqsge"]
 [ext_resource type="Texture2D" uid="uid://oi3o3iyopx6t" path="res://textures/game/camera_feed/Stage/rndr_stage_empty.png" id="107_ilysl"]
+[ext_resource type="Texture2D" uid="uid://b351mm8dqf3pn" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0003.png" id="108_i0g1p"]
 [ext_resource type="Texture2D" uid="uid://cwv5p30843do6" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0020.png" id="108_k2jov"]
 [ext_resource type="Texture2D" uid="uid://cc63fc5x7aayh" path="res://textures/game/camera_feed/DinningHall/rndr_diningHall_animatronic.png" id="108_pgf4p"]
+[ext_resource type="Texture2D" uid="uid://bf6wmj606mqfe" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0004.png" id="109_7mokv"]
 [ext_resource type="Texture2D" uid="uid://bjkgppke7uces" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0021.png" id="109_osiit"]
 [ext_resource type="Texture2D" uid="uid://gfpesx2ti2yn" path="res://textures/game/camera_feed/DinningHall/rndr_diningHall_empty.png" id="109_wigk3"]
+[ext_resource type="Texture2D" uid="uid://b7ale6pcehde5" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0005.png" id="110_ougo0"]
 [ext_resource type="Texture2D" uid="uid://bn4iddos43oft" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0022.png" id="110_wvj0x"]
 [ext_resource type="Texture2D" uid="uid://copeoipe0yyq1" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0023.png" id="111_d1om7"]
+[ext_resource type="Texture2D" uid="uid://bwgye5s7c386r" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0006.png" id="111_jmpbw"]
+[ext_resource type="Texture2D" uid="uid://df1avpakpch31" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0007.png" id="112_4hyal"]
 [ext_resource type="Texture2D" uid="uid://57saclrp4t3k" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0024.png" id="112_g0jan"]
+[ext_resource type="Texture2D" uid="uid://d1vbjr62lliio" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0008.png" id="113_qxstk"]
 [ext_resource type="Texture2D" uid="uid://d1x74it516jvb" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0025.png" id="113_uh8v6"]
 [ext_resource type="Texture2D" uid="uid://drj7ad1wy2onu" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0026.png" id="114_1fd0d"]
+[ext_resource type="Texture2D" uid="uid://dk5bh05w7khrc" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0009.png" id="114_tif2q"]
 [ext_resource type="Texture2D" uid="uid://cwpky46hgdmal" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0027.png" id="115_0mjh4"]
+[ext_resource type="Texture2D" uid="uid://diq13ma4nalif" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0010.png" id="115_gmo45"]
 [ext_resource type="Texture2D" uid="uid://bl6ii54sc82oy" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0028.png" id="116_bkxpl"]
+[ext_resource type="Texture2D" uid="uid://1b4gnf78vrja" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0011.png" id="116_rdi5s"]
+[ext_resource type="Texture2D" uid="uid://coqu008uev5xf" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0012.png" id="117_7xxeg"]
 [ext_resource type="Texture2D" uid="uid://3lmwoxpwsdp0" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0029.png" id="117_y2jf0"]
 [ext_resource type="Texture2D" uid="uid://cjyy2uyw4gpik" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0030.png" id="118_g33qm"]
+[ext_resource type="Texture2D" uid="uid://bpr0s831pg10u" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0013.png" id="118_k0l5t"]
+[ext_resource type="Texture2D" uid="uid://ck01o558frtjp" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0014.png" id="119_0pnci"]
 [ext_resource type="Texture2D" uid="uid://bpnee5are52me" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0031.png" id="119_hy75c"]
+[ext_resource type="Texture2D" uid="uid://dgt0uxdtjeu2x" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0015.png" id="120_03dbc"]
 [ext_resource type="Texture2D" uid="uid://g33b7sqrv55o" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0032.png" id="120_vaoao"]
+[ext_resource type="Texture2D" uid="uid://btl4oormqwbjx" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0016.png" id="121_tyid6"]
 [ext_resource type="Texture2D" uid="uid://bjeos5lj6cn7e" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0033.png" id="121_uaaia"]
+[ext_resource type="Texture2D" uid="uid://c0y6vvpmwotlp" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0017.png" id="122_8djkq"]
 [ext_resource type="Texture2D" uid="uid://cdx620kdile2a" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0034.png" id="122_x1ulb"]
+[ext_resource type="Texture2D" uid="uid://btu80wtbncgpj" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0018.png" id="123_8wuql"]
 [ext_resource type="Texture2D" uid="uid://c6y5b5r7o3unl" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0035.png" id="123_k4q15"]
 [ext_resource type="Texture2D" uid="uid://ca1rkkkgjkct7" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0036.png" id="124_7bpt6"]
+[ext_resource type="Texture2D" uid="uid://cvgtpgas3egus" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0019.png" id="124_tmhwu"]
+[ext_resource type="Texture2D" uid="uid://dt0xm5rojq33y" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0020.png" id="125_oa88d"]
 [ext_resource type="Texture2D" uid="uid://2nca0jsl4bnd" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0037.png" id="125_rowo6"]
+[ext_resource type="Texture2D" uid="uid://5fb7vr2xry5c" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0021.png" id="126_lygv6"]
 [ext_resource type="Texture2D" uid="uid://tejnmshaj6ex" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0038.png" id="126_max3w"]
 [ext_resource type="Texture2D" uid="uid://bkgglmp4a7mqb" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0039.png" id="127_nmeq6"]
+[ext_resource type="Texture2D" uid="uid://m50plm7wmgbg" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0022.png" id="127_ufjh3"]
+[ext_resource type="Texture2D" uid="uid://boquav6cdp13l" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0023.png" id="128_eio5l"]
 [ext_resource type="Texture2D" uid="uid://dhhse7iid3g5n" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0040.png" id="128_yr4ag"]
+[ext_resource type="Texture2D" uid="uid://eyjho18g3itc" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0024.png" id="129_7l6q4"]
 [ext_resource type="Texture2D" uid="uid://dplea4fk0tqt4" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0041.png" id="129_ae4wi"]
+[ext_resource type="Texture2D" uid="uid://dkfo1pbce0k5j" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0025.png" id="130_jqiwq"]
 [ext_resource type="Texture2D" uid="uid://b432mb3mxhjx8" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0042.png" id="130_n5r5x"]
+[ext_resource type="Texture2D" uid="uid://c28o0eyxcf5nc" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0026.png" id="131_08jcq"]
 [ext_resource type="Texture2D" uid="uid://cnekumqd5s2ka" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0043.png" id="131_x5xn3"]
 [ext_resource type="Texture2D" uid="uid://cfyts1yg3xqnv" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0044.png" id="132_152wt"]
+[ext_resource type="Texture2D" uid="uid://blwx5nwfdv70m" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0027.png" id="132_e07sx"]
 [ext_resource type="Texture2D" uid="uid://du6ngo3yl4m18" path="res://textures/game/jumpscares/ricky/tex_jumpscare_ricky0045.png" id="133_rjeju"]
+[ext_resource type="Texture2D" uid="uid://dyxgrho1yjgfx" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0028.png" id="133_yhaf3"]
+[ext_resource type="Texture2D" uid="uid://gsp0alv4abhl" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0029.png" id="134_1swxn"]
+[ext_resource type="Texture2D" uid="uid://dt55xxhd5naha" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0030.png" id="135_ub10f"]
+[ext_resource type="Texture2D" uid="uid://dnssol336yewx" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0031.png" id="136_mpqr6"]
+[ext_resource type="Texture2D" uid="uid://byk2ak4mmndfj" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0032.png" id="137_q6tk8"]
+[ext_resource type="Texture2D" uid="uid://dgpyv0qp4icbv" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0033.png" id="138_e3n7k"]
+[ext_resource type="Texture2D" uid="uid://xtee4pc5guyp" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0034.png" id="139_vpp0n"]
+[ext_resource type="Texture2D" uid="uid://cdgt2e8yn87s7" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0035.png" id="140_qkuf6"]
+[ext_resource type="Texture2D" uid="uid://cqfn1rmtt4v0r" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0036.png" id="141_nri4r"]
+[ext_resource type="Texture2D" uid="uid://dsp1783gp2hwu" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0037.png" id="142_pvp8v"]
 [ext_resource type="AudioStream" uid="uid://c1dpivkf7vht5" path="res://sounds/game/speaker-buzz-82989.mp3" id="143_iwdqm"]
+[ext_resource type="Texture2D" uid="uid://bofjp71b4dm1d" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0038.png" id="143_rjakg"]
+[ext_resource type="Texture2D" uid="uid://y5h6qs8bqik" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0039.png" id="144_addpb"]
+[ext_resource type="Texture2D" uid="uid://bnbqrlkcftcqj" path="res://textures/game/jumpscares/cage/tex_jumpscare_cage0040.png" id="145_mtq6s"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="176_4kxhu"]
 [ext_resource type="AudioStream" uid="uid://dms1qvpickor2" path="res://sounds/game/ambient/creepyambience1.mp3" id="205_oa88d"]
 [ext_resource type="AudioStream" uid="uid://j4o5pm4okeih" path="res://sounds/game/ambient/creepyambience2.mp3" id="206_lygv6"]
@@ -1186,85 +1226,124 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("72_1uieh")
+"texture": ExtResource("106_rso44")
 }, {
 "duration": 1.0,
-"texture": ExtResource("73_x2ts8")
+"texture": ExtResource("107_7fux8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("74_1fiuy")
+"texture": ExtResource("108_i0g1p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("75_fikvi")
+"texture": ExtResource("109_7mokv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("76_iwdqm")
+"texture": ExtResource("110_ougo0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("77_l0ny2")
+"texture": ExtResource("111_jmpbw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("78_h1bth")
+"texture": ExtResource("112_4hyal")
 }, {
 "duration": 1.0,
-"texture": ExtResource("79_6cwij")
+"texture": ExtResource("113_qxstk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("80_bqsge")
+"texture": ExtResource("114_tif2q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("81_k2jov")
+"texture": ExtResource("115_gmo45")
 }, {
 "duration": 1.0,
-"texture": ExtResource("82_osiit")
+"texture": ExtResource("116_rdi5s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("83_wvj0x")
+"texture": ExtResource("117_7xxeg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("84_d1om7")
+"texture": ExtResource("118_k0l5t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("85_g0jan")
+"texture": ExtResource("119_0pnci")
 }, {
 "duration": 1.0,
-"texture": ExtResource("86_uh8v6")
+"texture": ExtResource("120_03dbc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("87_1fd0d")
+"texture": ExtResource("121_tyid6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("88_0mjh4")
+"texture": ExtResource("122_8djkq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("89_bkxpl")
+"texture": ExtResource("123_8wuql")
 }, {
 "duration": 1.0,
-"texture": ExtResource("90_y2jf0")
+"texture": ExtResource("124_tmhwu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("91_g33qm")
+"texture": ExtResource("125_oa88d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("92_hy75c")
+"texture": ExtResource("126_lygv6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("93_vaoao")
+"texture": ExtResource("127_ufjh3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("94_uaaia")
+"texture": ExtResource("128_eio5l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("95_x1ulb")
+"texture": ExtResource("129_7l6q4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("96_k4q15")
+"texture": ExtResource("130_jqiwq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("97_7bpt6")
+"texture": ExtResource("131_08jcq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("98_rowo6")
+"texture": ExtResource("132_e07sx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_yhaf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_1swxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_ub10f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_mpqr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_q6tk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_e3n7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_vpp0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_qkuf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_nri4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_pvp8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_rjakg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_addpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_mtq6s")
 }],
 "loop": false,
 "name": &"cage_jumpscare",
@@ -2014,7 +2093,9 @@ modulate = Color(0.9818757, 0.9818757, 0.9818757, 1)
 position = Vector2(980.1891, 538.99994)
 scale = Vector2(1.0410849, 1.0388888)
 sprite_frames = SubResource("SpriteFrames_pgf4p")
-animation = &"cage_jumpscare"
+animation = &"ardent_jumpscare"
+frame = 26
+frame_progress = 1.0
 
 [node name="TimerBlinking" type="Timer" parent="." unique_id=7158448]
 wait_time = 10.0
