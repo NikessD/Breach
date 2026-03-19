@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c6wrh1kqs2vwa"
-path="res://.godot/imported/CamSelected.mp3-1e276f380286b4a75e8492b40ef09a18.mp3str"
+path="res://.godot/imported/CamSelected.mp3-bb3e23f389174ce38eb82ad9e3af9637.mp3str"
 
 [deps]
 
-source_file="res://sounds/UI/office/CamSelected.mp3"
-dest_files=["res://.godot/imported/CamSelected.mp3-1e276f380286b4a75e8492b40ef09a18.mp3str"]
+source_file="res://sounds/ui/office/CamSelected.mp3"
+dest_files=["res://.godot/imported/CamSelected.mp3-bb3e23f389174ce38eb82ad9e3af9637.mp3str"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhqcnvyxjgoh1"]
 
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
-[ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/Menu/music/river's end.mp3" id="2_g6gyw"]
+[ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/menu/music/river's end.mp3" id="2_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://myiy1w5nsipj" path="res://textures/ui/menu/backgrounds/MenuBackground.png" id="3_81l6r"]
 [ext_resource type="Texture2D" uid="uid://lhy1nbg35ae0" path="res://textures/staticbuzz/StaticTexture (1).png" id="4_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://b7eat6ih8s1ri" path="res://textures/staticbuzz/StaticTexture (2).png" id="5_3dmrc"]
@@ -18,9 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://b7js0tnqt1mbo" path="res://textures/game/custom_night/ricky_custom_night.png" id="20_fy8yy"]
 [ext_resource type="Texture2D" uid="uid://dfl88xpqmyx5a" path="res://textures/game/custom_night/ardent_custom_night.png" id="21_6wigr"]
 [ext_resource type="Texture2D" uid="uid://bturbxbjo8av5" path="res://textures/game/custom_night/cage_custom_night.png" id="22_lnf0i"]
-[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/buttons/ButtonClicked.mp3" id="128_3oclc"]
-[ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/UI/buttons/ButtonHover.wav" id="132_i4wbw"]
-[ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/Menu/IntoGame.wav" id="137_i4wbw"]
+[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/ui/buttons/ButtonClicked.mp3" id="128_3oclc"]
+[ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/ui/buttons/ButtonHover.wav" id="132_i4wbw"]
+[ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/menu/IntoGame.wav" id="137_i4wbw"]
 [ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://textures/ui/menu/logos/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_11y2r"]
@@ -312,62 +312,6 @@ animations = [{
 [sub_resource type="Theme" id="Theme_6cdou"]
 Button/fonts/font = ExtResource("6_13sgg")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_81l6r"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rsfmq"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oi1it"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_i4wbw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_81l6r")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_rsfmq")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_oi1it")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_rsfmq")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_rsfmq")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_oi1it")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_oi1it")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_81l6r")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_oi1it")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_rsfmq")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_81l6r")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_81l6r")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_81l6r")
-}, {
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_oi1it")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fy8yy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_13sgg"]
@@ -520,16 +464,6 @@ theme_override_font_sizes/font_size = 50
 text = "QUIT"
 flat = true
 
-[node name="ButtonBackgoundSprite" type="AnimatedSprite2D" parent="Menu/MenuButtons" unique_id=710062019]
-visible = false
-modulate = Color(1, 1, 1, 0.6039216)
-position = Vector2(93.68294, 140.00002)
-scale = Vector2(1.3649999, 0.8800003)
-sprite_frames = SubResource("SpriteFrames_i4wbw")
-autoplay = "default"
-frame_progress = 0.16001305
-offset = Vector2(29.17, 0)
-
 [node name="VersionNumber" type="Label" parent="Menu" unique_id=1123707364]
 layout_mode = 0
 offset_left = 1792.0
@@ -537,7 +471,7 @@ offset_top = 1053.0
 offset_right = 1918.0
 offset_bottom = 1076.0
 theme_override_fonts/font = ExtResource("6_13sgg")
-text = "VER - 1.0.0"
+text = "VER - 1.1.0"
 
 [node name="LoadingScreen" type="Control" parent="." unique_id=1262903751]
 visible = false
@@ -759,9 +693,9 @@ text = "   Programing - Jakub Mauer
 	       UI - Jakub Mauer
 
 
-	    Special thanks
-Mája Kubínová, František Hůlka,
- Slávek Kasík, Vít Kořínek"
+	  Special thanks to:
+Maja Kubinova, Frantisek Hulka,
+ Slavek Kasik, Vit Korinek"
 editable = false
 context_menu_enabled = false
 emoji_menu_enabled = false
@@ -774,6 +708,7 @@ empty_selection_clipboard_enabled = false
 virtual_keyboard_enabled = false
 
 [node name="CustomNight" type="Control" parent="." unique_id=107344465]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
