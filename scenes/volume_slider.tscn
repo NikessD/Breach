@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://txpepsg4esd4"]
 
-[ext_resource type="Script" uid="uid://ceooxbwmgfbvv" path="res://volume_slider.gd" id="1_e8uio"]
+[ext_resource type="Script" uid="uid://ceooxbwmgfbvv" path="res://scripts/volume_slider.gd" id="1_e8uio"]
 
 [sub_resource type="Theme" id="Theme_e8uio"]
 

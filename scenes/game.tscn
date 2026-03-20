@@ -6,8 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://dsfejvc4etgcy" path="res://sounds/game/PowerDownSound.mp3" id="8_qouja"]
 [ext_resource type="Texture2D" uid="uid://didishfi1tj3j" path="res://textures/game/office_views/view_front/txt_view_front_dimmed.png" id="8_x2ts8"]
 [ext_resource type="Texture2D" uid="uid://d2icw08i8wh62" path="res://textures/game/office_views/view_front/txt_view_front_blackout.png" id="9_1fiuy"]
-[ext_resource type="AudioStream" uid="uid://1wlyih21qbd7" path="res://sounds/UI/office/torch-turned-on-flashlight-click-457506.mp3" id="9_ilysl"]
-[ext_resource type="AudioStream" uid="uid://c6wrh1kqs2vwa" path="res://sounds/UI/office/CamSelected.mp3" id="10_02fa5"]
+[ext_resource type="AudioStream" uid="uid://1wlyih21qbd7" path="res://sounds/ui/office/torch-turned-on-flashlight-click-457506.mp3" id="9_ilysl"]
+[ext_resource type="AudioStream" uid="uid://c6wrh1kqs2vwa" path="res://sounds/ui/office/CamSelected.mp3" id="10_02fa5"]
 [ext_resource type="Texture2D" uid="uid://cs1lbhuwberlw" path="res://textures/game/office_views/view_front/txt_view_front.png" id="12_331gb"]
 [ext_resource type="Texture2D" uid="uid://dvrb6wv254pdt" path="res://textures/game/office_views/left/view_motion/view_left_movement0002.png" id="12_vaoao"]
 [ext_resource type="Texture2D" uid="uid://bf7bt65puwwnx" path="res://textures/game/office_views/left/view_motion/view_left_movement0003.png" id="13_uaaia"]
@@ -45,7 +45,6 @@
 [ext_resource type="AudioStream" uid="uid://nlilqa01kk1y" path="res://sounds/game/ComputerFanSoundLOOP.mp3" id="49_8qswn"]
 [ext_resource type="Texture2D" uid="uid://c26r1b2bwyau7" path="res://textures/game/office_views/right/view_door/flashlight_on_ricky.png" id="52_331gb"]
 [ext_resource type="Texture2D" uid="uid://cj7svb5o38ibm" path="res://textures/game/office_views/right/view_door/flashlight_on_empty.png" id="53_bdqdv"]
-[ext_resource type="Texture2D" uid="uid://cme052b1td8oq" path="res://textures/cage_temp.png" id="58_fikvi"]
 [ext_resource type="AudioStream" uid="uid://cy23tb25rv4p" path="res://sounds/game/CageShock.wav" id="69_bqsge"]
 [ext_resource type="PackedScene" uid="uid://bidd0qrfm35ne" path="res://scripts/animatronics/cage.tscn" id="71_l0ny2"]
 [ext_resource type="Texture2D" uid="uid://b3dyq8mt5wcsl" path="res://textures/game/jumpscares/ardent/tex_ardent_jumpcare.png0004.png" id="72_1uieh"]
@@ -182,7 +181,7 @@
 [ext_resource type="FontFile" uid="uid://c7gvdxmesi0hw" path="res://fonts/HydrophiliaIced-Regular.ttf" id="213_vpp0n"]
 [ext_resource type="Texture2D" uid="uid://bo4hscyll5cwo" path="res://textures/ui/office/buttons/flashlight/tex_lightbutton_off.png" id="213_yfuyu"]
 [ext_resource type="Texture2D" uid="uid://cnkx8p6fn01ww" path="res://textures/ui/office/buttons/flashlight/tex_lightbutton_on.png" id="214_qmnfn"]
-[ext_resource type="PackedScene" uid="uid://d4d3qe4rm77wx" path="res://scenes/Ricky.tscn" id="245_gpphh"]
+[ext_resource type="PackedScene" uid="uid://d4d3qe4rm77wx" path="res://scenes/ricky.tscn" id="245_gpphh"]
 [ext_resource type="PackedScene" uid="uid://ihr427hih7bu" path="res://scenes/ardent.tscn" id="246_ilysl"]
 [ext_resource type="Texture2D" uid="uid://l67cpuqotor4" path="res://textures/rndr_ardent_cam.png" id="262_y8e17"]
 [ext_resource type="Texture2D" uid="uid://n8ls5twww7lt" path="res://textures/ui/office/buttons/camera/tex_cambutton_deselected.png" id="273_njubb"]
@@ -922,6 +921,9 @@ animations = [{
 "name": &"Cam8Nothing",
 "speed": 5.0
 }]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hlvme"]
+load_path = "res://.godot/imported/cage_temp.png-ec043d23dbf32b92acf16fc0f85193f1.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e3n7k"]
 animations = [{
@@ -1673,7 +1675,7 @@ visible = false
 modulate = Color(0.601223, 0.601223, 0.601223, 1)
 position = Vector2(1183.5, 526.5)
 scale = Vector2(0.4914063, 0.44027787)
-texture = ExtResource("58_fikvi")
+texture = SubResource("CompressedTexture2D_hlvme")
 
 [node name="Ardent" type="Sprite2D" parent="Office/UiPc/CamFeed" unique_id=1773597370]
 visible = false
@@ -1750,8 +1752,16 @@ text = "00:00"
 label_settings = SubResource("LabelSettings_v8ala")
 metadata/_edit_use_anchors_ = true
 
+[node name="ProgressBar" type="ProgressBar" parent="Office/UiPc" unique_id=1478677207]
+layout_mode = 0
+offset_left = 731.0
+offset_top = 612.0
+offset_right = 793.0
+offset_bottom = 639.0
+step = 20.0
+show_percentage = false
+
 [node name="ShockButton" type="TextureButton" parent="Office/UiPc" unique_id=1323623989]
-visible = false
 layout_mode = 0
 offset_left = 731.0
 offset_top = 573.0

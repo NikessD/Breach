@@ -8,13 +8,13 @@
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="6_13sgg"]
 [ext_resource type="Texture2D" uid="uid://v32mhqvppn1t" path="res://textures/staticbuzz/StaticTexture (3).png" id="6_81l6r"]
 [ext_resource type="Texture2D" uid="uid://df3nld8pyyk61" path="res://textures/staticbuzz/StaticTexture (4).png" id="7_rsfmq"]
-[ext_resource type="PackedScene" uid="uid://txpepsg4esd4" path="res://volume_slider.tscn" id="13_6cdou"]
+[ext_resource type="PackedScene" uid="uid://txpepsg4esd4" path="res://scenes/volume_slider.tscn" id="13_6cdou"]
 [ext_resource type="Texture2D" uid="uid://b80snh2yt11x2" path="res://textures/ui/menu/logos/cenzorship/VS1.png" id="15_7jp70"]
 [ext_resource type="Texture2D" uid="uid://cgxferwi63xaf" path="res://textures/ui/menu/logos/cenzorship/VS2.png" id="16_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://bwpokbp0j2qfk" path="res://textures/ui/menu/logos/cenzorship/VS3.png" id="17_81l6r"]
 [ext_resource type="Script" uid="uid://dq0wafujfrjbl" path="res://scenes/custom_night.gd" id="18_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://b8nirl6jdeo0q" path="res://textures/ui/menu/logos/cenzorship/VS4.png" id="18_rsfmq"]
-[ext_resource type="PackedScene" uid="uid://1o4h7rj2ncj3" path="res://scripts/custom_night_animatronic.tscn" id="19_81l6r"]
+[ext_resource type="PackedScene" uid="uid://1o4h7rj2ncj3" path="res://scenes/custom_night_animatronic.tscn" id="19_81l6r"]
 [ext_resource type="Texture2D" uid="uid://b7js0tnqt1mbo" path="res://textures/game/custom_night/ricky_custom_night.png" id="20_fy8yy"]
 [ext_resource type="Texture2D" uid="uid://dfl88xpqmyx5a" path="res://textures/game/custom_night/ardent_custom_night.png" id="21_6wigr"]
 [ext_resource type="Texture2D" uid="uid://bturbxbjo8av5" path="res://textures/game/custom_night/cage_custom_night.png" id="22_lnf0i"]
@@ -768,8 +768,8 @@ animatronic_name = "Ricky"
 animatronic_sprite = NodePath("SpriteRicky")
 
 [node name="SpriteRicky" type="Sprite2D" parent="CustomNight/CustomNightRicky" unique_id=1180333069]
-position = Vector2(143.27213, 145.83331)
-scale = Vector2(0.26531875, 0.26175216)
+position = Vector2(142.63112, 145.83331)
+scale = Vector2(0.26650587, 0.26175216)
 texture = ExtResource("20_fy8yy")
 
 [node name="CustomNightArdent" parent="CustomNight" unique_id=710479226 instance=ExtResource("19_81l6r")]

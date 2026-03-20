@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bidd0qrfm35ne"]
 
-[ext_resource type="Script" uid="uid://bv8p4nf1iqbug" path="res://cage.gd" id="1_05tt0"]
+[ext_resource type="Script" uid="uid://bv8p4nf1iqbug" path="res://scripts/animatronics/cage.gd" id="1_05tt0"]
 [ext_resource type="AudioStream" uid="uid://dwbxxphirf3n8" path="res://sounds/game/jumpscare/jumpscare.mp3" id="2_mkxr1"]
 
 [node name="Cage" type="Control" unique_id=1402374273 node_paths=PackedStringArray("move_timer", "kill_sound")]
