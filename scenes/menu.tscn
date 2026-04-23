@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhqcnvyxjgoh1"]
 
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
-[ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/menu/music/river's end.mp3" id="2_g6gyw"]
+[ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/Menu/music/river's end.mp3" id="2_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://myiy1w5nsipj" path="res://textures/ui/menu/backgrounds/MenuBackground.png" id="3_81l6r"]
 [ext_resource type="Texture2D" uid="uid://lhy1nbg35ae0" path="res://textures/staticbuzz/StaticTexture (1).png" id="4_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://b7eat6ih8s1ri" path="res://textures/staticbuzz/StaticTexture (2).png" id="5_3dmrc"]
@@ -12,15 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://b80snh2yt11x2" path="res://textures/ui/menu/logos/cenzorship/VS1.png" id="15_7jp70"]
 [ext_resource type="Texture2D" uid="uid://cgxferwi63xaf" path="res://textures/ui/menu/logos/cenzorship/VS2.png" id="16_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://bwpokbp0j2qfk" path="res://textures/ui/menu/logos/cenzorship/VS3.png" id="17_81l6r"]
-[ext_resource type="Script" uid="uid://dq0wafujfrjbl" path="res://scenes/custom_night.gd" id="18_3dmrc"]
 [ext_resource type="Texture2D" uid="uid://b8nirl6jdeo0q" path="res://textures/ui/menu/logos/cenzorship/VS4.png" id="18_rsfmq"]
 [ext_resource type="PackedScene" uid="uid://1o4h7rj2ncj3" path="res://scenes/custom_night_animatronic.tscn" id="19_81l6r"]
 [ext_resource type="Texture2D" uid="uid://b7js0tnqt1mbo" path="res://textures/game/custom_night/ricky_custom_night.png" id="20_fy8yy"]
 [ext_resource type="Texture2D" uid="uid://dfl88xpqmyx5a" path="res://textures/game/custom_night/ardent_custom_night.png" id="21_6wigr"]
 [ext_resource type="Texture2D" uid="uid://bturbxbjo8av5" path="res://textures/game/custom_night/cage_custom_night.png" id="22_lnf0i"]
-[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/ui/buttons/ButtonClicked.mp3" id="128_3oclc"]
-[ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/ui/buttons/ButtonHover.wav" id="132_i4wbw"]
-[ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/menu/IntoGame.wav" id="137_i4wbw"]
+[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/buttons/ButtonClicked.mp3" id="128_3oclc"]
+[ext_resource type="AudioStream" uid="uid://dqk7fa221skx5" path="res://sounds/UI/buttons/ButtonHover.wav" id="132_i4wbw"]
+[ext_resource type="AudioStream" uid="uid://c0slcifm5sedr" path="res://sounds/Menu/IntoGame.wav" id="137_i4wbw"]
 [ext_resource type="Texture2D" uid="uid://b11y71iq8f31e" path="res://textures/ui/menu/logos/azimuth/Azimuth_Normal_Flag.png" id="138_i4wbw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_11y2r"]
@@ -320,6 +319,10 @@ font_size = 100
 
 [sub_resource type="SystemFont" id="SystemFont_i6lef"]
 font_names = PackedStringArray("LCD Solid")
+
+[sub_resource type="GDScript" id="GDScript_oi1it"]
+script/source = "extends Control
+"
 
 [node name="MainMenu" type="Control" unique_id=1274546302]
 material = SubResource("CanvasItemMaterial_11y2r")
@@ -712,7 +715,7 @@ visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("18_3dmrc")
+script = SubResource("GDScript_oi1it")
 
 [node name="HFlowContainer" type="HFlowContainer" parent="CustomNight" unique_id=1017747080]
 layout_mode = 0
