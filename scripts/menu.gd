@@ -11,6 +11,10 @@ var progress: = 0.0
 @onready var node_custom_night_cage: Control = $CustomNight/CustomNightCage
 
 func _ready() -> void:
+	if GlobalVars.night_number > 5:
+		$Menu/MenuButtons/CustomNight.set_visible(true)
+	else:
+		$Menu/MenuButtons/CustomNight.set_visible(false)
 	Saveload._load()
 	GlobalVars.night_number = Saveload.contents_to_save.night_number
 	GlobalVars.volume[1] = Saveload.contents_to_save.vfx_volume
@@ -24,6 +28,7 @@ func _ready() -> void:
 	tween.parallel().tween_property($Static, "self_modulate:a", 0.0, 0.5)
 	await get_tree().create_timer(0.5).timeout
 	$StaticTimer.start()
+
 	
 
 func _process(delta):

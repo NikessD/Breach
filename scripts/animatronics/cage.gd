@@ -21,7 +21,6 @@ var movement_random_number: int = 0
 func _on_move_timer_timeout() -> void:
 	movement_random_number = randi_range(0, 20)
 	if movement_random_number <= ai and ai > 0:
-		$"../UiPc/ShockButton/CageShock".play()
 		stage = stage + 1
 		office.camera_change()
 		office.camera_static()
@@ -44,6 +43,7 @@ func kill():
 
 func _on_shock_button_pressed() -> void:
 	if GlobalVars.camera_clicked == 3 and stage > 0:
+		$"../UiPc/ShockButton/CageShock".play()
 		stage = 0
 		office.camera_static()
 		office.camera_change()

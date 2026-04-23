@@ -1919,18 +1919,36 @@ offset_right = 1005.7508
 offset_bottom = 902.8889
 theme_override_fonts/font = ExtResource("213_vpp0n")
 theme_override_font_sizes/font_size = 14
-text = "<----Animatronic se může nacházet i v této místnosti, 
-ale nepůjde ho vidět, proto je důležité ho sledovat 
+text = "<----Animatronic se může nacházet i v této místnosti,
+ale nepůjde ho vidět, proto je důležité ho sledovat
 a mít přehled o jeho poloze"
+metadata/_edit_use_anchors_ = true
+
+[node name="TutorialTextCameras3" type="Label" parent="Office/Tutorial/CamFeed" unique_id=1920300607]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.527589
+anchor_top = -8.305555
+anchor_right = -1.2525895
+anchor_bottom = -6.9805555
+offset_left = 203.10356
+offset_top = 766.2222
+offset_right = 512.1036
+offset_bottom = 803.2222
+theme_override_fonts/font = ExtResource("213_vpp0n")
+theme_override_font_sizes/font_size = 14
+text = "Tady je Cage ------------------------------------------>
+Pokud se pohne, tak stačí zmáčknout tlačítko SHOCK 
+a on se vyresetuje do své původní pozice"
 metadata/_edit_use_anchors_ = true
 
 [node name="TutorialTextCameras" type="Label" parent="Office/Tutorial/CamFeed" unique_id=2051871003]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.0
-anchor_top = -6.3
-anchor_right = 1.0
-anchor_bottom = -4.975
+anchor_left = -0.3
+anchor_top = -3.0
+anchor_right = -0.3
+anchor_bottom = -1.675
 offset_left = 224.0
 offset_top = 690.0
 offset_right = 533.0

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhqcnvyxjgoh1"]
 
 [ext_resource type="Script" uid="uid://d1wf8cprrctva" path="res://scripts/menu.gd" id="1_v86rl"]
-[ext_resource type="AudioStream" uid="uid://e7smwe6jk6qf" path="res://sounds/Menu/music/river's end.mp3" id="2_g6gyw"]
+[ext_resource type="AudioStream" uid="uid://j4o5pm4okeih" path="res://sounds/game/ambient/creepyambience2.mp3" id="2_oi1it"]
 [ext_resource type="Texture2D" uid="uid://myiy1w5nsipj" path="res://textures/ui/menu/backgrounds/MenuBackground.png" id="3_81l6r"]
 [ext_resource type="Texture2D" uid="uid://lhy1nbg35ae0" path="res://textures/staticbuzz/StaticTexture (1).png" id="4_g6gyw"]
 [ext_resource type="Texture2D" uid="uid://b7eat6ih8s1ri" path="res://textures/staticbuzz/StaticTexture (2).png" id="5_3dmrc"]
@@ -344,8 +344,8 @@ wait_time = 0.093
 wait_time = 1.422
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="." unique_id=716738802]
-stream = ExtResource("2_g6gyw")
-volume_db = -10.894
+stream = ExtResource("2_oi1it")
+volume_db = -17.009
 pitch_scale = 0.9
 autoplay = true
 parameters/looping = true
@@ -474,7 +474,7 @@ offset_top = 1053.0
 offset_right = 1918.0
 offset_bottom = 1076.0
 theme_override_fonts/font = ExtResource("6_13sgg")
-text = "VER - 1.1.0"
+text = "VER - 1.1.1"
 
 [node name="LoadingScreen" type="Control" parent="." unique_id=1262903751]
 visible = false
@@ -676,39 +676,51 @@ position = Vector2(960, 896)
 scale = Vector2(0.046790645, 0.046790656)
 texture = ExtResource("138_i4wbw")
 
-[node name="TextEdit" type="TextEdit" parent="Credits" unique_id=1569592891]
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits" unique_id=165298201]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -376.0
-offset_top = -294.0
-offset_right = 376.0
-offset_bottom = 294.0
+offset_left = -572.5
+offset_top = -304.0
+offset_right = 572.5
+offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="Label3" type="Label" parent="Credits/VBoxContainer" unique_id=1670702829]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("6_13sgg")
-theme_override_font_sizes/font_size = 39
-text = "   Programing - Jakub Mauer
-       Models - Jakub Mauer
-	       UI - Jakub Mauer
+theme_override_font_sizes/font_size = 52
+text = "Models and scenes - Jakub Mauer"
 
+[node name="Label2" type="Label" parent="Credits/VBoxContainer" unique_id=465730741]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 52
+text = "UI Design - Jakub Mauer"
 
-	  Special thanks to:
+[node name="Label" type="Label" parent="Credits/VBoxContainer" unique_id=1050759236]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 52
+text = "Programing - Jakub Mauer"
+
+[node name="Label5" type="Label" parent="Credits/VBoxContainer" unique_id=632287617]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 52
+
+[node name="Label4" type="Label" parent="Credits/VBoxContainer" unique_id=1017755358]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 52
+text = "Special thanks to:
 Maja Kubinova, Frantisek Hulka,
- Slavek Kasik, Vit Korinek"
-editable = false
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-middle_mouse_paste_enabled = false
-empty_selection_clipboard_enabled = false
-virtual_keyboard_enabled = false
+Slavek Kasik, Vit Korinek, Jan Mysak"
 
 [node name="CustomNight" type="Control" parent="." unique_id=107344465]
 visible = false
