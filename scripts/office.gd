@@ -44,7 +44,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if GlobalVars.light_button_is_pressed == true:
-		power -= 0.015
+		power -= 0.025
 	if power > 0:
 		power -= 0.003
 
@@ -413,7 +413,7 @@ func _on_timer_blinking_timeout() -> void:
 
 func _on_timer_halucination_timeout() -> void:
 	var random = randi_range(1,10)
-	if random > 9:
+	if random > 20:
 		$"../HalucinationSound".play()
 		$"../Halucination".set_visible(true)
 		$"../Halucination".play("halucination")

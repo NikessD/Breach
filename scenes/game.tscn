@@ -304,7 +304,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_1fiuy")
 }],
-"loop": false,
+"loop": 0,
 "name": &"anim_blackout",
 "speed": 40.0
 }, {
@@ -387,7 +387,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_k2jov")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anim_view_left_twitching",
 "speed": 30.0
 }, {
@@ -395,7 +395,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_331gb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_view_front",
 "speed": 14.0
 }, {
@@ -442,7 +442,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_331gb")
 }],
-"loop": false,
+"loop": 0,
 "name": &"animation_view_front_blinking",
 "speed": 60.0
 }, {
@@ -492,7 +492,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("25_rjeju")
 }],
-"loop": false,
+"loop": 0,
 "name": &"animation_view_left",
 "speed": 60.0
 }, {
@@ -500,7 +500,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_gm07v")
 }],
-"loop": false,
+"loop": 0,
 "name": &"animation_view_left_animatronic",
 "speed": 30.0
 }, {
@@ -508,7 +508,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_texxq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_view_left_light",
 "speed": 30.0
 }, {
@@ -546,7 +546,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_gm07v")
 }],
-"loop": false,
+"loop": 0,
 "name": &"animation_view_left_light_walk_in",
 "speed": 30.0
 }, {
@@ -554,7 +554,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("25_rjeju")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_view_left_look",
 "speed": 5.0
 }, {
@@ -592,7 +592,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_texxq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"animation_view_left_scared_away",
 "speed": 30.0
 }, {
@@ -645,7 +645,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("36_rjeju")
 }],
-"loop": false,
+"loop": 0,
 "name": &"animation_view_right",
 "speed": 60.0
 }, {
@@ -653,7 +653,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("52_331gb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_view_right_animatronic",
 "speed": 5.0
 }, {
@@ -661,7 +661,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("53_bdqdv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_view_right_light",
 "speed": 30.0
 }, {
@@ -699,7 +699,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("52_331gb")
 }],
-"loop": false,
+"loop": 0,
 "name": &"animation_view_right_light_walk_in",
 "speed": 30.0
 }, {
@@ -707,7 +707,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("36_rjeju")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_view_right_look",
 "speed": 5.0
 }, {
@@ -745,7 +745,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("53_bdqdv")
 }],
-"loop": false,
+"loop": 0,
 "name": &"animation_view_right_scared_away",
 "speed": 30.0
 }, {
@@ -783,7 +783,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_gm07v")
 }],
-"loop": true,
+"loop": 1,
 "name": &"animation_view_right_twithing",
 "speed": 15.0
 }]
@@ -796,7 +796,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("106_gpphh")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Cam1Animatronic",
 "speed": 5.0
 }, {
@@ -804,7 +804,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("107_ilysl")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Cam1Nothing",
 "speed": 5.0
 }, {
@@ -812,7 +812,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("108_pgf4p")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Cam2Animatronic",
 "speed": 5.0
 }, {
@@ -820,7 +820,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("109_wigk3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Cam2Nothing",
 "speed": 5.0
 }, {
@@ -837,7 +837,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("77_qmnfn")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Cam3Cage",
 "speed": 0.0
 }, {
@@ -845,7 +845,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("78_yfuyu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Cam4Animatronic",
 "speed": 5.0
 }, {
@@ -853,7 +853,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("79_qmnfn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Cam4Nothing",
 "speed": 5.0
 }, {
@@ -861,7 +861,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("80_d0aju")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Cam5Animatronic",
 "speed": 5.0
 }, {
@@ -869,7 +869,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("81_dy8ei")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Cam5Nothing",
 "speed": 5.0
 }, {
@@ -877,7 +877,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("82_yfuyu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Cam6Animatronic",
 "speed": 5.0
 }, {
@@ -885,7 +885,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("83_qmnfn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Cam6Nothing",
 "speed": 5.0
 }, {
@@ -893,7 +893,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("84_vh2bu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Cam7Animatronic",
 "speed": 5.0
 }, {
@@ -901,7 +901,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("77_152wt")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Cam7Nothing",
 "speed": 5.0
 }, {
@@ -909,7 +909,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("86_d0aju")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Cam8Animatronic",
 "speed": 5.0
 }, {
@@ -917,7 +917,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("87_dy8ei")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Cam8Nothing",
 "speed": 5.0
 }]
@@ -1117,7 +1117,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("91_nc1gq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"CamStatic",
 "speed": 40.0
 }]
@@ -1222,7 +1222,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("98_rowo6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"ardent_jumpscare",
 "speed": 40.0
 }, {
@@ -1347,7 +1347,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("145_mtq6s")
 }],
-"loop": false,
+"loop": 0,
 "name": &"cage_jumpscare",
 "speed": 40.0
 }, {
@@ -1475,7 +1475,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("133_rjeju")
 }],
-"loop": false,
+"loop": 0,
 "name": &"ricky_jumpscare",
 "speed": 40.0
 }]
@@ -1600,7 +1600,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("122_x1ulb")
 }],
-"loop": false,
+"loop": 0,
 "name": &"halucination",
 "speed": 60.0
 }]
@@ -1626,7 +1626,7 @@ panning_strength = 0.0
 
 [node name="CamBuzzSound" type="AudioStreamPlayer" parent="Office" unique_id=1078928745]
 stream = ExtResource("4_bdqdv")
-volume_db = 5.621
+volume_db = 16.607
 bus = &"vfx"
 
 [node name="FlashLightSound" type="AudioStreamPlayer" parent="Office" unique_id=1215763858]
@@ -1667,7 +1667,7 @@ position = Vector2(1191.2001, 529.0062)
 rotation = -5.54186e-05
 scale = Vector2(0.8230823, 0.78632927)
 sprite_frames = SubResource("SpriteFrames_7025r")
-animation = &"Cam3Cage"
+animation = &"Cam1Animatronic"
 autoplay = "Cam1Animatronic"
 
 [node name="Cage" type="Sprite2D" parent="Office/UiPc/CamFeed" unique_id=1413922300]
@@ -1704,6 +1704,7 @@ label_settings = SubResource("LabelSettings_xnu4a")
 metadata/_edit_use_anchors_ = true
 
 [node name="ShockText" type="Label" parent="Office/UiPc" unique_id=696658477]
+visible = false
 use_parent_material = true
 layout_mode = 0
 offset_left = 744.0
@@ -1762,6 +1763,7 @@ step = 20.0
 show_percentage = false
 
 [node name="ShockButton" type="TextureButton" parent="Office/UiPc" unique_id=1323623989]
+visible = false
 layout_mode = 0
 offset_left = 731.0
 offset_top = 573.0

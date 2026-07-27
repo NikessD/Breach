@@ -25,10 +25,11 @@ func _ready() -> void:
 	$StaticTimer.stop()
 	$Static.self_modulate.a = 10
 	var tween = create_tween()
+	$MenuStaticSoundPlayer.play()
 	tween.parallel().tween_property($Static, "self_modulate:a", 0.0, 0.5)
 	await get_tree().create_timer(0.5).timeout
 	$StaticTimer.start()
-
+	$MenuStaticSoundPlayer.stop()
 	
 
 func _process(delta):
@@ -76,7 +77,6 @@ func _on_play_pressed() -> void:
 	$ColorRect2.self_modulate.a = 0
 	$StaticTimer.stop()
 	$MenuTheme.stop()
-	$Menu/Background/MenuStatic.stop()
 	$StartButtonSound.play()
 	$LoadingScreen/NightNumber.text = "NIGHT " + str(GlobalVars.night_number)
 	$Menu.set_visible(false)

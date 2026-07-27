@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b7eat6ih8s1ri" path="res://textures/staticbuzz/StaticTexture (2).png" id="4_ra01a"]
 [ext_resource type="Texture2D" uid="uid://v32mhqvppn1t" path="res://textures/staticbuzz/StaticTexture (3).png" id="5_0ol00"]
 [ext_resource type="Texture2D" uid="uid://df3nld8pyyk61" path="res://textures/staticbuzz/StaticTexture (4).png" id="6_iqwqv"]
+[ext_resource type="AudioStream" uid="uid://c1dpivkf7vht5" path="res://sounds/game/speaker-buzz-82989.mp3" id="7_0ol00"]
+[ext_resource type="AudioStream" uid="uid://83g8lvti7f0d" path="res://sounds/game/CamBuzzSound.mp3" id="8_iqwqv"]
 
 [sub_resource type="SystemFont" id="SystemFont_0eiwq"]
 font_names = PackedStringArray("LCD Solid")
@@ -182,7 +184,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_o7rnw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Static",
 "speed": 30.0
 }]
@@ -238,6 +240,17 @@ position = Vector2(963.55554, 545)
 scale = Vector2(1.5305555, 1.5305556)
 sprite_frames = SubResource("SpriteFrames_leokh")
 animation = &"Static"
-frame_progress = 0.9386576
+frame = 49
+frame_progress = 0.394756
+
+[node name="HumSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=1671655838]
+stream = ExtResource("7_0ol00")
+volume_db = -19.042
+pitch_scale = 0.75
+
+[node name="BuzzAudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1465867693]
+stream = ExtResource("8_iqwqv")
+volume_db = 19.042
+pitch_scale = 1.11
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
