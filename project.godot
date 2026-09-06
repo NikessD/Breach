@@ -42,6 +42,10 @@ window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://bn60yte3y7vju"
 window/icon=""
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/project-time-tracker/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

@@ -14,7 +14,7 @@ func _ready() -> void:
 	if GlobalVars.night_number > 5:
 		$Menu/MenuButtons/CustomNight.set_visible(true)
 	else:
-		$Menu/MenuButtons/CustomNight.set_visible(false)
+		$Menu/MenuButtons/CustomNight.set_visible(true)
 	Saveload._load()
 	GlobalVars.night_number = Saveload.contents_to_save.night_number
 	GlobalVars.volume[1] = Saveload.contents_to_save.vfx_volume
@@ -37,6 +37,7 @@ func _process(delta):
 
 	if status == ResourceLoader.THREAD_LOAD_LOADED:
 		var packed_scene = ResourceLoader.load_threaded_get("res://scenes/game.tscn")
+		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_packed(packed_scene)
 
 
@@ -85,7 +86,7 @@ func _on_play_pressed() -> void:
 		$ColorRect2.self_modulate.a += 0.1
 		$Static.self_modulate.a += 0.1
 		await get_tree().process_frame
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(5).timeout
 
 
 func _on_options_pressed() -> void:
@@ -175,7 +176,6 @@ func _on_playcustom_night_pressed() -> void:
 	$ColorRect2.self_modulate.a = 0
 	$StaticTimer.stop()
 	$MenuTheme.stop()
-	$Menu/Background/MenuStatic.stop()
 	$StartButtonSound.play()
 	$LoadingScreen/NightNumber.text = "CUSTOM NIGHT"
 	$Menu.set_visible(false)
@@ -188,4 +188,4 @@ func _on_playcustom_night_pressed() -> void:
 		$ColorRect2.self_modulate.a += 0.1
 		$Static.self_modulate.a += 0.1
 		await get_tree().process_frame
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(5).timeout

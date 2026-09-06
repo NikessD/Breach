@@ -28,7 +28,8 @@ pitch_scale = 1.73
 [node name="RunningSound" type="AudioStreamPlayer" parent="." unique_id=2121790855]
 stream = ExtResource("3_s67ih")
 volume_db = -15.981
-pitch_scale = 0.96
+pitch_scale = 1.26
+bus = &"InGameEcho"
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
 [connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

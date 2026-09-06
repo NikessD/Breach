@@ -23,7 +23,9 @@ func _on_move_timer_timeout() -> void:
 	if movement_random_number <= ai and ai > 0:
 		stage = stage + 1
 		office.camera_change()
-		office.camera_static()
+		office._on_timer_blinking_timeout()
+		if GlobalVars.camera_clicked == 3:
+			office.camera_static()
 		if stage == 3:
 			killer = true
 			kill()
@@ -33,13 +35,15 @@ func kill():
 	GlobalVars.cage_killer = true
 	animation_camera_static.self_modulate.a = (100000)
 	sound_camera_buzz.play()
-	await get_tree().create_timer(1.5).timeout
+	$RunningSound.play()
+	await get_tree().create_timer(3).timeout
+	$RunningSound.stop()
 	jumpscare_player.set_visible(true)
 	jumpscare_player.play("cage_jumpscare")
-	kill_sound.play()
+	kill_sound.play() 
 	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
-
+	
 
 func _on_shock_button_pressed() -> void:
 	if GlobalVars.camera_clicked == 3 and stage > 0:
@@ -47,3 +51,10 @@ func _on_shock_button_pressed() -> void:
 		stage = 0
 		office.camera_static()
 		office.camera_change()
+		office.power -= 0.3*GlobalVars.night_number
+		shocked()
+		
+func shocked():
+		move_timer.stop()
+		await get_tree().create_timer(randf_range(0.8,8)).timeout
+		move_timer.start()

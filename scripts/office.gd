@@ -44,7 +44,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if GlobalVars.light_button_is_pressed == true:
-		power -= 0.025
+		power -= 0.020
 	if power > 0:
 		power -= 0.003
 

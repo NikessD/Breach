@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwf0pbrnkuc5i" path="res://scripts/custom_night_animatronic.gd" id="1_uqemq"]
 [ext_resource type="Texture2D" uid="uid://lhy1nbg35ae0" path="res://textures/staticbuzz/StaticTexture (1).png" id="2_8fho3"]
-[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/ui/buttons/ButtonClicked.mp3" id="2_kj5lc"]
+[ext_resource type="AudioStream" uid="uid://budtponlvqa5p" path="res://sounds/UI/buttons/ButtonClicked.mp3" id="2_kj5lc"]
 [ext_resource type="Texture2D" uid="uid://df3nld8pyyk61" path="res://textures/staticbuzz/StaticTexture (4).png" id="2_pxdk8"]
 [ext_resource type="Texture2D" uid="uid://b7eat6ih8s1ri" path="res://textures/staticbuzz/StaticTexture (2).png" id="3_kj5lc"]
 [ext_resource type="FontFile" uid="uid://mou5bhoqqbqj" path="res://fonts/LcdSolid-VPzB.ttf" id="3_pxdk8"]
@@ -107,7 +107,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_pxdk8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"customnight_animatronic_background",
 "speed": 20.0
 }]

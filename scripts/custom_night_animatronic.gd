@@ -11,11 +11,20 @@ var animatronic_background_speed: float = 0
 
 @onready var animatronic_background: AnimatedSprite2D = $AnimatedSprite2D
 @onready var button_clicked: AudioStreamPlayer = $ButtonClicked
+@onready var button_subtract: Button = $HBoxContainer/ButtonSubtract
+@onready var button_add: Button = $HBoxContainer/ButtonAdd
 
 func _ready():
 	label_animatronic.text = str(animatronic_name)
 	animatronic_background.set_speed_scale(0)
 
+#func _process(delta: float) -> void:
+	#while button_subtract.button_pressed and custom_ai > 0:
+		#custom_ai =- 1*delta
+		#animatronic_ai_value_changed()
+	#while button_add.button_pressed and custom_ai < 20:
+		#custom_ai =+ 1*delta
+		#animatronic_ai_value_changed()
 
 func animatronic_ai_value_changed():
 	label_animatronic_ai.text = str(custom_ai)
@@ -28,8 +37,6 @@ func _on_button_add_pressed() -> void:
 	if custom_ai < 20:
 		custom_ai = custom_ai + 1
 		animatronic_ai_value_changed()
-
-
 
 
 func _on_button_subtract_pressed() -> void:

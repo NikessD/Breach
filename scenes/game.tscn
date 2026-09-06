@@ -1224,7 +1224,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"ardent_jumpscare",
-"speed": 40.0
+"speed": 50.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1349,7 +1349,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"cage_jumpscare",
-"speed": 40.0
+"speed": 50.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1638,6 +1638,7 @@ bus = &"vfx"
 [node name="PowerDownSound" type="AudioStreamPlayer" parent="Office" unique_id=1388111080]
 stream = ExtResource("8_qouja")
 volume_db = -17.359
+pitch_scale = 0.98
 
 [node name="CamSelected" type="AudioStreamPlayer" parent="Office" unique_id=1548058344]
 stream = ExtResource("10_02fa5")
@@ -1899,6 +1900,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Tutorial" type="Control" parent="Office" unique_id=984619428]
+visible = false
 anchors_preset = 0
 metadata/_edit_use_anchors_ = true
 
@@ -2104,7 +2106,7 @@ autostart = true
 
 [node name="ComputerFanSound" type="AudioStreamPlayer" parent="." unique_id=573453652]
 stream = ExtResource("49_8qswn")
-volume_db = -6.551
+volume_db = -5.819
 pitch_scale = 0.75
 autoplay = true
 bus = &"vfx"
@@ -2123,8 +2125,8 @@ modulate = Color(0.9818757, 0.9818757, 0.9818757, 1)
 position = Vector2(980.1891, 538.99994)
 scale = Vector2(1.0410849, 1.0388888)
 sprite_frames = SubResource("SpriteFrames_pgf4p")
-animation = &"ardent_jumpscare"
-frame = 26
+animation = &"cage_jumpscare"
+frame = 39
 frame_progress = 1.0
 
 [node name="TimerBlinking" type="Timer" parent="." unique_id=7158448]

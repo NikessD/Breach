@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bv8p4nf1iqbug" path="res://scripts/animatronics/cage.gd" id="1_05tt0"]
 [ext_resource type="AudioStream" uid="uid://dwbxxphirf3n8" path="res://sounds/game/jumpscare/jumpscare.mp3" id="2_mkxr1"]
+[ext_resource type="AudioStream" uid="uid://bckgksosw3tkm" path="res://sounds/game/cage_running.mp3" id="3_28ieq"]
 
 [node name="Cage" type="Control" unique_id=1402374273 node_paths=PackedStringArray("move_timer", "kill_sound")]
 layout_mode = 3
@@ -22,5 +23,11 @@ autostart = true
 [node name="KillSound" type="AudioStreamPlayer" parent="." unique_id=1129992587]
 stream = ExtResource("2_mkxr1")
 volume_db = -22.018
+
+[node name="RunningSound" type="AudioStreamPlayer" parent="." unique_id=1290185892]
+stream = ExtResource("3_28ieq")
+volume_db = -10.254
+pitch_scale = 3.08
+bus = &"InGameEcho"
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

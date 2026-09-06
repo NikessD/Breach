@@ -340,7 +340,7 @@ script = ExtResource("1_v86rl")
 
 [node name="MenuStaticSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=550857956]
 stream = ExtResource("14_fy8yy")
-volume_db = -18.468
+volume_db = -22.862
 pitch_scale = 1.19
 mix_target = 1
 
